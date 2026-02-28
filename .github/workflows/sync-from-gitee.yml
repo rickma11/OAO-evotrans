@@ -5,31 +5,36 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - name: Download evolutions.json from Gitee
-        id: download
         run: |
           echo "Downloading evolutions.json from Gitee..."
           curl -s -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
-          echo "File size: $(ls -la evolutions.json)"
-          echo "content=$(cat evolutions.json | jq -R -s .)" >> $GITHUB_OUTPUT
+          echo "Download completed. File size: $(ls -la evolutions.json)"
 
-      - name: Update evolutions.json on GitHub
+      - name: Commit and push if changed
         run: |
-          echo "Updating evolutions.json on GitHub..."
-          # Get current SHA of the file
-          CURRENT_SHA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/rickma11/OAO-evotrans/contents/evolutions.json" | jq -r .sha)
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           
-          # Update the file using GitHub API
-          curl -s -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            "https://api.github.com/repos/rickma11/OAO-evotrans/contents/evolutions.json" \
-            -d "{
-              \"message\": \"Sync evolutions.json from Gitee\",
-              \"content\": \"$(cat evolutions.json | base64)\",
-              \"sha\": \"$CURRENT_SHA\"
-            }"
+          git add evolutions.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            echo "Changes detected, committing..."
+            git commit -m "Sync evolutions.json from Gitee"
+            echo "Pushing changes..."
+            git push
+          fi
