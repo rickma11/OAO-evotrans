@@ -1,22 +1,22 @@
 {
-    "Go Long": {
-     "CN": "目光长远"
-    },
-    "Clinical Creator": {
-  "CN": "凌厉创造者"
-    },
-    "Set Menu": {
-  "CN": "套餐菜单"
-    },
-    "Bench Boost": {
+  "Go Long": {
+    "CN": "目光长远"
+  },
+  "Clinical Creator": {
+    "CN": "凌厉创造者"
+  },
+  "Set Menu": {
+    "CN": "套餐菜单"
+  },
+  "Bench Boost": {
     "CN": "替补强化"
-    },
-    "Max Skills": {
+  },
+  "Max Skills": {
     "CN": "巅峰技巧"
-    },
-    "Inventive+": {
+  },
+  "Inventive+": {
     "CN": "别出心裁 +"
-    },
+  },
   "Bronze Glow Up": {
     "CN": "青铜球员突飞猛进"
   },
@@ -62,7 +62,7 @@
   "CAM & Roles++": {
     "CN": "前腰位置和角色++（适用于任意超级巨星）"
   },
-   "Fantasy FC": {
+  "Fantasy FC": {
     "CN": "梦幻FC"
   },
   "New Spark": {
@@ -133,5 +133,6 @@
   },
   "Club Member Reward": {
     "CN": "俱乐部会员奖励"
-  }
+  },
+  "sdsdd": "sdsds d"
 }
