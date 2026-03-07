@@ -1,4 +1,115 @@
 {
+  "[OBJ] Jockey+": {
+    "CN": "【任务】跟防+"
+  },
+  "[OBJ] Gamechanger+": {
+    "CN": "【任务】颠覆者+"
+  },
+  "[OBJ] Low Driven Shot+": {
+    "CN": "【任务】大力低射+"
+  },
+  "Premium PlayStyle+ Bakery": {
+    "CN": "高级 PS+烘焙"
+  },
+  "PlayStyle+ Bakery": {
+    "CN": "PS+烘焙"
+  },
+  "PS Bakery": {
+    "CN": "PS烘焙"
+  },
+  "Cake & Rash": {
+    "CN": "蛋糕冲动"
+  },
+  "CB Level up": {
+    "CN": "中后卫升级"
+  },
+  "Relentless+": {
+    "CN": "坚持不懈+"
+  },
+  "Enforcer+": {
+    "CN": "执行者+"
+  },
+  "Long Throw+": {
+    "CN": "远距离界外球+"
+  },
+  "Quick Step+": {
+    "CN": "健步如飞+"
+  },
+  "Jockey+": {
+    "CN": "跟防+"
+  },
+  "Bruiser+": {
+    "CN": "斗士+"
+  },
+  "Slide Tackle+": {
+    "CN": "滑铲+"
+  },
+  "Block+": {
+    "CN": "封堵+"
+  },
+  "Intercept+": {
+    "CN": "拦截+"
+  },
+  "Anticipate+": {
+    "CN": "预判+"
+  },
+  "Aerial Fortress+": {
+    "CN": "空中堡垒+"
+  },
+  "Gamechanger+": {
+    "CN": "颠覆者+"
+  },
+  "Finesse Shot+": {
+    "CN": "精准射门+"
+  },
+  "First Touch+": {
+    "CN": "第一脚触球+"
+  },
+  "Dead Ball+": {
+    "CN": "死球+"
+  },
+  "Chip Shot+": {
+    "CN": "吊射+"
+  },
+  "Acrobatic+": {
+    "CN": "杂耍+"
+  },
+  "Incisive Pass+": {
+    "CN": "切入传球+"
+  },
+  "Precision Header+": {
+    "CN": "精准头球+"
+  },
+  "Low Driven Shot+": {
+    "CN": "大力低射+"
+  },
+  "Power Shot+": {
+    "CN": "大力射门+"
+  },
+  "Trickster+": {
+    "CN": "诡术师+"
+  },
+  "Long Ball Pass+": {
+    "CN": "远距离传球+"
+  },
+  "Technical+": {
+    "CN": "技术+"
+  },
+  "Inventive+": {
+    "CN": "别出心裁+"
+  },
+  "Whipped Pass+": {
+    "CN": "快速传球+"
+  },
+  "Press Proven+": {
+    "CN": "紧逼好手+"
+  },
+  "Pinged Pass+": {
+    "CN": "大力传球+"
+  },
+  "Rapid+": {
+    "CN": "灵动迅捷+"
+  },
   "Trickster Boost": {
     "CN": "诡术师强化"
   },
@@ -7,9 +118,6 @@
   },
   "Birthday Warmup": {
     "CN": "生日热身"
-  },
-  "First Touch+": {
-    "CN": "第一脚触球+"
   },
   "Re-Enforced": {
     "CN": "重新执行"
@@ -28,9 +136,6 @@
   },
   "Max Skills": {
     "CN": "巅峰技巧"
-  },
-  "Inventive+": {
-    "CN": "别出心裁 +"
   },
   "Bronze Glow Up": {
     "CN": "青铜球员突飞猛进"
