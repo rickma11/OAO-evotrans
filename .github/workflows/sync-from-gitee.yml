@@ -44,7 +44,7 @@ jobs:
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
-          
+          fi
       - name: Commit and push changes
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
