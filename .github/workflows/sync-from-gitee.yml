@@ -2,39 +2,58 @@ name: Sync from Gitee
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 1
-
-      - name: Download evolutions.json from Gitee
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          
+      - name: Debug information
+        run: |
+          pwd
+          ls -la
+          git status
+          git branch
+          
+      - name: Fetch files from Gitee
         run: |
           echo "Downloading evolutions.json from Gitee..."
-          curl -s -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
           echo "Download completed. File size: $(ls -la evolutions.json)"
-
-      - name: Commit and push if changed
+          
+          echo "Downloading built-in-dictionaries.json from Gitee..."
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o built-in-dictionaries.json
+          echo "Download completed. File size: $(ls -la built-in-dictionaries.json)"
+          
+      - name: Check for changes
+        id: check_changes
         run: |
+          echo "Checking for changes..."
+          git add evolutions.json built-in-dictionaries.json
+          git diff --cached
+          if git diff --exit-code --cached; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "Committing and pushing changes..."
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          git commit -m "Sync files from Gitee [skip ci]"
+          git push -v
           
-          git add evolutions.json
-          
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            echo "Changes detected, committing..."
-            git commit -m "Sync evolutions.json from Gitee"
-            echo "Pushing changes..."
-            git push
-          fi
+      - name: No changes
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: echo "No changes to sync"
