@@ -2,7 +2,7 @@ name: Sync from Gitee
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,13 +17,17 @@ jobs:
           
       - name: Debug information
         run: |
+          echo "=== Debug Information ==="
           pwd
           ls -la
           git status
-          git branch
+          git branch -a
+          git remote -v
+          echo "GitHub Token exists: ${{ secrets.GITHUB_TOKEN != '' }}"
           
       - name: Fetch files from Gitee
         run: |
+          echo "=== Fetching files from Gitee ==="
           echo "Downloading evolutions.json from Gitee..."
           curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
           echo "Download completed. File size: $(ls -la evolutions.json)"
@@ -35,20 +39,23 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          echo "Checking for changes..."
+          echo "=== Checking for changes ==="
           git add evolutions.json built-in-dictionaries.json
+          git status
           git diff --cached
-          if git diff --exit-code --cached; then
+          
+          if git diff --cached --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
           fi
+          
       - name: Commit and push changes
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          echo "Committing and pushing changes..."
+          echo "=== Committing and pushing changes ==="
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git status
@@ -56,7 +63,12 @@ jobs:
           git status
           git branch -a
           git remote -v
-          git push origin HEAD:main -v
+          echo "Current branch: $(git branch --show-current)"
+          git push origin HEAD:main -v || {
+            echo "Push failed with exit code $?"
+            git status
+            exit 1
+          }
           
       - name: No changes
         if: steps.check_changes.outputs.has_changes == 'false'
