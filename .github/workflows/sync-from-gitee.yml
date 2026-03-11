@@ -2,12 +2,14 @@ name: Sync from Gitee
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '0 */5 * * *'
   workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout GitHub repo
         uses: actions/checkout@v3
@@ -26,29 +28,52 @@ jobs:
       - name: Fetch files from Gitee
         run: |
           echo "=== Fetching files from Gitee ==="
-          mkdir -p sync-test
           
           echo "Downloading evolutions.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o sync-test/evolutions.json
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
           if [ $? -eq 0 ]; then
-            echo "Download successful. File size: $(ls -la sync-test/evolutions.json)"
-            echo "File content (first 500 chars):"
-            head -c 500 sync-test/evolutions.json
+            echo "Download successful. File size: $(ls -la evolutions.json)"
           else
             echo "Download failed"
+            exit 1
           fi
           
           echo "Downloading built-in-dictionaries.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o sync-test/built-in-dictionaries.json
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o built-in-dictionaries.json
           if [ $? -eq 0 ]; then
-            echo "Download successful. File size: $(ls -la sync-test/built-in-dictionaries.json)"
-            echo "File content (first 500 chars):"
-            head -c 500 sync-test/built-in-dictionaries.json
+            echo "Download successful. File size: $(ls -la built-in-dictionaries.json)"
           else
             echo "Download failed"
+            exit 1
           fi
           
-      - name: Show sync results
+      - name: Check for changes
+        id: check_changes
         run: |
-          echo "=== Sync Results ==="
-          ls -la sync-test/
+          echo "=== Checking for changes ==="
+          git status
+          git add evolutions.json built-in-dictionaries.json
+          
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+            git diff --staged
+          fi
+          
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "=== Committing and pushing changes ==="
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git status
+          git commit -m "Sync files from Gitee [skip ci]"
+          git status
+          git push origin HEAD:main -v
+          
+      - name: No changes
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: echo "No changes to sync"
