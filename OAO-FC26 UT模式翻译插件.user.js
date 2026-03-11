@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OAO-FC26 UT模式翻译插件
 // @namespace    https://github.com/
-// @version      1.3.8
+// @version      1.3.10
 // @description  中文翻译Futbin、Futgg网站的英文信息，包括球员信息、进化名称等
 // @author       我要欧啊欧
 // @match        https://www.fut.gg/*
@@ -100,7 +100,11 @@
   // 版本检查配置
   const SCRIPTCAT_SCRIPT_URL = 'https://scriptcat.org/zh-CN/script-show-page/5488';
   const VERSION_CHECK_KEY = 'oaevo_last_version_check_date';
-  const VERSION_CHECK_INTERVAL = 12 * 60 * 60 * 1000; // 2小时检查一次
+  const VERSION_CHECK_INTERVAL = 24 * 60 * 60 * 1000; // 24小时检查一次
+  const NEW_VERSION_KEY = 'oaevo_new_version_available'; // 存储新版本信息
+  
+  // 全局变量存储新版本信息
+  let newVersionInfo = null;
   
   // 自定义翻译配置
   const CUSTOM_TRANSLATIONS_KEY = 'oaevo_custom_translations';
@@ -2016,6 +2020,7 @@ function showMessage(message, type = 'info') {
     
     // 添加版本信息
     const versionInfo = document.createElement('div');
+    versionInfo.setAttribute('data-version-indicator', 'true');
     // 从 UserScript 头部读取版本号
     let scriptVersion = 'unknown';
     try {
@@ -2035,12 +2040,48 @@ function showMessage(message, type = 'info') {
     } catch (e) {
       // console.warn('Failed to get script version:', e);
     }
-    versionInfo.textContent = 'version: ' + scriptVersion;
+    versionInfo.innerHTML = 'version: ' + scriptVersion;
     versionInfo.style.fontSize = '12px';
     versionInfo.style.color = '#fff';
     versionInfo.style.textAlign = 'center';
     versionInfo.style.marginTop = '8px';
     versionInfo.style.opacity = '0.7';
+    versionInfo.style.cursor = 'pointer';
+    versionInfo.title = '点击检查更新';
+    
+    // 检查是否有新版本信息
+    const savedNewVersion = localStorage.getItem(NEW_VERSION_KEY);
+    if (savedNewVersion) {
+      try {
+        newVersionInfo = JSON.parse(savedNewVersion);
+        // 添加红点
+        const dot = document.createElement('span');
+        dot.className = 'version-update-dot';
+        dot.style.cssText = `
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background: #ff4444;
+          border-radius: 50%;
+          margin-left: 6px;
+          animation: pulse 2s infinite;
+        `;
+        versionInfo.appendChild(dot);
+      } catch (e) {
+        // 解析失败，忽略
+      }
+    }
+    
+    // 点击版本信息时显示更新弹窗
+    versionInfo.addEventListener('click', () => {
+      if (newVersionInfo) {
+        showUpdateDialog(newVersionInfo.remoteVersion, newVersionInfo.currentVersion);
+      } else {
+        // 没有新版本信息，执行一次检查
+        checkVersionUpdate('popup');
+      }
+    });
+    
     panel.appendChild(versionInfo);
     
     panel.appendChild(label);
@@ -4748,98 +4789,113 @@ function showMessage(message, type = 'info') {
   }
 
   // 检查版本更新
-  async function checkVersionUpdate() {
+  // mode: 'background' - 后台检查，只显示红点
+  // mode: 'popup' - 满足间隔时显示弹窗
+  async function checkVersionUpdate(mode = 'background') {
     const lastCheckDate = localStorage.getItem(VERSION_CHECK_KEY);
     const now = Date.now();
     
-    // console.log('[版本检查] 当前时间:', new Date(now).toLocaleString());
-    // console.log('[版本检查] 上次检查时间:', lastCheckDate ? new Date(parseInt(lastCheckDate)).toLocaleString() : '无');
-    // console.log('[版本检查] 检查间隔:', VERSION_CHECK_INTERVAL, 'ms');
-    
-    // 检查是否需要检查（24小时内不重复检查）
-    if (lastCheckDate && (now - parseInt(lastCheckDate)) < VERSION_CHECK_INTERVAL) {
-      // console.log('[版本检查] 距离上次检查时间不足，跳过');
-      return;
+    // 如果是弹窗模式，检查是否满足间隔要求
+    if (mode === 'popup') {
+      if (lastCheckDate && (now - parseInt(lastCheckDate)) < VERSION_CHECK_INTERVAL) {
+        // 不满足间隔，直接返回
+        return;
+      }
     }
-    
-    // console.log('[版本检查] 开始检查版本更新...');
     
     // 如果 URL 中包含 debug=1，强制清除检查时间缓存
     if (window.location.href.includes('debug=1')) {
-      // console.log('[版本检查] 调试模式：清除检查时间缓存');
       localStorage.removeItem(VERSION_CHECK_KEY);
     }
     
     try {
       // 使用 GM_xmlhttpRequest 绕过 CORS 限制
-      // console.log('[版本检查] 使用 GM_xmlhttpRequest 获取页面...');
-      
       GM_xmlhttpRequest({
         method: 'GET',
         url: SCRIPTCAT_SCRIPT_URL,
         onload: function(response) {
-          // console.log('[版本检查] 响应状态:', response.status);
-          // console.log('[版本检查] 页面内容长度:', response.responseText.length);
-          
-          // 打印页面内容的前2000个字符，用于调试
-          // console.log('[版本检查] 页面内容片段:', response.responseText.substring(0, 2000));
-          
           // 尝试多种方式匹配版本号
-          // 方式1: 查找 ant-statistic 组件中的版本号（scriptcat.org 页面格式）
           let versionMatch = response.responseText.match(/当前版本[\s\S]*?<span[^>]*>([\d.]+)<\/span>/i);
-          // console.log('[版本检查] 匹配方式1结果（当前版本）:', versionMatch);
           
-          // 方式2: 查找 @version 后面跟着的版本号
           if (!versionMatch) {
             versionMatch = response.responseText.match(/@version\s+([\d.]+)/);
-            // console.log('[版本检查] 匹配方式2结果（@version）:', versionMatch);
           }
           
-          // 方式3: 查找包含 "version" 和数字的模式
           if (!versionMatch) {
             versionMatch = response.responseText.match(/version[:\s]*([\d.]+)/i);
-            // console.log('[版本检查] 匹配方式3结果（通用version）:', versionMatch);
           }
           
-          // 方式4: 查找 ant-statistic-content-value 类中的版本号
           if (!versionMatch) {
             versionMatch = response.responseText.match(/ant-statistic-content-value[^>]*>([\d.]+)<\/span>/i);
-            // console.log('[版本检查] 匹配方式4结果（ant-statistic）:', versionMatch);
           }
           
           if (versionMatch) {
             const remoteVersion = versionMatch[1];
-            // 从 GM_info 获取当前脚本版本
             const currentVersion = (typeof GM_info !== 'undefined' && GM_info.script && GM_info.script.version) ? GM_info.script.version : '1.1.19';
-            
-            // console.log('[版本检查] 远程版本:', remoteVersion);
-            // console.log('[版本检查] 当前版本:', currentVersion);
             
             // 比较版本号
             const comparison = compareVersions(remoteVersion, currentVersion);
-            // console.log('[版本检查] 版本比较结果:', comparison, '(1=需要更新, 0=相等, -1=远程更低)');
             
             if (comparison > 0) {
-              // console.log('[版本检查] 发现新版本，显示弹窗');
-              // 显示更新提示弹窗
-              showUpdateDialog(remoteVersion, currentVersion);
+              // 发现新版本，保存信息
+              newVersionInfo = {
+                remoteVersion: remoteVersion,
+                currentVersion: currentVersion
+              };
+              localStorage.setItem(NEW_VERSION_KEY, JSON.stringify(newVersionInfo));
+              
+              // 更新侧边栏红点
+              updateVersionIndicator(true);
+              
+              // 如果是弹窗模式，显示弹窗
+              if (mode === 'popup') {
+                showUpdateDialog(remoteVersion, currentVersion);
+              }
             } else {
-              // console.log('[版本检查] 版本已是最新');
+              // 版本已是最新，清除红点
+              localStorage.removeItem(NEW_VERSION_KEY);
+              newVersionInfo = null;
+              updateVersionIndicator(false);
             }
             
             // 保存检查时间
             localStorage.setItem(VERSION_CHECK_KEY, Date.now().toString());
-          } else {
-            // console.log('[版本检查] 未找到版本号');
           }
         },
         onerror: function(error) {
-          // console.error('[版本检查] 请求出错:', error);
+          // 静默处理错误
         }
       });
     } catch (error) {
-      // console.error('[版本检查] 检查出错:', error);
-      // 静默处理错误，不影响用户体验
+      // 静默处理错误
+    }
+  }
+  
+  // 更新版本信息处的红点指示器
+  function updateVersionIndicator(hasNewVersion) {
+    const versionInfo = document.querySelector('#oaevo-sidebar-panel div[data-version-indicator]');
+    if (versionInfo) {
+      const dot = versionInfo.querySelector('.version-update-dot');
+      if (hasNewVersion) {
+        if (!dot) {
+          const newDot = document.createElement('span');
+          newDot.className = 'version-update-dot';
+          newDot.style.cssText = `
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ff4444;
+            border-radius: 50%;
+            margin-left: 6px;
+            animation: pulse 2s infinite;
+          `;
+          versionInfo.appendChild(newDot);
+        }
+      } else {
+        if (dot) {
+          dot.remove();
+        }
+      }
     }
   }
   
@@ -4985,7 +5041,10 @@ function showMessage(message, type = 'info') {
     startTranslationObserver();
     monitorEvolutionPageChanges();
     // 检查版本更新（异步，不阻塞主流程）
-    checkVersionUpdate();
+    // 页面刷新时后台检查，有新版本则显示红点
+    checkVersionUpdate('background');
+    // 满足间隔时显示弹窗提醒
+    checkVersionUpdate('popup');
     // 如果在 squad-builder 页面，添加每周阵型战术推荐按钮
     if (isSquadBuilderPage()) {
       addWeeklyTacticsButton();
