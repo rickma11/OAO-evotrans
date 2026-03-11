@@ -12,7 +12,6 @@ jobs:
       - name: Checkout GitHub repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           
       - name: Debug information
@@ -23,55 +22,33 @@ jobs:
           git status
           git branch -a
           git remote -v
-          echo "GitHub Token exists: ${{ secrets.GITHUB_TOKEN != '' }}"
           
       - name: Fetch files from Gitee
         run: |
           echo "=== Fetching files from Gitee ==="
+          mkdir -p sync-test
+          
           echo "Downloading evolutions.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
-          echo "Download completed. File size: $(ls -la evolutions.json)"
-          
-          echo "Downloading built-in-dictionaries.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o built-in-dictionaries.json
-          echo "Download completed. File size: $(ls -la built-in-dictionaries.json)"
-          
-      - name: Check for changes
-        id: check_changes
-        run: |
-          echo "=== Checking for changes ==="
-          git status
-          git add -A
-          if git diff --staged --quiet; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o sync-test/evolutions.json
+          if [ $? -eq 0 ]; then
+            echo "Download successful. File size: $(ls -la sync-test/evolutions.json)"
+            echo "File content (first 500 chars):"
+            head -c 500 sync-test/evolutions.json
           else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected"
-            git diff --staged
+            echo "Download failed"
           fi
           
-      - name: Commit and push changes
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          echo "=== Committing and pushing changes ==="
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git status
-          git commit -m "Sync files from Gitee [skip ci]" || {
-            echo "Commit failed with exit code $?"
-            exit 1
-          }
-          git status
-          git branch -a
-          git remote -v
-          echo "Current branch: $(git branch --show-current)"
-          git push origin HEAD:main -v || {
-            echo "Push failed with exit code $?"
-            git status
-            exit 1
-          }
+          echo "Downloading built-in-dictionaries.json from Gitee..."
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o sync-test/built-in-dictionaries.json
+          if [ $? -eq 0 ]; then
+            echo "Download successful. File size: $(ls -la sync-test/built-in-dictionaries.json)"
+            echo "File content (first 500 chars):"
+            head -c 500 sync-test/built-in-dictionaries.json
+          else
+            echo "Download failed"
+          fi
           
-      - name: No changes
-        if: steps.check_changes.outputs.has_changes == 'false'
-        run: echo "No changes to sync"
+      - name: Show sync results
+        run: |
+          echo "=== Sync Results ==="
+          ls -la sync-test/
