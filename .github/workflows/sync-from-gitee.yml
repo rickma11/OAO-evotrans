@@ -2,7 +2,7 @@ name: Sync from Gitee
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/2 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -40,16 +40,15 @@ jobs:
         id: check_changes
         run: |
           echo "=== Checking for changes ==="
-          git add evolutions.json built-in-dictionaries.json
           git status
-          git diff --cached
-          
-          if git diff --cached --quiet; then
+          git add -A
+          if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
+            git diff --staged
           fi
           
       - name: Commit and push changes
@@ -59,7 +58,10 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git status
-          git commit -m "Sync files from Gitee [skip ci]"
+          git commit -m "Sync files from Gitee [skip ci]" || {
+            echo "Commit failed with exit code $?"
+            exit 1
+          }
           git status
           git branch -a
           git remote -v
