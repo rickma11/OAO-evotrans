@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OAO-FC26 UT模式翻译插件
 // @namespace    https://github.com/
-// @version      1.3.7
+// @version      1.3.8
 // @description  中文翻译Futbin、Futgg网站的英文信息，包括球员信息、进化名称等
 // @author       我要欧啊欧
 // @match        https://www.fut.gg/*
@@ -17,7 +17,9 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM_setValue
 // @grant        GM_getValue
-// @license      MIT  
+// @license      MIT
+// @updateURL    https://raw.githubusercontent.com/rickma11/OAO-evotrans/main/OAO-FC26%20UT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js
+// @downloadURL  https://gitee.com/rickma11/OAO-evotrans/raw/master/OAO-FC26%20UT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js
 // ==/UserScript==
 
 (() => {
