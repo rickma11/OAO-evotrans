@@ -1,350 +1,1645 @@
 {
   "basic": {
-    "Name": {"webpagedata": "球员名称", "shorten": "名称"},
-    "Club": {"webpagedata": "所属俱乐部", "shorten": "俱乐部"},
-    "Clubs": {"webpagedata": "所属俱乐部", "shorten": "俱乐部"},
-    "Nation": {"webpagedata": "所属国籍", "shorten": "国籍"},
-    "Nations": {"webpagedata": "所属国籍", "shorten": "国籍"},
-    "League": {"webpagedata": "所属联赛", "shorten": "联赛"},
-    "Leagues": {"webpagedata": "所属联赛", "shorten": "联赛"},
-    "Foot": {"webpagedata": "惯用脚", "shorten": "惯用脚"},
-    "Strong Foot": {"webpagedata": "惯用脚", "shorten": "惯用脚"},
-    "Skill Moves": {"webpagedata": "花式动作", "shorten": "花式"},
-    "Skills": {"webpagedata": "花式动作", "shorten": "花式"},
-    "Weak Foot": {"webpagedata": "逆足", "shorten": "逆足"},
-    "AcceleRATE": {"webpagedata": "加速类型", "shorten": "加速类型"},
-    "Accelerate Type": {"webpagedata": "加速类型", "shorten": "加速类型"},
-    "Gender": {"webpagedata": "性别", "shorten": "性别"},
-    "Height": {"webpagedata": "身高", "shorten": "身高"},
-    "Weight": {"webpagedata": "体重", "shorten": "体重"},
-    "B.Type": {"webpagedata": "模型", "shorten": "模型"},
-    "Body Type": {"webpagedata": "模型", "shorten": "模型"},
-    "Real Face": {"webpagedata": "是否真脸", "shorten": "真脸"},
-    "Shirt Number": {"webpagedata": "球衣号码", "shorten": "球衣号码"},
-    "Age": {"webpagedata": "年龄", "shorten": "年龄"},
-    "Player ID": {"webpagedata": "球员ID", "shorten": "球员ID"},
-    "Item ID": {"webpagedata": "物品ID", "shorten": "物品ID"},
-    "Added On": {"webpagedata": "上线时间", "shorten": "上线时间"},
-    "Attributes": {"webpagedata": "数据", "shorten": "数据"},
-    "Position": {"webpagedata": "位置", "shorten": "位置"},
-    "Max Pos.": {"webpagedata": "位置", "shorten": "位置"},
-    "Player Requirements": {"webpagedata": "要求", "shorten": "球员要求"},
-    "Requirements": {"webpagedata": "要求", "shorten": "球员要求"},
-    "Total Upgrades": {"webpagedata": "进化提升", "shorten": "进化提升"},
-    "Total Positions": {"webpagedata": "位置总数", "shorten": "位置总数"},
-    "PlayStyle": {"webpagedata": "银特技总数", "shorten": "银特技总数"},
-    "Max PS": {"webpagedata": "银特技总数最多", "shorten": "银特技总数最多"},
-    "PlayStyle+": {"webpagedata": "金特技总数", "shorten": "金特技总数"},
-    "Max PS+": {"webpagedata": "金特技总数最多", "shorten": "金特技总数最多"},
-    "Not Rarity": {"webpagedata": "排除稀有程度", "shorten": "排除稀有度"},
-    "Excluded Rarity": {"webpagedata": "排除稀有程度", "shorten": "排除稀有度"},
-    "Not Position": {"webpagedata": "排除位置", "shorten": "排除位置"},
-    "World Tour Silver Stars": {"webpagedata": "世界巡回白银巨星", "shorten": "世界巡回白银巨星"}
+    "Name": {
+      "webpagedata": "球员名称",
+      "shorten": "名称"
+    },
+    "Club": {
+      "webpagedata": "所属俱乐部",
+      "shorten": "俱乐部"
+    },
+    "Clubs": {
+      "webpagedata": "所属俱乐部",
+      "shorten": "俱乐部"
+    },
+    "Nation": {
+      "webpagedata": "所属国籍",
+      "shorten": "国籍"
+    },
+    "Nations": {
+      "webpagedata": "所属国籍",
+      "shorten": "国籍"
+    },
+    "League": {
+      "webpagedata": "所属联赛",
+      "shorten": "联赛"
+    },
+    "Leagues": {
+      "webpagedata": "所属联赛",
+      "shorten": "联赛"
+    },
+    "Foot": {
+      "webpagedata": "惯用脚",
+      "shorten": "惯用脚"
+    },
+    "Strong Foot": {
+      "webpagedata": "惯用脚",
+      "shorten": "惯用脚"
+    },
+    "Skill Moves": {
+      "webpagedata": "花式动作",
+      "shorten": "花式"
+    },
+    "Skills": {
+      "webpagedata": "花式动作",
+      "shorten": "花式"
+    },
+    "Weak Foot": {
+      "webpagedata": "逆足",
+      "shorten": "逆足"
+    },
+    "AcceleRATE": {
+      "webpagedata": "加速类型",
+      "shorten": "加速类型"
+    },
+    "Accelerate Type": {
+      "webpagedata": "加速类型",
+      "shorten": "加速类型"
+    },
+    "Gender": {
+      "webpagedata": "性别",
+      "shorten": "性别"
+    },
+    "Height": {
+      "webpagedata": "身高",
+      "shorten": "身高"
+    },
+    "Weight": {
+      "webpagedata": "体重",
+      "shorten": "体重"
+    },
+    "B.Type": {
+      "webpagedata": "模型",
+      "shorten": "模型"
+    },
+    "Body Type": {
+      "webpagedata": "模型",
+      "shorten": "模型"
+    },
+    "Real Face": {
+      "webpagedata": "是否真脸",
+      "shorten": "真脸"
+    },
+    "Shirt Number": {
+      "webpagedata": "球衣号码",
+      "shorten": "球衣号码"
+    },
+    "Age": {
+      "webpagedata": "年龄",
+      "shorten": "年龄"
+    },
+    "Player ID": {
+      "webpagedata": "球员ID",
+      "shorten": "球员ID"
+    },
+    "Item ID": {
+      "webpagedata": "物品ID",
+      "shorten": "物品ID"
+    },
+    "Added On": {
+      "webpagedata": "上线时间",
+      "shorten": "上线时间"
+    },
+    "Attributes": {
+      "webpagedata": "数据",
+      "shorten": "数据"
+    },
+    "Position": {
+      "webpagedata": "位置",
+      "shorten": "位置"
+    },
+    "Max Pos.": {
+      "webpagedata": "位置",
+      "shorten": "位置"
+    },
+    "Player Requirements": {
+      "webpagedata": "要求",
+      "shorten": "球员要求"
+    },
+    "Requirements": {
+      "webpagedata": "要求",
+      "shorten": "球员要求"
+    },
+    "Total Upgrades": {
+      "webpagedata": "进化提升",
+      "shorten": "进化提升"
+    },
+    "Total Positions": {
+      "webpagedata": "位置总数",
+      "shorten": "位置总数"
+    },
+    "PlayStyle": {
+      "webpagedata": "银特技总数",
+      "shorten": "银特技总数"
+    },
+    "Max PS": {
+      "webpagedata": "银特技总数最多",
+      "shorten": "银特技总数最多"
+    },
+    "PlayStyle+": {
+      "webpagedata": "金特技总数",
+      "shorten": "金特技总数"
+    },
+    "Max PS+": {
+      "webpagedata": "金特技总数最多",
+      "shorten": "金特技总数最多"
+    },
+    "Not Rarity": {
+      "webpagedata": "排除稀有程度",
+      "shorten": "排除稀有度"
+    },
+    "Excluded Rarity": {
+      "webpagedata": "排除稀有程度",
+      "shorten": "排除稀有度"
+    },
+    "Not Position": {
+      "webpagedata": "排除位置",
+      "shorten": "排除位置"
+    },
+    "World Tour Silver Stars": {
+      "webpagedata": "世界巡回白银巨星",
+      "shorten": "世界巡回白银巨星"
+    },
+    "Price": {
+      "webpagedata": "市场价格",
+      "shorten": "价格",
+      "timestamp": 1773065747678
+    }
   },
   "sixStat": {
-    "Overall": {"webpagedata": "总评", "shorten": "总评"},
-    "Pace": {"webpagedata": "速度", "shorten": "速度"},
-    "PAC": {"webpagedata": "速度", "shorten": "速度"},
-    "Shooting": {"webpagedata": "射门", "shorten": "射门"},
-    "SHO": {"webpagedata": "射门", "shorten": "射门"},
-    "Passing": {"webpagedata": "传球", "shorten": "传球"},
-    "PAS": {"webpagedata": "传球", "shorten": "传球"},
-    "Dribbling": {"webpagedata": "盘带", "shorten": "盘带"},
-    "DRI": {"webpagedata": "盘带", "shorten": "盘带"},
-    "Defending": {"webpagedata": "防守", "shorten": "防守"},
-    "DEF": {"webpagedata": "防守", "shorten": "防守"},
-    "Physical": {"webpagedata": "身体", "shorten": "身体"},
-    "Physicality": {"webpagedata": "身体", "shorten": "身体"},
-    "PHY": {"webpagedata": "身体", "shorten": "身体"},
-    "Acceleration": {"webpagedata": "加速", "shorten": "加速"},
-    "Sprint Speed": {"webpagedata": "冲刺速度", "shorten": "冲刺速度"},
-    "Att. Position": {"webpagedata": "进攻位置", "shorten": "进攻位置"},
-    "Att. Pos.": {"webpagedata": "进攻位置", "shorten": "进攻位置"},
-    "Fk Acc.": {"webpagedata": "任意球精度", "shorten": "任意球精度"},
-    "Finishing": {"webpagedata": "临门一脚", "shorten": "终结"},
-    "Shot Power": {"webpagedata": "射门力道", "shorten": "射门力量"},
-    "Long Shots": {"webpagedata": "远射", "shorten": "远射"},
-    "Volleys": {"webpagedata": "凌空射门", "shorten": "凌空射门"},
-    "Penalties": {"webpagedata": "点球", "shorten": "点球"},
-    "Vision": {"webpagedata": "视野", "shorten": "视野"},
-    "Crossing": {"webpagedata": "传中", "shorten": "传中"},
-    "FK Acc.": {"webpagedata": "任意球精度", "shorten": "任意球精度"},
-    "FK. Acc.": {"webpagedata": "任意球精度", "shorten": "任意球精度"},
-    "Short Pass": {"webpagedata": "短传", "shorten": "短传"},
-    "Short Passing": {"webpagedata": "短传", "shorten": "短传"},
-    "Long Pass": {"webpagedata": "长传", "shorten": "长传"},
-    "Long Passing": {"webpagedata": "长传", "shorten": "长传"},
-    "Curve": {"webpagedata": "弧线", "shorten": "弧线"},
-    "Agility": {"webpagedata": "敏捷性", "shorten": "敏捷性"},
-    "Balance": {"webpagedata": "平衡", "shorten": "平衡"},
-    "Reactions": {"webpagedata": "反应", "shorten": "反应"},
-    "Ball Control": {"webpagedata": "控球", "shorten": "控球"},
-    "Ball control": {"webpagedata": "控球", "shorten": "控球"},
-    "Dribbling": {"webpagedata": "盘带", "shorten": "盘带"},
-    "Composure": {"webpagedata": "沉着", "shorten": "沉着"},
-    "Interceptions": {"webpagedata": "拦截", "shorten": "拦截"},
-    "Heading Acc.": {"webpagedata": "头球精度", "shorten": "头球精度"},
-    "Heading Acc": {"webpagedata": "头球精度", "shorten": "头球精度"},
-    "Def. Aware": {"webpagedata": "防守意识", "shorten": "防守意识"},
-    "Def. Aware.": {"webpagedata": "防守意识", "shorten": "防守意识"},
-    "Defensive Awareness": {"webpagedata": "防守意识", "shorten": "防守意识"},
-    "Stand Tackle": {"webpagedata": "抢断", "shorten": "抢断"},
-    "Standing Tackle": {"webpagedata": "抢断", "shorten": "抢断"},
-    "Slide Tackle": {"webpagedata": "滑铲", "shorten": "滑铲"},
-    "Sliding Tackle": {"webpagedata": "滑铲", "shorten": "滑铲"},
-    "OVR": {"webpagedata": "总评", "shorten": "总评"},
-    "SM": {"webpagedata": "花式", "shorten": "花式"},
-    "WF": {"webpagedata": "逆足", "shorten": "逆足"},
-    "Gk Accuracy": {"webpagedata": "门将精度", "shorten": "门将精度"},
-    "GK Accuracy": {"webpagedata": "门将精度", "shorten": "门将精度"},
-    "Jumping": {"webpagedata": "弹跳", "shorten": "弹跳"},
-    "Stamina": {"webpagedata": "耐力", "shorten": "耐力"},
-    "Strength": {"webpagedata": "力量", "shorten": "力量"},
-    "Aggression": {"webpagedata": "积极性", "shorten": "积极性"},
-    "Diving": {"webpagedata": "飞身扑救", "shorten": "飞身扑救"},
-    "Handing": {"webpagedata": "接球", "shorten": "接球"},
-    "Kicking": {"webpagedata": "开球", "shorten": "开球"},
-    "Reflexes": {"webpagedata": "反应能力", "shorten": "反应能力"},
-    "Positioning": {"webpagedata": "站位", "shorten": "站位"}
+    "Overall": {
+      "webpagedata": "总评",
+      "shorten": "总评"
+    },
+    "Pace": {
+      "webpagedata": "速度",
+      "shorten": "速度"
+    },
+    "PAC": {
+      "webpagedata": "速度",
+      "shorten": "速度"
+    },
+    "Shooting": {
+      "webpagedata": "射门",
+      "shorten": "射门"
+    },
+    "SHO": {
+      "webpagedata": "射门",
+      "shorten": "射门"
+    },
+    "Passing": {
+      "webpagedata": "传球",
+      "shorten": "传球"
+    },
+    "PAS": {
+      "webpagedata": "传球",
+      "shorten": "传球"
+    },
+    "Dribbling": {
+      "webpagedata": "盘带",
+      "shorten": "盘带"
+    },
+    "DRI": {
+      "webpagedata": "盘带",
+      "shorten": "盘带"
+    },
+    "Defending": {
+      "webpagedata": "防守",
+      "shorten": "防守"
+    },
+    "DEF": {
+      "webpagedata": "防守",
+      "shorten": "防守"
+    },
+    "Physical": {
+      "webpagedata": "身体",
+      "shorten": "身体"
+    },
+    "Physicality": {
+      "webpagedata": "身体",
+      "shorten": "身体"
+    },
+    "PHY": {
+      "webpagedata": "身体",
+      "shorten": "身体"
+    },
+    "Acceleration": {
+      "webpagedata": "加速",
+      "shorten": "加速"
+    },
+    "Sprint Speed": {
+      "webpagedata": "冲刺速度",
+      "shorten": "冲刺速度"
+    },
+    "Att. Position": {
+      "webpagedata": "进攻位置",
+      "shorten": "进攻位置"
+    },
+    "Att. Pos.": {
+      "webpagedata": "进攻位置",
+      "shorten": "进攻位置"
+    },
+    "Fk Acc.": {
+      "webpagedata": "任意球精度",
+      "shorten": "任意球精度"
+    },
+    "Finishing": {
+      "webpagedata": "临门一脚",
+      "shorten": "终结"
+    },
+    "Shot Power": {
+      "webpagedata": "射门力道",
+      "shorten": "射门力量"
+    },
+    "Long Shots": {
+      "webpagedata": "远射",
+      "shorten": "远射"
+    },
+    "Volleys": {
+      "webpagedata": "凌空射门",
+      "shorten": "凌空射门"
+    },
+    "Penalties": {
+      "webpagedata": "点球",
+      "shorten": "点球"
+    },
+    "Vision": {
+      "webpagedata": "视野",
+      "shorten": "视野"
+    },
+    "Crossing": {
+      "webpagedata": "传中",
+      "shorten": "传中"
+    },
+    "FK Acc.": {
+      "webpagedata": "任意球精度",
+      "shorten": "任意球精度"
+    },
+    "FK. Acc.": {
+      "webpagedata": "任意球精度",
+      "shorten": "任意球精度"
+    },
+    "Short Pass": {
+      "webpagedata": "短传",
+      "shorten": "短传"
+    },
+    "Short Passing": {
+      "webpagedata": "短传",
+      "shorten": "短传"
+    },
+    "Long Pass": {
+      "webpagedata": "长传",
+      "shorten": "长传"
+    },
+    "Long Passing": {
+      "webpagedata": "长传",
+      "shorten": "长传"
+    },
+    "Curve": {
+      "webpagedata": "弧线",
+      "shorten": "弧线"
+    },
+    "Agility": {
+      "webpagedata": "敏捷性",
+      "shorten": "敏捷性"
+    },
+    "Balance": {
+      "webpagedata": "平衡",
+      "shorten": "平衡"
+    },
+    "Reactions": {
+      "webpagedata": "反应",
+      "shorten": "反应"
+    },
+    "Ball Control": {
+      "webpagedata": "控球",
+      "shorten": "控球"
+    },
+    "Ball control": {
+      "webpagedata": "控球",
+      "shorten": "控球"
+    },
+    "Composure": {
+      "webpagedata": "沉着",
+      "shorten": "沉着"
+    },
+    "Interceptions": {
+      "webpagedata": "拦截",
+      "shorten": "拦截"
+    },
+    "Heading Acc.": {
+      "webpagedata": "头球精度",
+      "shorten": "头球精度"
+    },
+    "Heading Acc": {
+      "webpagedata": "头球精度",
+      "shorten": "头球精度"
+    },
+    "Def. Aware": {
+      "webpagedata": "防守意识",
+      "shorten": "防守意识"
+    },
+    "Def. Aware.": {
+      "webpagedata": "防守意识",
+      "shorten": "防守意识"
+    },
+    "Defensive Awareness": {
+      "webpagedata": "防守意识",
+      "shorten": "防守意识"
+    },
+    "Stand Tackle": {
+      "webpagedata": "抢断",
+      "shorten": "抢断"
+    },
+    "Standing Tackle": {
+      "webpagedata": "抢断",
+      "shorten": "抢断"
+    },
+    "Slide Tackle": {
+      "webpagedata": "滑铲",
+      "shorten": "滑铲"
+    },
+    "Sliding Tackle": {
+      "webpagedata": "滑铲",
+      "shorten": "滑铲"
+    },
+    "OVR": {
+      "webpagedata": "总评",
+      "shorten": "总评"
+    },
+    "SM": {
+      "webpagedata": "花式",
+      "shorten": "花式"
+    },
+    "WF": {
+      "webpagedata": "逆足",
+      "shorten": "逆足"
+    },
+    "Gk Accuracy": {
+      "webpagedata": "门将精度",
+      "shorten": "门将精度"
+    },
+    "GK Accuracy": {
+      "webpagedata": "门将精度",
+      "shorten": "门将精度"
+    },
+    "Jumping": {
+      "webpagedata": "弹跳",
+      "shorten": "弹跳"
+    },
+    "Stamina": {
+      "webpagedata": "耐力",
+      "shorten": "耐力"
+    },
+    "Strength": {
+      "webpagedata": "力量",
+      "shorten": "力量"
+    },
+    "Aggression": {
+      "webpagedata": "积极性",
+      "shorten": "积极性"
+    },
+    "Diving": {
+      "webpagedata": "飞身扑救",
+      "shorten": "飞身扑救"
+    },
+    "Handing": {
+      "webpagedata": "接球",
+      "shorten": "接球"
+    },
+    "Kicking": {
+      "webpagedata": "开球",
+      "shorten": "开球"
+    },
+    "Reflexes": {
+      "webpagedata": "反应能力",
+      "shorten": "反应能力"
+    },
+    "Positioning": {
+      "webpagedata": "站位",
+      "shorten": "站位"
+    },
+    "POS": {
+      "webpagedata": "位置",
+      "shorten": "位置",
+      "timestamp": 1773065974670
+    }
   },
   "roles": {
-    "Roles": {"webpagedata": "球员角色", "shorten": "球员角色"},
-    "Goalkeeper": {"webpagedata": "守门员", "shorten": "门将"},
-    "Sweeper Keeper": {"webpagedata": "清道夫门将", "shorten": "清道夫门将"},
-    "Ball-Playing Keeper": {"webpagedata": "出球型门将", "shorten": "出球型门将"},
-    "Fullback": {"webpagedata": "边后卫", "shorten": "边后卫"},
-    "Wingback": {"webpagedata": "边翼卫", "shorten": "边翼卫"},
-    "Falseback": {"webpagedata": "伪后卫", "shorten": "伪后卫"},
-    "Attacking Wingback": {"webpagedata": "进攻型边翼卫", "shorten": "进攻边翼卫"},
-    "Inverted Wingback": {"webpagedata": "内收型边翼卫", "shorten": "内收边翼卫"},
-    "Defender": {"webpagedata": "后卫", "shorten": "后卫"},
-    "Stopper": {"webpagedata": "拦截者", "shorten": "拦截者"},
-    "Ball-Playing Defender": {"webpagedata": "控球后卫", "shorten": "控球后卫"},
-    "Ball Playing Defender": {"webpagedata": "控球后卫", "shorten": "控球后卫"},
-    "Wide Back": {"webpagedata": "边后卫", "shorten": "边后卫"},
-    "Holding": {"webpagedata": "镇守/持球", "shorten": "镇守"},
-    "Centre Half": {"webpagedata": "中前卫", "shorten": "中前卫"},
-    "Centre-Half": {"webpagedata": "中前卫", "shorten": "中前卫"},
-    "Wide Half": {"webpagedata": "半边卫", "shorten": "半边卫"},
-    "Deep-Lying Playmaker": {"webpagedata": "拖后型组织核心", "shorten": "拖后组织核心"},
-    "Deep Lying Playmaker": {"webpagedata": "拖后型组织核心", "shorten": "拖后组织核心"},
-    "Box Crasher": {"webpagedata": "禁区冲击者", "shorten": "禁区冲击"},
-    "Box-To-Box": {"webpagedata": "全能中场", "shorten": "全能中场"},
-    "Box-to-Box": {"webpagedata": "全能中场", "shorten": "全能中场"},
-    "Box to Box": {"webpagedata": "全能中场", "shorten": "全能中场"},
-    "Playmaker": {"webpagedata": "组织核心", "shorten": "组织核心"},
-    "Half Winger": {"webpagedata": "半边锋", "shorten": "半边锋"},
-    "Half-Winger": {"webpagedata": "半边锋", "shorten": "半边锋"},
-    "Winger": {"webpagedata": "边锋", "shorten": "边锋"},
-    "Wide Midfielder": {"webpagedata": "边中场", "shorten": "边中场"},
-    "Wide Playmaker": {"webpagedata": "边路组织核心", "shorten": "边路组织核心"},
-    "Inside Forward": {"webpagedata": "内锋", "shorten": "内锋"},
-    "Shadow Striker": {"webpagedata": "影子前锋", "shorten": "影子前锋"},
-    "Classic 10": {"webpagedata": "经典10号", "shorten": "经典10号"},
-    "Advance Forward": {"webpagedata": "突前型前锋", "shorten": "突前前锋"},
-    "Advanced Forward": {"webpagedata": "突前型前锋", "shorten": "突前前锋"},
-    "Poacher": {"webpagedata": "禁区之王", "shorten": "禁区之王"},
-    "False 9": {"webpagedata": "伪9号", "shorten": "伪9号"},
-    "Target Forward": {"webpagedata": "站桩中锋", "shorten": "站桩中锋"}
+    "Roles": {
+      "webpagedata": "球员角色",
+      "shorten": "球员角色"
+    },
+    "Goalkeeper": {
+      "webpagedata": "守门员",
+      "shorten": "门将"
+    },
+    "Sweeper Keeper": {
+      "webpagedata": "清道夫门将",
+      "shorten": "清道夫门将"
+    },
+    "Ball-Playing Keeper": {
+      "webpagedata": "出球型门将",
+      "shorten": "出球型门将"
+    },
+    "Fullback": {
+      "webpagedata": "边后卫",
+      "shorten": "边后卫"
+    },
+    "Wingback": {
+      "webpagedata": "边翼卫",
+      "shorten": "边翼卫"
+    },
+    "Falseback": {
+      "webpagedata": "伪后卫",
+      "shorten": "伪后卫"
+    },
+    "Attacking Wingback": {
+      "webpagedata": "进攻型边翼卫",
+      "shorten": "进攻边翼卫"
+    },
+    "Inverted Wingback": {
+      "webpagedata": "内收型边翼卫",
+      "shorten": "内收边翼卫"
+    },
+    "Defender": {
+      "webpagedata": "后卫",
+      "shorten": "后卫"
+    },
+    "Stopper": {
+      "webpagedata": "拦截者",
+      "shorten": "拦截者"
+    },
+    "Ball-Playing Defender": {
+      "webpagedata": "控球后卫",
+      "shorten": "控球后卫"
+    },
+    "Ball Playing Defender": {
+      "webpagedata": "控球后卫",
+      "shorten": "控球后卫"
+    },
+    "Wide Back": {
+      "webpagedata": "边后卫",
+      "shorten": "边后卫"
+    },
+    "Holding": {
+      "webpagedata": "镇守/持球",
+      "shorten": "镇守"
+    },
+    "Centre Half": {
+      "webpagedata": "中前卫",
+      "shorten": "中前卫"
+    },
+    "Centre-Half": {
+      "webpagedata": "中前卫",
+      "shorten": "中前卫"
+    },
+    "Wide Half": {
+      "webpagedata": "半边卫",
+      "shorten": "半边卫"
+    },
+    "Deep-Lying Playmaker": {
+      "webpagedata": "拖后型组织核心",
+      "shorten": "拖后组织核心"
+    },
+    "Deep Lying Playmaker": {
+      "webpagedata": "拖后型组织核心",
+      "shorten": "拖后组织核心"
+    },
+    "Box Crasher": {
+      "webpagedata": "禁区冲击者",
+      "shorten": "禁区冲击"
+    },
+    "Box-To-Box": {
+      "webpagedata": "全能中场",
+      "shorten": "全能中场"
+    },
+    "Box-to-Box": {
+      "webpagedata": "全能中场",
+      "shorten": "全能中场"
+    },
+    "Box to Box": {
+      "webpagedata": "全能中场",
+      "shorten": "全能中场"
+    },
+    "Playmaker": {
+      "webpagedata": "组织核心",
+      "shorten": "组织核心"
+    },
+    "Half Winger": {
+      "webpagedata": "半边锋",
+      "shorten": "半边锋"
+    },
+    "Half-Winger": {
+      "webpagedata": "半边锋",
+      "shorten": "半边锋"
+    },
+    "Winger": {
+      "webpagedata": "边锋",
+      "shorten": "边锋"
+    },
+    "Wide Midfielder": {
+      "webpagedata": "边中场",
+      "shorten": "边中场"
+    },
+    "Wide Playmaker": {
+      "webpagedata": "边路组织核心",
+      "shorten": "边路组织核心"
+    },
+    "Inside Forward": {
+      "webpagedata": "内锋",
+      "shorten": "内锋"
+    },
+    "Shadow Striker": {
+      "webpagedata": "影子前锋",
+      "shorten": "影子前锋"
+    },
+    "Classic 10": {
+      "webpagedata": "经典10号",
+      "shorten": "经典10号"
+    },
+    "Advance Forward": {
+      "webpagedata": "突前型前锋",
+      "shorten": "突前前锋"
+    },
+    "Advanced Forward": {
+      "webpagedata": "突前型前锋",
+      "shorten": "突前前锋"
+    },
+    "Poacher": {
+      "webpagedata": "禁区之王",
+      "shorten": "禁区之王"
+    },
+    "False 9": {
+      "webpagedata": "伪9号",
+      "shorten": "伪9号"
+    },
+    "Target Forward": {
+      "webpagedata": "站桩中锋",
+      "shorten": "站桩中锋"
+    },
+    "Defend": {
+      "webpagedata": "防守",
+      "shorten": "防守"
+    },
+    "Balanced": {
+      "webpagedata": "平衡",
+      "shorten": "平衡"
+    },
+    "Build-Up": {
+      "webpagedata": "组织",
+      "shorten": "组织"
+    },
+    "Versatile": {
+      "webpagedata": "灵活",
+      "shorten": "灵活"
+    },
+    "Support": {
+      "webpagedata": "支援",
+      "shorten": "支援"
+    },
+    "Attack": {
+      "webpagedata": "进攻",
+      "shorten": "进攻"
+    },
+    "Aggressive": {
+      "webpagedata": "侵略性",
+      "shorten": "侵略性"
+    },
+    "Ball-Winning": {
+      "webpagedata": "抢球",
+      "shorten": "抢球"
+    },
+    "Roaming": {
+      "webpagedata": "自由跑动",
+      "shorten": "自由跑动"
+    },
+    "Wide": {
+      "webpagedata": "边路",
+      "shorten": "边路"
+    },
+    "Goalkeeper (GK)": {
+      "webpagedata": "守门员",
+      "shorten": "门将",
+      "timestamp": 1773112978484
+    },
+    "Defenders": {
+      "webpagedata": "后卫",
+      "shorten": "后卫",
+      "timestamp": 1773112996784
+    },
+    "Midfielders": {
+      "webpagedata": "中场",
+      "shorten": "中场",
+      "timestamp": 1773113016382
+    },
+    "Attackers": {
+      "webpagedata": "前锋",
+      "shorten": "前锋",
+      "timestamp": 1773113047121
+    },
+    "Goalkeepers": {
+      "webpagedata": "守门员",
+      "shorten": "门将",
+      "timestamp": 1773113166886
+    }
   },
   "chemistry": {
-    "Chemistry": {"webpagedata": "化学加成", "shorten": "化学加成"},
-    "Basic": {"webpagedata": "基础", "shorten": "基础"},
-    "Hunter": {"webpagedata": "猎手", "shorten": "猎手"},
-    "Hawk": {"webpagedata": "鹰", "shorten": "鹰"},
-    "Deadeye": {"webpagedata": "神枪手", "shorten": "神枪手"},
-    "Sniper": {"webpagedata": "狙击手", "shorten": "狙击手"},
-    "Finisher": {"webpagedata": "终结者", "shorten": "终结者"},
-    "Marksman": {"webpagedata": "神射手", "shorten": "神射手"},
-    "Catalyst": {"webpagedata": "催化剂", "shorten": "催化剂"},
-    "Engine": {"webpagedata": "发动机", "shorten": "发动机"},
-    "Artist": {"webpagedata": "艺术家", "shorten": "艺术家"},
-    "Architect": {"webpagedata": "建筑师", "shorten": "建筑师"},
-    "Powerhouse": {"webpagedata": "发动机", "shorten": "发动机"},
-    "Maestro": {"webpagedata": "大师", "shorten": "大师"},
-    "Shadow": {"webpagedata": "影子", "shorten": "影子"},
-    "Anchor": {"webpagedata": "中流砥柱", "shorten": "中流砥柱"},
-    "Sentinel": {"webpagedata": "哨兵", "shorten": "哨兵"},
-    "Guardian": {"webpagedata": "守卫者", "shorten": "守卫者"},
-    "Gladiator": {"webpagedata": "角斗士", "shorten": "角斗士"},
-    "Backbone": {"webpagedata": "主心骨", "shorten": "主心骨"},
-    "Goalkeeper Basic": {"webpagedata": "守门员基础", "shorten": "守门员基础"},
-    "Cat": {"webpagedata": "猫", "shorten": "猫"},
-    "Glove": {"webpagedata": "手套", "shorten": "手套"},
-    "Shield": {"webpagedata": "盾", "shorten": "盾"},
-    "Wall": {"webpagedata": "铜墙铁壁", "shorten": "铜墙铁壁"},
-    "GK Basic": {"webpagedata": "守门员基础", "shorten": "守门员基础"}
+    "Chemistry": {
+      "webpagedata": "化学加成",
+      "shorten": "化学加成"
+    },
+    "Basic": {
+      "webpagedata": "基础",
+      "shorten": "基础"
+    },
+    "Hunter": {
+      "webpagedata": "猎手",
+      "shorten": "猎手"
+    },
+    "Hawk": {
+      "webpagedata": "鹰",
+      "shorten": "鹰"
+    },
+    "Deadeye": {
+      "webpagedata": "神枪手",
+      "shorten": "神枪手"
+    },
+    "Sniper": {
+      "webpagedata": "狙击手",
+      "shorten": "狙击手"
+    },
+    "Finisher": {
+      "webpagedata": "终结者",
+      "shorten": "终结者"
+    },
+    "Marksman": {
+      "webpagedata": "神射手",
+      "shorten": "神射手"
+    },
+    "Catalyst": {
+      "webpagedata": "催化剂",
+      "shorten": "催化剂"
+    },
+    "Engine": {
+      "webpagedata": "发动机",
+      "shorten": "发动机"
+    },
+    "Artist": {
+      "webpagedata": "艺术家",
+      "shorten": "艺术家"
+    },
+    "Architect": {
+      "webpagedata": "建筑师",
+      "shorten": "建筑师"
+    },
+    "Powerhouse": {
+      "webpagedata": "发动机",
+      "shorten": "发动机"
+    },
+    "Maestro": {
+      "webpagedata": "大师",
+      "shorten": "大师"
+    },
+    "Shadow": {
+      "webpagedata": "影子",
+      "shorten": "影子"
+    },
+    "Anchor": {
+      "webpagedata": "中流砥柱",
+      "shorten": "中流砥柱"
+    },
+    "Sentinel": {
+      "webpagedata": "哨兵",
+      "shorten": "哨兵"
+    },
+    "Guardian": {
+      "webpagedata": "守卫者",
+      "shorten": "守卫者"
+    },
+    "Gladiator": {
+      "webpagedata": "角斗士",
+      "shorten": "角斗士"
+    },
+    "Backbone": {
+      "webpagedata": "主心骨",
+      "shorten": "主心骨"
+    },
+    "Goalkeeper Basic": {
+      "webpagedata": "守门员基础",
+      "shorten": "守门员基础"
+    },
+    "Cat": {
+      "webpagedata": "猫",
+      "shorten": "猫"
+    },
+    "Glove": {
+      "webpagedata": "手套",
+      "shorten": "手套"
+    },
+    "Shield": {
+      "webpagedata": "盾",
+      "shorten": "盾"
+    },
+    "Wall": {
+      "webpagedata": "铜墙铁壁",
+      "shorten": "铜墙铁壁"
+    },
+    "GK Basic": {
+      "webpagedata": "守门员基础",
+      "shorten": "守门员基础"
+    }
   },
   "playstyles": {
-    "PlayStyles+": {"webpagedata": "金特技", "shorten": "金特技"},
-    "Goalkeeping": {"webpagedata": "守门", "shorten": "守门"},
-    "Finesse Shot": {"webpagedata": "精准射门", "shorten": "精准射门"},
-    "Low Driven Shot": {"webpagedata": "大力低射", "shorten": "大力低射"},
-    "Low Driven": {"webpagedata": "大力低射", "shorten": "大力低射"},
-    "Game Changer": {"webpagedata": "颠覆者", "shorten": "颠覆者"},
-    "GameChanger": {"webpagedata": "颠覆者", "shorten": "颠覆者"},
-    "Gamechanger": {"webpagedata": "颠覆者", "shorten": "颠覆者"},
-    "Precision Header": {"webpagedata": "精准头球", "shorten": "精准头球"},
-    "Chip shot": {"webpagedata": "吊射", "shorten": "吊射"},
-    "Chip Shot": {"webpagedata": "吊射", "shorten": "吊射"},
-    "Power Shot": {"webpagedata": "大力射门", "shorten": "大力射门"},
-    "Dead Ball": {"webpagedata": "死球", "shorten": "死球"},
-    "Acrobatic": {"webpagedata": "杂耍", "shorten": "杂耍"},
-    "Pinged Pass": {"webpagedata": "大力传球", "shorten": "大力传球"},
-    "Incisive Pass": {"webpagedata": "切入传球", "shorten": "切入传球"},
-    "Tiki Taka": {"webpagedata": "Tiki-Taka", "shorten": "Tiki-Taka"},
-    "Inventive": {"webpagedata": "别出心裁", "shorten": "别出心裁"},
-    "Long Ball Pass": {"webpagedata": "远距离传球", "shorten": "远距离传球"},
-    "Long Ball": {"webpagedata": "远距离传球", "shorten": "远距离传球"},
-    "Whipped Pass": {"webpagedata": "快速传球", "shorten": "快速传球"},
-    "First Touch": {"webpagedata": "第一脚触球", "shorten": "第一脚触球"},
-    "Press Proven": {"webpagedata": "紧逼好手", "shorten": "紧逼好手"},
-    "Rapid": {"webpagedata": "灵动迅捷", "shorten": "灵动迅捷"},
-    "Technical": {"webpagedata": "技术", "shorten": "技术"},
-    "Trickster": {"webpagedata": "诡术师", "shorten": "诡术师"},
-    "Block": {"webpagedata": "封堵", "shorten": "封堵"},
-    "Anticipate": {"webpagedata": "预判", "shorten": "预判"},
-    "Intercept": {"webpagedata": "拦截", "shorten": "拦截"},
-    "Jockey": {"webpagedata": "跟防", "shorten": "跟防"},
-    "Aerial Fortress": {"webpagedata": "空中堡垒", "shorten": "空中堡垒"},
-    "slide Tackle": {"webpagedata": "滑铲", "shorten": "滑铲"},
-    "Bruiser": {"webpagedata": "斗士", "shorten": "斗士"},
-    "Relentless": {"webpagedata": "坚持不懈", "shorten": "坚持不懈"},
-    "Quick Step": {"webpagedata": "健步如飞", "shorten": "健步如飞"},
-    "Enforcer": {"webpagedata": "执行者", "shorten": "执行者"},
-    "Long Throw": {"webpagedata": "远距离界外球", "shorten": "远距离界外球"},
-    "Far Throw": {"webpagedata": "远距离抛球", "shorten": "远距离抛球"},
-    "Footwork": {"webpagedata": "步法", "shorten": "步法"},
-    "Cross Claimer": {"webpagedata": "传中没收者", "shorten": "传中没收者"},
-    "Rush Out": {"webpagedata": "冲出重围", "shorten": "冲出重围"},
-    "Far Reach": {"webpagedata": "远距离出击", "shorten": "远距离出击"},
-    "Deflector": {"webpagedata": "偏转", "shorten": "偏转"},
-    "Ballcontrol": {"webpagedata": "控球", "shorten": "控球"}
+    "PlayStyles+": {
+      "webpagedata": "金特技",
+      "shorten": "金特技"
+    },
+    "Goalkeeping": {
+      "webpagedata": "守门",
+      "shorten": "守门"
+    },
+    "Finesse Shot": {
+      "webpagedata": "精准射门",
+      "shorten": "精准射门"
+    },
+    "Low Driven Shot": {
+      "webpagedata": "大力低射",
+      "shorten": "大力低射"
+    },
+    "Low Driven": {
+      "webpagedata": "大力低射",
+      "shorten": "大力低射"
+    },
+    "Game Changer": {
+      "webpagedata": "颠覆者",
+      "shorten": "颠覆者"
+    },
+    "GameChanger": {
+      "webpagedata": "颠覆者",
+      "shorten": "颠覆者"
+    },
+    "Gamechanger": {
+      "webpagedata": "颠覆者",
+      "shorten": "颠覆者"
+    },
+    "Precision Header": {
+      "webpagedata": "精准头球",
+      "shorten": "精准头球"
+    },
+    "Chip shot": {
+      "webpagedata": "吊射",
+      "shorten": "吊射"
+    },
+    "Chip Shot": {
+      "webpagedata": "吊射",
+      "shorten": "吊射"
+    },
+    "Power Shot": {
+      "webpagedata": "大力射门",
+      "shorten": "大力射门"
+    },
+    "Dead Ball": {
+      "webpagedata": "死球",
+      "shorten": "死球"
+    },
+    "Acrobatic": {
+      "webpagedata": "杂耍",
+      "shorten": "杂耍"
+    },
+    "Pinged Pass": {
+      "webpagedata": "大力传球",
+      "shorten": "大力传球"
+    },
+    "Incisive Pass": {
+      "webpagedata": "切入传球",
+      "shorten": "切入传球"
+    },
+    "Tiki Taka": {
+      "webpagedata": "Tiki-Taka",
+      "shorten": "Tiki-Taka"
+    },
+    "Inventive": {
+      "webpagedata": "别出心裁",
+      "shorten": "别出心裁"
+    },
+    "Long Ball Pass": {
+      "webpagedata": "远距离传球",
+      "shorten": "远距离传球"
+    },
+    "Long Ball": {
+      "webpagedata": "远距离传球",
+      "shorten": "远距离传球"
+    },
+    "Whipped Pass": {
+      "webpagedata": "快速传球",
+      "shorten": "快速传球"
+    },
+    "First Touch": {
+      "webpagedata": "第一脚触球",
+      "shorten": "第一脚触球"
+    },
+    "Press Proven": {
+      "webpagedata": "紧逼好手",
+      "shorten": "紧逼好手"
+    },
+    "Rapid": {
+      "webpagedata": "灵动迅捷",
+      "shorten": "灵动迅捷"
+    },
+    "Technical": {
+      "webpagedata": "技术",
+      "shorten": "技术"
+    },
+    "Trickster": {
+      "webpagedata": "诡术师",
+      "shorten": "诡术师"
+    },
+    "Block": {
+      "webpagedata": "封堵",
+      "shorten": "封堵"
+    },
+    "Anticipate": {
+      "webpagedata": "预判",
+      "shorten": "预判"
+    },
+    "Intercept": {
+      "webpagedata": "拦截",
+      "shorten": "拦截"
+    },
+    "Jockey": {
+      "webpagedata": "跟防",
+      "shorten": "跟防"
+    },
+    "Aerial Fortress": {
+      "webpagedata": "空中堡垒",
+      "shorten": "空中堡垒"
+    },
+    "slide Tackle": {
+      "webpagedata": "滑铲",
+      "shorten": "滑铲"
+    },
+    "Bruiser": {
+      "webpagedata": "斗士",
+      "shorten": "斗士"
+    },
+    "Relentless": {
+      "webpagedata": "坚持不懈",
+      "shorten": "坚持不懈"
+    },
+    "Quick Step": {
+      "webpagedata": "健步如飞",
+      "shorten": "健步如飞"
+    },
+    "Enforcer": {
+      "webpagedata": "执行者",
+      "shorten": "执行者"
+    },
+    "Long Throw": {
+      "webpagedata": "远距离界外球",
+      "shorten": "远距离界外球"
+    },
+    "Far Throw": {
+      "webpagedata": "远距离抛球",
+      "shorten": "远距离抛球"
+    },
+    "Footwork": {
+      "webpagedata": "步法",
+      "shorten": "步法"
+    },
+    "Cross Claimer": {
+      "webpagedata": "传中没收者",
+      "shorten": "传中没收者"
+    },
+    "Rush Out": {
+      "webpagedata": "冲出重围",
+      "shorten": "冲出重围"
+    },
+    "Far Reach": {
+      "webpagedata": "远距离出击",
+      "shorten": "远距离出击"
+    },
+    "Deflector": {
+      "webpagedata": "偏转",
+      "shorten": "偏转"
+    },
+    "Ballcontrol": {
+      "webpagedata": "控球",
+      "shorten": "控球"
+    }
   },
   "futgg": {
-    "Players": {"webpagedata": "球员", "shorten": "球员"},
-    "Squad Builder": {"webpagedata": "阵容模拟", "shorten": "阵容模拟"},
-    "Evolutions": {"webpagedata": "进化", "shorten": "进化"},
-    "Objectives": {"webpagedata": "任务目标", "shorten": "任务"},
-    "Evo Lab": {"webpagedata": "进化实验室", "shorten": "进化实验室"},
-    "EVO LAB": {"webpagedata": "进化实验室", "shorten": "进化实验室"},
-    "Quality": {"webpagedata": "稀有度", "shorten": "稀有度"},
-    "Rarities": {"webpagedata": "所属活动", "shorten": "所属活动"},
-    "Rarity": {"webpagedata": "所属活动", "shorten": "所属活动"},
-    "Squads": {"webpagedata": "所属活动阵容", "shorten": "所属活动阵容"},
-    "Custom Attributes": {"webpagedata": "自定义数据", "shorten": "自定义数据"},
-    "Past and Present": {"webpagedata": "过去与现在", "shorten": "过去与现在"},
-    "OVERVIEW": {"webpagedata": "总览", "shorten": "总览"},
-    "Overview": {"webpagedata": "总览", "shorten": "总览"},
-    "PRICES": {"webpagedata": "市场价格", "shorten": "市场价格"},
-    "Prices": {"webpagedata": "市场价格", "shorten": "市场价格"},
-    "PLAYSTYLES": {"webpagedata": "球员特技", "shorten": "特技"},
-    "PlayStyles": {"webpagedata": "球员特技", "shorten": "特技"},
-    "CHEM LINKS": {"webpagedata": "化学链接", "shorten": "化学链接"},
-    "Chem Links": {"webpagedata": "化学链接", "shorten": "化学链接"},
-    "COMMENTS": {"webpagedata": "评论", "shorten": "评论"},
-    "Comments": {"webpagedata": "评论", "shorten": "评论"},
-    "ASSETS": {"webpagedata": "球员图片", "shorten": "球员图片"},
-    "Assets": {"webpagedata": "球员图片", "shorten": "球员图片"},
-    "COMPARE": {"webpagedata": "球员对比", "shorten": "对比"},
-    "Compare": {"webpagedata": "球员对比", "shorten": "对比"},
-    "EVOLVE": {"webpagedata": "模拟", "shorten": "模拟"},
-    "Evolve": {"webpagedata": "模拟", "shorten": "模拟"},
-    "Add to Evo Lab": {"webpagedata": "添加到进化实验室", "shorten": "添加到进化实验室"},
-    "Add to Compare": {"webpagedata": "添加到对比", "shorten": "添加到对比"},
-    "Other Versions": {"webpagedata": "其他版本", "shorten": "其他版本"},
-    "Select a Version..": {"webpagedata": "选择一个版本", "shorten": "当前选择一个版本"},
-    "Best Possible Path": {"webpagedata": "当前可用最佳进化路线", "shorten": "当前可用最佳进化路线"},
-    "View Upgrades": {"webpagedata": "显示升级内容", "shorten": "显示升级内容"},
-    "Hide Upgrades": {"webpagedata": "隐藏升级内容", "shorten": "隐藏升级内容"},
-    "GENERATE": {"webpagedata": "自动生成", "shorten": "自动生成"},
-    "Quick": {"webpagedata": "快速", "shorten": "快速"},
-    "Balanced": {"webpagedata": "平衡", "shorten": "平衡"},
-    "Complete": {"webpagedata": "完整", "shorten": "完整"},
-    "Custom Settings": {"webpagedata": "自定义设置", "shorten": "自定义设置"},
-    "Excluded Evolutions": {"webpagedata": "排除特定进化", "shorten": "排除特定进化"},
-    "Same Evos, Different Order": {"webpagedata": "不同顺序相同进化", "shorten": "不同顺序相同进化"},
-    "Max Evolutions in Path": {"webpagedata": "路径最大进化", "shorten": "路径最大进化"},
-    "Include Reward Evolutions": {"webpagedata": "包含奖励进化", "shorten": "包含奖励进化"},
-    "REMOVE FROM EVO LAB": {"webpagedata": "从进化实验室移除", "shorten": "从进化实验室移除"},
-    "Calculate GG Rating": {"webpagedata": "计算GG评分", "shorten": "计算GG评分"},
-    "YOUR UPGRADES": {"webpagedata": "可进化内容", "shorten": "可进化内容"},
-    "HIDE BASE PLAYERS": {"webpagedata": "隐藏未进化球员", "shorten": "隐藏未进化球员"},
-    "HIDE EVOLUTIONS PLAYERS": {"webpagedata": "隐藏已进化球员", "shorten": "隐藏已进化球员"},
-    "REWARD UPGRADES": {"webpagedata": "奖励进化", "shorten": "奖励进化"},
-    "UPGRADES": {"webpagedata": "可进化", "shorten": "可进化"},
-    "+ CREATE": {"webpagedata": "+ 创建进化", "shorten": "+ 创建进化"},
-    "Eligible Evolutions": {"webpagedata": "符合资格的进化", "shorten": "符合资格的进化"},
-    "Active Evolutions": {"webpagedata": "当前可用进化", "shorten": "当前可用进化"},
-    "Used Evolutions": {"webpagedata": "已使用进化", "shorten": "已使用进化"},
-    "All Evolutions": {"webpagedata": "所有进化", "shorten": "所有进化"},
-    "ELIGIBLE EVOLUTIONS": {"webpagedata": "符合资格的进化", "shorten": "符合资格的进化"},
-    "ACTIVE EVOLUTIONS": {"webpagedata": "当前可用进化", "shorten": "当前可用进化"},
-    "USED EVOLUTIONS": {"webpagedata": "已使用进化", "shorten": "已使用进化"},
-    "ALL EVOLUTIONS": {"webpagedata": "所有进化", "shorten": "所有进化"},
-    "ALL EVOS": {"webpagedata": "所有进化", "shorten": "所有进化"},
-    "ACTIVE": {"webpagedata": "可用进化路径", "shorten": "可用进化路径"},
-    "GENERATE PATHS": {"webpagedata": "生成进化路径", "shorten": "生成进化路径"},
-    "CUSTOMISE": {"webpagedata": "定制数据", "shorten": "定制数据"},
-    "General Information": {"webpagedata": "基础信息", "shorten": "基础信息"},
-    "GENERAL": {"webpagedata": "基础信息", "shorten": "基础信息"},
-    "Cosmetic Evolution": {"webpagedata": "外观进化", "shorten": "外观进化"},
-    "RESET MODIFICATIONS": {"webpagedata": "重置修改", "shorten": "重置修改"},
-    "SHOW ATTRIBUTES": {"webpagedata": "显示小数据", "shorten": "显示小数据"},
-    "HIDE ATTRIBUTES": {"webpagedata": "隐藏小数据", "shorten": "隐藏小数据"},
-    "REVIEW": {"webpagedata": "检查数据", "shorten": "检查数据"},
-    "Chemistry Boost": {"webpagedata": "默契度加成", "shorten": "默契度加成"},
-    "Go to Evolution": {"webpagedata": "前往进化详情页", "shorten": "前往进化详情页"},
-    "Show Evolution Info": {"webpagedata": "显示进化详情", "shorten": "显示进化详情"},
-    "Hide Evolution Info": {"webpagedata": "隐藏进化详情", "shorten": "隐藏进化详情"},
-    "Exclude from Player Upgrades": {"webpagedata": "从可进化内容中排除", "shorten": "从可进化内容中排除"},
-    "CHECK ELIGIBILITY": {"webpagedata": "检查资格", "shorten": "检查资格"},
-    "HIDE EXPIRED": {"webpagedata": "隐藏过期进化", "shorten": "隐藏过期进化"},
-    "HIDE USED EVOLUTIONS": {"webpagedata": "隐藏已使用进化", "shorten": "隐藏已使用进化"},
-    "SHOW UPGRADES": {"webpagedata": "显示进化内容", "shorten": "显示进化内容"},
-    "SHOW CARDS": {"webpagedata": "展示卡面", "shorten": "展示卡面"},
-    "Show all": {"webpagedata": "显示全部", "shorten": "显示全部"},
-    "Show less": {"webpagedata": "显示部分", "shorten": "显示部分"},
-    "TRAINING TIME": {"webpagedata": "训练时间", "shorten": "训练时间"}
+    "Players": {
+      "webpagedata": "球员",
+      "shorten": "球员"
+    },
+    "Squad Builder": {
+      "webpagedata": "阵容模拟",
+      "shorten": "阵容模拟"
+    },
+    "Evolutions": {
+      "webpagedata": "进化",
+      "shorten": "进化"
+    },
+    "Objectives": {
+      "webpagedata": "任务目标",
+      "shorten": "任务"
+    },
+    "Evo Lab": {
+      "webpagedata": "进化实验室",
+      "shorten": "进化实验室"
+    },
+    "EVO LAB": {
+      "webpagedata": "进化实验室",
+      "shorten": "进化实验室"
+    },
+    "Quality": {
+      "webpagedata": "稀有度",
+      "shorten": "稀有度"
+    },
+    "Rarities": {
+      "webpagedata": "所属活动",
+      "shorten": "所属活动"
+    },
+    "Rarity": {
+      "webpagedata": "所属活动",
+      "shorten": "所属活动"
+    },
+    "Squads": {
+      "webpagedata": "所属活动阵容",
+      "shorten": "所属活动阵容"
+    },
+    "Custom Attributes": {
+      "webpagedata": "自定义数据",
+      "shorten": "自定义数据"
+    },
+    "Past and Present": {
+      "webpagedata": "过去与现在",
+      "shorten": "过去与现在"
+    },
+    "OVERVIEW": {
+      "webpagedata": "总览",
+      "shorten": "总览"
+    },
+    "Overview": {
+      "webpagedata": "总览",
+      "shorten": "总览"
+    },
+    "PRICES": {
+      "webpagedata": "市场价格",
+      "shorten": "市场价格"
+    },
+    "Prices": {
+      "webpagedata": "市场价格",
+      "shorten": "市场价格"
+    },
+    "PLAYSTYLES": {
+      "webpagedata": "球员特技",
+      "shorten": "特技"
+    },
+    "PlayStyles": {
+      "webpagedata": "球员特技",
+      "shorten": "特技"
+    },
+    "CHEM LINKS": {
+      "webpagedata": "化学链接",
+      "shorten": "化学链接"
+    },
+    "Chem Links": {
+      "webpagedata": "化学链接",
+      "shorten": "化学链接"
+    },
+    "COMMENTS": {
+      "webpagedata": "评论",
+      "shorten": "评论"
+    },
+    "Comments": {
+      "webpagedata": "评论",
+      "shorten": "评论"
+    },
+    "ASSETS": {
+      "webpagedata": "球员图片",
+      "shorten": "球员图片"
+    },
+    "Assets": {
+      "webpagedata": "球员图片",
+      "shorten": "球员图片"
+    },
+    "COMPARE": {
+      "webpagedata": "球员对比",
+      "shorten": "对比"
+    },
+    "Compare": {
+      "webpagedata": "球员对比",
+      "shorten": "对比"
+    },
+    "EVOLVE": {
+      "webpagedata": "模拟",
+      "shorten": "模拟"
+    },
+    "Evolve": {
+      "webpagedata": "模拟",
+      "shorten": "模拟"
+    },
+    "Add to Evo Lab": {
+      "webpagedata": "添加到进化实验室",
+      "shorten": "添加到进化实验室"
+    },
+    "Add to Compare": {
+      "webpagedata": "添加到对比",
+      "shorten": "添加到对比"
+    },
+    "Other Versions": {
+      "webpagedata": "其他版本",
+      "shorten": "其他版本"
+    },
+    "Select a Version..": {
+      "webpagedata": "选择一个版本",
+      "shorten": "当前选择一个版本"
+    },
+    "Best Possible Path": {
+      "webpagedata": "当前可用最佳进化路线",
+      "shorten": "当前可用最佳进化路线"
+    },
+    "View Upgrades": {
+      "webpagedata": "显示升级内容",
+      "shorten": "显示升级内容"
+    },
+    "Hide Upgrades": {
+      "webpagedata": "隐藏升级内容",
+      "shorten": "隐藏升级内容"
+    },
+    "GENERATE": {
+      "webpagedata": "自动生成",
+      "shorten": "自动生成"
+    },
+    "Quick": {
+      "webpagedata": "快速",
+      "shorten": "快速"
+    },
+    "Balanced": {
+      "webpagedata": "平衡",
+      "shorten": "平衡"
+    },
+    "Complete": {
+      "webpagedata": "完整",
+      "shorten": "完整"
+    },
+    "Custom Settings": {
+      "webpagedata": "自定义设置",
+      "shorten": "自定义设置"
+    },
+    "Excluded Evolutions": {
+      "webpagedata": "排除特定进化",
+      "shorten": "排除特定进化"
+    },
+    "Same Evos, Different Order": {
+      "webpagedata": "不同顺序相同进化",
+      "shorten": "不同顺序相同进化"
+    },
+    "Max Evolutions in Path": {
+      "webpagedata": "路径最大进化",
+      "shorten": "路径最大进化"
+    },
+    "Include Reward Evolutions": {
+      "webpagedata": "包含奖励进化",
+      "shorten": "包含奖励进化"
+    },
+    "REMOVE FROM EVO LAB": {
+      "webpagedata": "从进化实验室移除",
+      "shorten": "从进化实验室移除"
+    },
+    "Calculate GG Rating": {
+      "webpagedata": "计算GG评分",
+      "shorten": "计算GG评分"
+    },
+    "YOUR UPGRADES": {
+      "webpagedata": "可进化内容",
+      "shorten": "可进化内容"
+    },
+    "HIDE BASE PLAYERS": {
+      "webpagedata": "隐藏未进化球员",
+      "shorten": "隐藏未进化球员"
+    },
+    "HIDE EVOLUTIONS PLAYERS": {
+      "webpagedata": "隐藏已进化球员",
+      "shorten": "隐藏已进化球员"
+    },
+    "REWARD UPGRADES": {
+      "webpagedata": "奖励进化",
+      "shorten": "奖励进化"
+    },
+    "UPGRADES": {
+      "webpagedata": "可进化",
+      "shorten": "可进化"
+    },
+    "+ CREATE": {
+      "webpagedata": "+ 创建进化",
+      "shorten": "+ 创建进化"
+    },
+    "Eligible Evolutions": {
+      "webpagedata": "符合资格的进化",
+      "shorten": "符合资格的进化"
+    },
+    "Active Evolutions": {
+      "webpagedata": "当前可用进化",
+      "shorten": "当前可用进化"
+    },
+    "Used Evolutions": {
+      "webpagedata": "已使用进化",
+      "shorten": "已使用进化"
+    },
+    "All Evolutions": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化"
+    },
+    "ELIGIBLE EVOLUTIONS": {
+      "webpagedata": "符合资格的进化",
+      "shorten": "符合资格的进化"
+    },
+    "ACTIVE EVOLUTIONS": {
+      "webpagedata": "当前可用进化",
+      "shorten": "当前可用进化"
+    },
+    "USED EVOLUTIONS": {
+      "webpagedata": "已使用进化",
+      "shorten": "已使用进化"
+    },
+    "ALL EVOLUTIONS": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化"
+    },
+    "ALL EVOS": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化"
+    },
+    "ACTIVE": {
+      "webpagedata": "可用进化路径",
+      "shorten": "可用进化路径"
+    },
+    "GENERATE PATHS": {
+      "webpagedata": "生成进化路径",
+      "shorten": "生成进化路径"
+    },
+    "CUSTOMISE": {
+      "webpagedata": "定制数据",
+      "shorten": "定制数据"
+    },
+    "General Information": {
+      "webpagedata": "基础信息",
+      "shorten": "基础信息"
+    },
+    "GENERAL": {
+      "webpagedata": "基础信息",
+      "shorten": "基础信息"
+    },
+    "Cosmetic Evolution": {
+      "webpagedata": "外观进化",
+      "shorten": "外观进化"
+    },
+    "RESET MODIFICATIONS": {
+      "webpagedata": "重置修改",
+      "shorten": "重置修改"
+    },
+    "SHOW ATTRIBUTES": {
+      "webpagedata": "显示小数据",
+      "shorten": "显示小数据"
+    },
+    "HIDE ATTRIBUTES": {
+      "webpagedata": "隐藏小数据",
+      "shorten": "隐藏小数据"
+    },
+    "REVIEW": {
+      "webpagedata": "检查数据",
+      "shorten": "检查数据"
+    },
+    "Chemistry Boost": {
+      "webpagedata": "默契度加成",
+      "shorten": "默契度加成"
+    },
+    "Go to Evolution": {
+      "webpagedata": "前往进化详情页",
+      "shorten": "前往进化详情页"
+    },
+    "Show Evolution Info": {
+      "webpagedata": "显示进化详情",
+      "shorten": "显示进化详情"
+    },
+    "Hide Evolution Info": {
+      "webpagedata": "隐藏进化详情",
+      "shorten": "隐藏进化详情"
+    },
+    "Exclude from Player Upgrades": {
+      "webpagedata": "从可进化内容中排除",
+      "shorten": "从可进化内容中排除"
+    },
+    "CHECK ELIGIBILITY": {
+      "webpagedata": "检查资格",
+      "shorten": "检查资格"
+    },
+    "HIDE EXPIRED": {
+      "webpagedata": "隐藏过期进化",
+      "shorten": "隐藏过期进化"
+    },
+    "HIDE USED EVOLUTIONS": {
+      "webpagedata": "隐藏已使用进化",
+      "shorten": "隐藏已使用进化"
+    },
+    "SHOW UPGRADES": {
+      "webpagedata": "显示进化内容",
+      "shorten": "显示进化内容"
+    },
+    "SHOW CARDS": {
+      "webpagedata": "展示卡面",
+      "shorten": "展示卡面"
+    },
+    "Show all": {
+      "webpagedata": "显示全部",
+      "shorten": "显示全部"
+    },
+    "Show less": {
+      "webpagedata": "显示部分",
+      "shorten": "显示部分"
+    },
+    "TRAINING TIME": {
+      "webpagedata": "训练时间",
+      "shorten": "训练时间"
+    },
+    "TRENDING PLAYERS": {
+      "webpagedata": "热门进化球员",
+      "shorten": "热门进化球员"
+    },
+    "EXPIRED EVOLUTIONS": {
+      "webpagedata": "过期进化",
+      "shorten": "过期进化"
+    },
+    "Birthday Bakery": {
+      "webpagedata": "生日烘焙",
+      "shorten": "生日烘焙"
+    },
+    "Excluded Position": {
+      "webpagedata": "排除位置",
+      "shorten": "排除位置"
+    },
+    "Expiring Soon": {
+      "webpagedata": "即将过期",
+      "shorten": "即将过期"
+    },
+    "Evo Lab Mode": {
+      "webpagedata": "进化实验室模式",
+      "shorten": "进化实验室模式"
+    },
+    "Rewards": {
+      "webpagedata": "奖励",
+      "shorten": "奖励"
+    },
+    "Evolution": {
+      "webpagedata": "进化",
+      "shorten": "进化",
+      "timestamp": 1773066129864
+    },
+    "FC 26 Players": {
+      "webpagedata": "FC26球员",
+      "shorten": "FC26球员",
+      "timestamp": 1773138436817
+    },
+    "Actions": {
+      "webpagedata": "动作",
+      "shorten": "动作",
+      "timestamp": 1773144140428
+    },
+    "All Roles & Positions": {
+      "webpagedata": "所有角色&位置",
+      "shorten": "所有角色&位置",
+      "timestamp": 1773144208683
+    },
+    "Born Before": {
+      "webpagedata": "生日早于",
+      "shorten": "生日早于",
+      "timestamp": 1773194922628
+    }
   },
   "futbin": {
-    "Players": {"webpagedata": "球员", "shorten": "球员"},
-    "Squad Builder": {"webpagedata": "阵容模拟", "shorten": "阵容模拟"},
-    "Squad": {"webpagedata": "所属活动", "shorten": "活动"},
-    "Squads": {"webpagedata": "所属活动", "shorten": "活动"},
-    "Market": {"webpagedata": "市场", "shorten": "市场"},
-    "Evolutions": {"webpagedata": "进化", "shorten": "进化"},
-    "Community": {"webpagedata": "社区", "shorten": "社区"},
-    "Summary": {"webpagedata": "总览", "shorten": "总览"},
-    "Stats": {"webpagedata": "统计", "shorten": "数据"},
-    "Evolution": {"webpagedata": "进化", "shorten": "进化"},
-    "Player Stats": {"webpagedata": "球员数据", "shorten": "球员数据"},
-    "Evolution Builder": {"webpagedata": "进化模拟", "shorten": "进化模拟"},
-    "Rating": {"webpagedata": "评分", "shorten": "评分"},
-    "Total Stats": {"webpagedata": "总属性", "shorten": "总属性"},
-    "Top 3 community voted": {"webpagedata": "社区投票前三名", "shorten": "社区投票前三名"},
-    "Total Chem. style added:": {"webpagedata": "化学总加成", "shorten": "化学总加成"},
-    "Best Active path": {"webpagedata": "当前可用最佳进化路线", "shorten": "当前可用最佳进化路线"},
-    "Total cost:": {"webpagedata": "总成本：", "shorten": "总成本:"},
-    "AcceleRATE & Chemistry": {"webpagedata": "加速类型&化学加成", "shorten": "加速类型&化学加成"},
-    "Edit in build mode": {"webpagedata": "进入进化模拟器编辑", "shorten": "进入进化模拟器编辑"},
-    "Show upgrade details": {"webpagedata": "显示升级详情", "shorten": "显示升级详情"},
-    "Discover your own path to glory": {"webpagedata": "发现您自己的进化路径", "shorten": "发现您自己的进化路径"},
-    "Path with highest stats upgrades": {"webpagedata": "进化数据提升最高的路径", "shorten": "进化数据提升最高的路径"},
-    "Path with most Play Styles added": {"webpagedata": "进化特技加成最多的路径", "shorten": "进化特技加成最多的路径"},
-    "Path with most Roles added": {"webpagedata": "进化角色加成最高的路径", "shorten": "进化角色加成最高的路径"},
-    "ELIGIBLE EVOLUTIONS": {"webpagedata": "符合资格的进化", "shorten": "符合资格的进化"},
-    "ACTIVE EVOLUTIONS": {"webpagedata": "当前可用进化", "shorten": "当前可用进化"},
-    "USED EVOLUTIONS": {"webpagedata": "已使用进化", "shorten": "已使用进化"},
-    "ALL EVOLUTIONS": {"webpagedata": "所有进化", "shorten": "所有进化"},
-    "Rewards": {"webpagedata": "奖励", "shorten": "奖励"},
-    "Cosmetics": {"webpagedata": "外观", "shorten": "外观"},
-    "Expiring Soon": {"webpagedata": "即将过期", "shorten": "即将过期"},
-    "Popular Players": {"webpagedata": "热门进化球员", "shorten": "热门进化球员"},
-    "Saved Evolutions": {"webpagedata": "已保存进化球员", "shorten": "已保存进化球员"},
-    "My Evolutions": {"webpagedata": "我的进化", "shorten": "我的进化"},
-    "Build evolution": {"webpagedata": "进化模拟", "shorten": "进化模拟"},
-    "Active": {"webpagedata": "可用", "shorten": "可用"},
-    "Expired": {"webpagedata": "过期", "shorten": "过期"}
+    "Generations": {
+      "webpagedata": "世代",
+      "shorten": "世代"
+    },
+    "New Players": {
+      "webpagedata": "新球员",
+      "shorten": "新球员"
+    },
+    "Playstyles": {
+      "webpagedata": "球员特技",
+      "shorten": "球员特技"
+    },
+    "Evolution Players": {
+      "webpagedata": "进化球员",
+      "shorten": "进化球员"
+    },
+    "Popular Evolution Players": {
+      "webpagedata": "热门进化球员",
+      "shorten": "热门进化球员"
+    },
+    "Create Squad": {
+      "webpagedata": "创建球队",
+      "shorten": "创建球队"
+    },
+    "Squad info": {
+      "webpagedata": "球队信息",
+      "shorten": "球队信息"
+    },
+    "Total Chemistry": {
+      "webpagedata": "总化学默契",
+      "shorten": "总化学默契"
+    },
+    "Remove all players": {
+      "webpagedata": "移除所有球员",
+      "shorten": "移除所有球员"
+    },
+    "ALL": {
+      "webpagedata": "全部",
+      "shorten": "全部"
+    },
+    "Upgrades": {
+      "webpagedata": "球员升级",
+      "shorten": "球员升级"
+    },
+    "Challenges": {
+      "webpagedata": "挑战任务",
+      "shorten": "挑战任务"
+    },
+    "Icons": {
+      "webpagedata": "传奇球星",
+      "shorten": "传奇球星"
+    },
+    "Foundations": {
+      "webpagedata": "基础球员",
+      "shorten": "基础球员"
+    },
+    "Expiry": {
+      "webpagedata": "到期时间",
+      "shorten": "到期时间"
+    },
+    "Reward": {
+      "webpagedata": "奖励",
+      "shorten": "奖励"
+    },
+    "Repeatable": {
+      "webpagedata": "可重复完成",
+      "shorten": "可重复完成"
+    },
+    "Sorting": {
+      "webpagedata": "排序",
+      "shorten": "排序"
+    },
+    "Build your Evolution path": {
+      "webpagedata": "打造你的进化路线",
+      "shorten": "打造你的进化路线"
+    },
+    "My Evolutions Upgrades": {
+      "webpagedata": "我的进化升级",
+      "shorten": "我的进化升级"
+    },
+    "Exclude Evolutions": {
+      "webpagedata": "排除进化球员",
+      "shorten": "排除进化球员"
+    },
+    "My Watchlist": {
+      "webpagedata": "我的关注列表",
+      "shorten": "我的关注列表"
+    },
+    "Select Evolutions": {
+      "webpagedata": "选择进化球员",
+      "shorten": "选择进化球员"
+    },
+    "News": {
+      "webpagedata": "最新资讯",
+      "shorten": "最新资讯"
+    },
+    "Objectives": {
+      "webpagedata": "目标任务",
+      "shorten": "目标任务"
+    },
+    "Icon Swaps": {
+      "webpagedata": "传奇代币兑换",
+      "shorten": "传奇代币兑换"
+    },
+    "Players": {
+      "webpagedata": "球员",
+      "shorten": "球员"
+    },
+    "Squad Builder": {
+      "webpagedata": "阵容模拟",
+      "shorten": "阵容模拟"
+    },
+    "Squad": {
+      "webpagedata": "所属活动",
+      "shorten": "活动"
+    },
+    "Squads": {
+      "webpagedata": "所属活动",
+      "shorten": "活动"
+    },
+    "Market": {
+      "webpagedata": "市场",
+      "shorten": "市场"
+    },
+    "Evolutions": {
+      "webpagedata": "进化",
+      "shorten": "进化"
+    },
+    "Community": {
+      "webpagedata": "社区",
+      "shorten": "社区"
+    },
+    "Summary": {
+      "webpagedata": "总览",
+      "shorten": "总览"
+    },
+    "Stats": {
+      "webpagedata": "统计",
+      "shorten": "数据"
+    },
+    "Evolution": {
+      "webpagedata": "进化",
+      "shorten": "进化"
+    },
+    "Player Stats": {
+      "webpagedata": "球员数据",
+      "shorten": "球员数据"
+    },
+    "Evolution Builder": {
+      "webpagedata": "进化模拟",
+      "shorten": "进化模拟"
+    },
+    "Rating": {
+      "webpagedata": "评分",
+      "shorten": "评分"
+    },
+    "Total Stats": {
+      "webpagedata": "总属性",
+      "shorten": "总属性"
+    },
+    "Top 3 community voted": {
+      "webpagedata": "社区投票前三名",
+      "shorten": "社区投票前三名"
+    },
+    "Total Chem. style added:": {
+      "webpagedata": "化学总加成",
+      "shorten": "化学总加成"
+    },
+    "Best Active path": {
+      "webpagedata": "当前可用最佳进化路线",
+      "shorten": "当前可用最佳进化路线"
+    },
+    "Total cost:": {
+      "webpagedata": "总成本：",
+      "shorten": "总成本:"
+    },
+    "AcceleRATE & Chemistry": {
+      "webpagedata": "加速类型&化学加成",
+      "shorten": "加速类型&化学加成"
+    },
+    "Edit in build mode": {
+      "webpagedata": "进入进化模拟器编辑",
+      "shorten": "进入进化模拟器编辑"
+    },
+    "Show upgrade details": {
+      "webpagedata": "显示升级详情",
+      "shorten": "显示升级详情"
+    },
+    "Discover your own path to glory": {
+      "webpagedata": "发现您自己的进化路径",
+      "shorten": "发现您自己的进化路径"
+    },
+    "Path with highest stats upgrades": {
+      "webpagedata": "进化数据提升最高的路径",
+      "shorten": "进化数据提升最高的路径"
+    },
+    "Path with most Play Styles added": {
+      "webpagedata": "进化特技加成最多的路径",
+      "shorten": "进化特技加成最多的路径"
+    },
+    "Path with most Roles added": {
+      "webpagedata": "进化角色加成最高的路径",
+      "shorten": "进化角色加成最高的路径"
+    },
+    "ELIGIBLE EVOLUTIONS": {
+      "webpagedata": "符合资格的进化",
+      "shorten": "符合资格的进化"
+    },
+    "ACTIVE EVOLUTIONS": {
+      "webpagedata": "当前可用进化",
+      "shorten": "当前可用进化"
+    },
+    "USED EVOLUTIONS": {
+      "webpagedata": "已使用进化",
+      "shorten": "已使用进化"
+    },
+    "ALL EVOLUTIONS": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化"
+    },
+    "Rewards": {
+      "webpagedata": "奖励",
+      "shorten": "奖励"
+    },
+    "Cosmetics": {
+      "webpagedata": "外观",
+      "shorten": "外观"
+    },
+    "Expiring Soon": {
+      "webpagedata": "即将过期",
+      "shorten": "即将过期"
+    },
+    "Popular Players": {
+      "webpagedata": "热门进化球员",
+      "shorten": "热门进化球员"
+    },
+    "Saved Evolutions": {
+      "webpagedata": "已保存进化球员",
+      "shorten": "已保存进化球员"
+    },
+    "My Evolutions": {
+      "webpagedata": "我的进化",
+      "shorten": "我的进化"
+    },
+    "Build evolution": {
+      "webpagedata": "进化模拟",
+      "shorten": "进化模拟"
+    },
+    "Active": {
+      "webpagedata": "可用",
+      "shorten": "可用"
+    },
+    "Expired": {
+      "webpagedata": "过期",
+      "shorten": "过期"
+    },
+    "Formation": {
+      "webpagedata": "阵型",
+      "shorten": "阵型"
+    },
+    "Build Up Style": {
+      "webpagedata": "组织类型",
+      "shorten": "组织类型"
+    },
+    "Defensive Approach": {
+      "webpagedata": "防御策略",
+      "shorten": "防御策略"
+    },
+    "Line Height": {
+      "webpagedata": "防守高度",
+      "shorten": "防守高度"
+    },
+    "Tactics": {
+      "webpagedata": "战术",
+      "shorten": "战术"
+    },
+    "Version": {
+      "webpagedata": "所属活动",
+      "shorten": "活动",
+      "timestamp": 1773065441528
+    },
+    "Positions": {
+      "webpagedata": "位置",
+      "shorten": "位置",
+      "timestamp": 1773065545994
+    },
+    "PlayStyles": {
+      "webpagedata": "球员特技",
+      "shorten": "特技",
+      "timestamp": 1773065701757
+    },
+    "SM & WF": {
+      "webpagedata": "花式&逆足",
+      "shorten": "花逆",
+      "timestamp": 1773065912192
+    },
+    "Player has no active evolutions": {
+      "webpagedata": "无进化",
+      "shorten": "无进化",
+      "timestamp": 1773067322806
+    },
+    "Swaps": {
+      "webpagedata": "代币交换",
+      "shorten": "代币交换",
+      "timestamp": 1773113558630
+    },
+    "Sort by": {
+      "webpagedata": "排序依据",
+      "shorten": "排序依据",
+      "timestamp": 1773113654890
+    },
+    "Rarity": {
+      "webpagedata": "稀有度",
+      "shorten": "稀有度",
+      "timestamp": 1773113715046
+    },
+    "Born Before": {
+      "webpagedata": "出生早于",
+      "shorten": "出生早于",
+      "timestamp": 1773194940641
+    }
   }
 }
