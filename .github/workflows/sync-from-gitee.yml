@@ -2,7 +2,7 @@ name: Sync from Gitee
 
 on:
   schedule:
-    - cron: '0 */10 * * *'
+    - cron: '0 */5 * * *'
   workflow_dispatch:
 
 jobs:
@@ -47,12 +47,21 @@ jobs:
             exit 1
           fi
           
+          echo "Downloading OAO-FC26 UT模式翻译插件.user.js from Gitee..."
+          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/OAO-FC26%20UT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js" -o "OAO-FC26 UT模式翻译插件.user.js"
+          if [ $? -eq 0 ]; then
+            echo "Download successful. File size: $(ls -la "OAO-FC26 UT模式翻译插件.user.js")"
+          else
+            echo "Download failed"
+            exit 1
+          fi
+          
       - name: Check for changes
         id: check_changes
         run: |
           echo "=== Checking for changes ==="
           git status
-          git add evolutions.json built-in-dictionaries.json
+          git add evolutions.json built-in-dictionaries.json "OAO-FC26 UT模式翻译插件.user.js"
           
           if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
