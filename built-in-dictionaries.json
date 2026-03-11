@@ -175,15 +175,7 @@
       "webpagedata": "速度",
       "shorten": "速度"
     },
-    "PAC": {
-      "webpagedata": "速度",
-      "shorten": "速度"
-    },
     "Shooting": {
-      "webpagedata": "射门",
-      "shorten": "射门"
-    },
-    "SHO": {
       "webpagedata": "射门",
       "shorten": "射门"
     },
@@ -191,23 +183,11 @@
       "webpagedata": "传球",
       "shorten": "传球"
     },
-    "PAS": {
-      "webpagedata": "传球",
-      "shorten": "传球"
-    },
     "Dribbling": {
       "webpagedata": "盘带",
       "shorten": "盘带"
     },
-    "DRI": {
-      "webpagedata": "盘带",
-      "shorten": "盘带"
-    },
     "Defending": {
-      "webpagedata": "防守",
-      "shorten": "防守"
-    },
-    "DEF": {
       "webpagedata": "防守",
       "shorten": "防守"
     },
@@ -216,10 +196,6 @@
       "shorten": "身体"
     },
     "Physicality": {
-      "webpagedata": "身体",
-      "shorten": "身体"
-    },
-    "PHY": {
       "webpagedata": "身体",
       "shorten": "身体"
     },
