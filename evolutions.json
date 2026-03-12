@@ -159,7 +159,8 @@
     "CN": "中场发动机"
   },
   "Fantasy Captain ICON": {
-    "CN": "梦幻队长传奇"
+    "CN": "梦幻队长超级巨星",
+    "timestamp": 1773305893793
   },
   "Calm & Collected": {
     "CN": "冷静沉稳"
@@ -282,5 +283,125 @@
   "Winger Transformation": {
     "CN": "边锋转型",
     "timestamp": 1773273269589
+  },
+  "Dish 'em Out": {
+    "CN": "秒传连连",
+    "timestamp": 1773305185001
+  },
+  "Make Your Idol - Attacker 1": {
+    "CN": "塑造偶像一进攻球员1",
+    "timestamp": 1773305401498
+  },
+  "Make Your Idol - Midfielder 1": {
+    "CN": "塑造偶像一中场球员1",
+    "timestamp": 1773305397838
+  },
+  "Make Your Idol - Defender 1": {
+    "CN": "塑造偶像一防守球员1",
+    "timestamp": 1773305394208
+  },
+  "Make Your Idol - Defender 2": {
+    "CN": "塑造偶像一防守球员2",
+    "timestamp": 1773305390606
+  },
+  "Make Your Idol - Defender 3": {
+    "CN": "塑造偶像一防守球员3",
+    "timestamp": 1773305385988
+  },
+  "Make Your Idol - Attacker 2": {
+    "CN": "塑造偶像一进攻球员2",
+    "timestamp": 1773305381978
+  },
+  "Make Your Idol - Attacker 3": {
+    "CN": "塑造偶像一进攻球员3",
+    "timestamp": 1773305377116
+  },
+  "Make Your Idol - Midfielder 3": {
+    "CN": "塑造偶像一中场球员3",
+    "timestamp": 1773305461751
+  },
+  "Make Your Idol - Midfielder 2": {
+    "CN": "塑造偶像一中场球员2",
+    "timestamp": 1773305470038
+  },
+  "Make Your Idol - Starter": {
+    "CN": "塑造偶像一启程",
+    "timestamp": 1773305499775
+  },
+  "Architect of Play": {
+    "CN": "组织建筑师",
+    "timestamp": 1773305556414
+  },
+  "Goal Machine": {
+    "CN": "进球机器",
+    "timestamp": 1773305594780
+  },
+  "Sweep & Supply": {
+    "CN": "清扫与输送",
+    "timestamp": 1773305679509
+  },
+  "Roadrunner": {
+    "CN": "走鹃",
+    "timestamp": 1773305756384
+  },
+  "Locked & Loaded": {
+    "CN": "严阵以待",
+    "timestamp": 1773305808940
+  },
+  "Up to Speed": {
+    "CN": "跟上节奏",
+    "timestamp": 1773305844843
+  },
+  "Make Your ldol - Tiki Taka+": {
+    "CN": "塑造偶像一Tiki Taka+",
+    "timestamp": 1773306312231
+  },
+  "Make Your Idol - Incisive Pass+": {
+    "CN": "塑造偶像一切入传球+",
+    "timestamp": 1773306341603
+  },
+  "Make Your ldol - Low Driven+": {
+    "CN": "塑造偶像一大力低射+",
+    "timestamp": 1773306362824
+  },
+  "Make Your ldol - Technical+": {
+    "CN": "塑造偶像一技术+",
+    "timestamp": 1773306378103
+  },
+  "Make Your ldol - Jockey+": {
+    "CN": "塑造偶像一跟防+",
+    "timestamp": 1773306391772
+  },
+  "Make Your ldol - Intercept+": {
+    "CN": "塑造偶像一拦截+",
+    "timestamp": 1773306411340
+  },
+  "Make Your Idol - Finesse Shot+": {
+    "CN": "塑造偶像一精准射门+",
+    "timestamp": 1773306446562
+  },
+  "Make Your ldol - First Touch+": {
+    "CN": "塑造偶像一第一脚触球+",
+    "timestamp": 1773306466629
+  },
+  "Make Your ldol - Pinged Pass+": {
+    "CN": "塑造偶像一大力传球+",
+    "timestamp": 1773306485528
+  },
+  "Make Your ldol - Rapid+": {
+    "CN": "塑造偶像一灵动迅捷+",
+    "timestamp": 1773306504497
+  },
+  "Make Your Idol - Quick Step+": {
+    "CN": "塑造偶像一健步如飞+",
+    "timestamp": 1773306526834
+  },
+  "Make Your Idol - Anticipate+": {
+    "CN": "塑造偶像一预判+",
+    "timestamp": 1773306563774
+  },
+  "Season Ladder Excellence": {
+    "CN": "赛季天梯卓越",
+    "timestamp": 1773307584396
   }
 }
