@@ -18,7 +18,8 @@
     "CN": "【任务】大力低射+"
   },
   "Premium PlayStyle+ Bakery": {
-    "CN": "高级 PS+烘焙"
+    "CN": "高级PS+烘焙",
+    "timestamp": 1773318859566
   },
   "PlayStyle+ Bakery": {
     "CN": "PS+烘焙"
@@ -403,5 +404,41 @@
   "Season Ladder Excellence": {
     "CN": "赛季天梯卓越",
     "timestamp": 1773307584396
+  },
+  "Make Your Idol - Intercept+": {
+    "CN": "塑造偶像一拦截+",
+    "timestamp": 1773318569357
+  },
+  "Make Your Idol - Jockey+": {
+    "CN": "塑造偶像一跟防+",
+    "timestamp": 1773318598812
+  },
+  "Make Your Idol - Technical+": {
+    "CN": "塑造偶像一技术+",
+    "timestamp": 1773318609462
+  },
+  "Make Your Idol - Low Driven+": {
+    "CN": "塑造偶像一大力低射+",
+    "timestamp": 1773318623353
+  },
+  "PS+ Bakery": {
+    "CN": "PS+烘焙",
+    "timestamp": 1773318798565
+  },
+  "Premium PS+ Bakery": {
+    "CN": "高级PS+烘焙",
+    "timestamp": 1773318852808
+  },
+  "Make Your Idol - Tiki Taka+": {
+    "CN": "塑造偶像一Tiki Taka+",
+    "timestamp": 1773318898826
+  },
+  "5 Star Skill Moves & Weak Foot Upgrade": {
+    "CN": "5星级花式动作和逆足升级",
+    "timestamp": 1773319094264
+  },
+  "Tiki Taka+ & Low Driven Shot+": {
+    "CN": "TikiTaka+和大力低射+",
+    "timestamp": 1773319114439
   }
 }
