@@ -1293,6 +1293,26 @@
       "webpagedata": "生日早于",
       "shorten": "生日早于",
       "timestamp": 1773194922628
+    },
+    "Recommended PlayStyles": {
+      "webpagedata": "特技搭配推荐",
+      "shorten": "特技搭配推荐",
+      "timestamp": 1773455961989
+    },
+    "New Players": {
+      "webpagedata": "新球员",
+      "shorten": "新球员",
+      "timestamp": 1773462269345
+    },
+    "In Packs": {
+      "webpagedata": "活动中",
+      "shorten": "活动中",
+      "timestamp": 1773462333590
+    },
+    "Women Players": {
+      "webpagedata": "女足球员",
+      "shorten": "女足球员",
+      "timestamp": 1773462348679
     }
   },
   "futbin": {
