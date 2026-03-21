@@ -1313,6 +1313,26 @@
       "webpagedata": "女足球员",
       "shorten": "女足球员",
       "timestamp": 1773462348679
+    },
+    "Challenges": {
+      "webpagedata": "挑战",
+      "shorten": "挑战",
+      "timestamp": 1774095131911
+    },
+    "Icons": {
+      "webpagedata": "超级巨星",
+      "shorten": "超级巨星",
+      "timestamp": 1774095932400
+    },
+    "Foundations": {
+      "webpagedata": "基础",
+      "shorten": "基础",
+      "timestamp": 1774095907684
+    },
+    "Swaps": {
+      "webpagedata": "代币兑换",
+      "shorten": "代币兑换",
+      "timestamp": 1774095918791
     }
   },
   "futbin": {
