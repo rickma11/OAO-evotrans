@@ -544,5 +544,29 @@
   "Party Exit": {
     "CN": "派对散场",
     "timestamp": 1773964594899
+  },
+  "National Captain": {
+    "CN": "国家队长",
+    "timestamp": 1774044625691
+  },
+  "National Captain: Final Touch": {
+    "CN": "国家队长: 画龙点睛",
+    "timestamp": 1774044654793
+  },
+  "5 Star Factory 2": {
+    "CN": "5星级工厂2",
+    "timestamp": 1774044702558
+  },
+  "Euro Minitrip": {
+    "CN": "欧洲短途旅行",
+    "timestamp": 1774044723667
+  },
+  "South American Stars": {
+    "CN": "南美明星",
+    "timestamp": 1774044738272
+  },
+  "Euro Trio": {
+    "CN": "欧洲三巨头",
+    "timestamp": 1774044779695
   }
 }
