@@ -164,6 +164,14 @@
       "webpagedata": "市场价格",
       "shorten": "价格",
       "timestamp": 1773065747678
+    },
+    "Positions": {
+      "webpagedata": "位置",
+      "timestamp": 1774246040153
+    },
+    "Version": {
+      "webpagedata": "所属活动",
+      "timestamp": 1774246064040
     }
   },
   "sixStat": {
@@ -399,6 +407,10 @@
       "webpagedata": "位置",
       "shorten": "位置",
       "timestamp": 1773065974670
+    },
+    "Skill Moves": {
+      "webpagedata": "花式",
+      "timestamp": 1774245000234
     }
   },
   "roles": {
@@ -1612,16 +1624,6 @@
       "webpagedata": "战术",
       "shorten": "战术"
     },
-    "Version": {
-      "webpagedata": "所属活动",
-      "shorten": "活动",
-      "timestamp": 1773065441528
-    },
-    "Positions": {
-      "webpagedata": "位置",
-      "shorten": "位置",
-      "timestamp": 1773065545994
-    },
     "PlayStyles": {
       "webpagedata": "球员特技",
       "shorten": "特技",
@@ -1666,6 +1668,24 @@
       "webpagedata": "第6赛季通行证",
       "shorten": "第6赛季通行证",
       "timestamp": 1773318744503
+    }
+  },
+  "easysbc": {
+    "Card Type": {
+      "webpagedata": "卡片类型",
+      "shorten": "卡片类型"
+    },
+    "Country": {
+      "webpagedata": "国家",
+      "shorten": "国家"
+    },
+    "Skill Moves": {
+      "webpagedata": "花式",
+      "shorten": "花式"
+    },
+    "Weak Foot": {
+      "webpagedata": "逆足",
+      "shorten": "逆足"
     }
   }
 }
