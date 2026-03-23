@@ -167,11 +167,23 @@
     },
     "Positions": {
       "webpagedata": "位置",
-      "timestamp": 1774246040153
+      "shorten": "位置",
+      "timestamp": 1774267870438
     },
     "Version": {
       "webpagedata": "所属活动",
-      "timestamp": 1774246064040
+      "shorten": "所属活动",
+      "timestamp": 1774267865711
+    },
+    "Left Foot": {
+      "webpagedata": "左脚",
+      "shorten": "左脚",
+      "timestamp": 1774271400044
+    },
+    "Right Foot": {
+      "webpagedata": "右脚",
+      "shorten": "右脚",
+      "timestamp": 1774271421021
     }
   },
   "sixStat": {
@@ -411,6 +423,31 @@
     "Skill Moves": {
       "webpagedata": "花式",
       "timestamp": 1774245000234
+    },
+    "Heading Accuracy": {
+      "webpagedata": "头球精度",
+      "shorten": "头球精度",
+      "timestamp": 1774267734145
+    },
+    "Def. Awareness": {
+      "webpagedata": "防守意识",
+      "shorten": "防守意识",
+      "timestamp": 1774267747374
+    },
+    "Standing Tackles": {
+      "webpagedata": "抢断",
+      "shorten": "抢断",
+      "timestamp": 1774267766614
+    },
+    "Sliding Tackles": {
+      "webpagedata": "滑铲",
+      "shorten": "滑铲",
+      "timestamp": 1774267776735
+    },
+    "FK Accuracy": {
+      "webpagedata": "任意球精度",
+      "shorten": "任意球精度",
+      "timestamp": 1774276335008
     }
   },
   "roles": {
@@ -1392,10 +1429,6 @@
       "webpagedata": "球员升级",
       "shorten": "球员升级"
     },
-    "Challenges": {
-      "webpagedata": "挑战任务",
-      "shorten": "挑战任务"
-    },
     "Icons": {
       "webpagedata": "传奇球星",
       "shorten": "传奇球星"
@@ -1668,6 +1701,26 @@
       "webpagedata": "第6赛季通行证",
       "shorten": "第6赛季通行证",
       "timestamp": 1773318744503
+    },
+    "Premium PS+ Bakery": {
+      "webpagedata": "高级PS+烘焙",
+      "shorten": "高级PS+烘焙",
+      "timestamp": 1774278882096
+    },
+    "PS+ Bakery": {
+      "webpagedata": "PS+烘焙",
+      "shorten": "PS+烘焙",
+      "timestamp": 1774278922669
+    },
+    "PS Bakery": {
+      "webpagedata": "PS烘焙",
+      "shorten": "PS烘焙",
+      "timestamp": 1774278949436
+    },
+    "Challenges": {
+      "webpagedata": "挑战任务",
+      "shorten": "挑战任务",
+      "timestamp": 1774280559135
     }
   },
   "easysbc": {
@@ -1683,25 +1736,95 @@
       "webpagedata": "花式",
       "shorten": "花式"
     },
-    "Weak Foot": {
-      "webpagedata": "逆足",
-      "shorten": "逆足"
-    },
     "Player Role": {
       "webpagedata": "角色",
-      "timestamp": 1774246315134
+      "shorten": "角色",
+      "timestamp": 1774269179635
     },
     "Chemstyle": {
       "webpagedata": "化学",
-      "timestamp": 1774246322357
+      "shorten": "化学",
+      "timestamp": 1774269184660
     },
     "Evolution Builder": {
       "webpagedata": "进化模拟",
-      "timestamp": 1774246400531
+      "shorten": "进化模拟",
+      "timestamp": 1774269190000
     },
     "SBC Price": {
       "webpagedata": "SBC造价",
-      "timestamp": 1774246419135
+      "shorten": "SBC造价",
+      "timestamp": 1774269194170
+    },
+    "PlayStyles": {
+      "webpagedata": "特技",
+      "shorten": "特技",
+      "timestamp": 1774276221865
+    },
+    "Squad Builder": {
+      "webpagedata": "阵容模拟",
+      "shorten": "阵容模拟",
+      "timestamp": 1774278031383
+    },
+    "Players": {
+      "webpagedata": "球员",
+      "shorten": "球员",
+      "timestamp": 1774278065237
+    },
+    "Evolutions": {
+      "webpagedata": "进化",
+      "shorten": "进化",
+      "timestamp": 1774278088675
+    },
+    "Tactics": {
+      "webpagedata": "战术",
+      "shorten": "战术",
+      "timestamp": 1774278111792
+    },
+    "Show All Roles": {
+      "webpagedata": "展示全部角色",
+      "shorten": "展示全部角色",
+      "timestamp": 1774278174262
+    },
+    "Player Bio": {
+      "webpagedata": "球员信息",
+      "shorten": "球员信息",
+      "timestamp": 1774278255314
+    },
+    "ALL": {
+      "webpagedata": "所有",
+      "shorten": "所有",
+      "timestamp": 1774280441696
+    },
+    "Favorites": {
+      "webpagedata": "最爱",
+      "shorten": "最爱",
+      "timestamp": 1774280463679
+    },
+    "Upgrades": {
+      "webpagedata": "升级",
+      "shorten": "升级",
+      "timestamp": 1774280495763
+    },
+    "Icons": {
+      "webpagedata": "传奇球星",
+      "shorten": "传奇球星",
+      "timestamp": 1774280532350
+    },
+    "Challenges": {
+      "webpagedata": "挑战任务",
+      "shorten": "挑战任务",
+      "timestamp": 1774280567011
+    },
+    "Swaps": {
+      "webpagedata": "代币交换",
+      "shorten": "代币交换",
+      "timestamp": 1774280582446
+    },
+    "Foundations": {
+      "webpagedata": "基础球员",
+      "shorten": "基础球员",
+      "timestamp": 1774280612488
     }
   }
 }
