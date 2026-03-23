@@ -1686,6 +1686,22 @@
     "Weak Foot": {
       "webpagedata": "逆足",
       "shorten": "逆足"
+    },
+    "Player Role": {
+      "webpagedata": "角色",
+      "timestamp": 1774246315134
+    },
+    "Chemstyle": {
+      "webpagedata": "化学",
+      "timestamp": 1774246322357
+    },
+    "Evolution Builder": {
+      "webpagedata": "进化模拟",
+      "timestamp": 1774246400531
+    },
+    "SBC Price": {
+      "webpagedata": "SBC造价",
+      "timestamp": 1774246419135
     }
   }
 }
