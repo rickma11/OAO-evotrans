@@ -1825,6 +1825,21 @@
       "webpagedata": "基础球员",
       "shorten": "基础球员",
       "timestamp": 1774280612488
+    },
+    "Evolution Players": {
+      "webpagedata": "进化球员",
+      "shorten": "进化球员",
+      "timestamp": 1774331744381
+    },
+    "My Evolutions": {
+      "webpagedata": "我的进化",
+      "shorten": "我的进化",
+      "timestamp": 1774331769654
+    },
+    "Unlock": {
+      "webpagedata": "未解锁",
+      "shorten": "未解锁",
+      "timestamp": 1774331781561
     }
   }
 }
