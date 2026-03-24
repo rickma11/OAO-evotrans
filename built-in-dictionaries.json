@@ -667,6 +667,16 @@
       "webpagedata": "守门员",
       "shorten": "门将",
       "timestamp": 1773113166886
+    },
+    "Adv. Fwd.": {
+      "webpagedata": "突前型前锋",
+      "shorten": "突前型前锋",
+      "timestamp": 1774364250762
+    },
+    "B2B": {
+      "webpagedata": "全能中场",
+      "shorten": "全能中场",
+      "timestamp": 1774364268958
     }
   },
   "chemistry": {
@@ -1840,6 +1850,51 @@
       "webpagedata": "未解锁",
       "shorten": "未解锁",
       "timestamp": 1774331781561
+    },
+    "Formation": {
+      "webpagedata": "阵型",
+      "shorten": "阵型",
+      "timestamp": 1774363931752
+    },
+    "Best Formation": {
+      "webpagedata": "最佳阵型",
+      "shorten": "最佳阵型",
+      "timestamp": 1774363946332
+    },
+    "Budget": {
+      "webpagedata": "预算",
+      "shorten": "预算",
+      "timestamp": 1774363966361
+    },
+    "Scope": {
+      "webpagedata": "范围",
+      "shorten": "范围",
+      "timestamp": 1774364014300
+    },
+    "Transfer Market": {
+      "webpagedata": "转会市场",
+      "shorten": "转会市场",
+      "timestamp": 1774364030919
+    },
+    "General Filters": {
+      "webpagedata": "常规筛选条件",
+      "shorten": "常规筛选条件",
+      "timestamp": 1774364084546
+    },
+    "Both": {
+      "webpagedata": "全部",
+      "shorten": "全部",
+      "timestamp": 1774364102516
+    },
+    "BUILD SQUADS": {
+      "webpagedata": "组建阵容",
+      "shorten": "组建阵容",
+      "timestamp": 1774364197748
+    },
+    "More General Filters": {
+      "webpagedata": "更多筛选条件",
+      "shorten": "更多筛选条件",
+      "timestamp": 1774364416066
     }
   }
 }
