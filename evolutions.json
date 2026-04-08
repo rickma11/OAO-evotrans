@@ -701,5 +701,17 @@
   "Lisbon Lifeline": {
     "CN": "里斯本救赎",
     "timestamp": 1775596585653
+  },
+  "Red Bull - Physical": {
+    "CN": "Red Bull - 体格",
+    "timestamp": 1775637131633
+  },
+  "Red Bull - Shooting": {
+    "CN": "Red Bull - 射门",
+    "timestamp": 1775637171627
+  },
+  "Red Bull - Pace": {
+    "CN": "Red Bull - 速度",
+    "timestamp": 1775637202682
   }
 }
