@@ -753,5 +753,17 @@
   "bottom corner": {
     "CN": "底角",
     "timestamp": 1775971816904
+  },
+  "Backline Boost": {
+    "CN": "巩固后防",
+    "timestamp": 1776052972097
+  },
+  "Velocity Touch": {
+    "CN": "疾速触球",
+    "timestamp": 1776053029511
+  },
+  "Crunch Time": {
+    "CN": "关键时刻",
+    "timestamp": 1776053125065
   }
 }
