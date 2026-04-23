@@ -868,11 +868,11 @@
   },
   "WTSS Journey 2 - Midfielder": {
     "CN": "世界巡回白银巨星征程2-中场球员",
-    "timestamp": 1776936805000
+    "timestamp": 1776944349401
   },
   "WTSS Journey 3 - Defender": {
     "CN": "世界巡回白银巨星征程3-防守球员",
-    "timestamp": 1776936849409
+    "timestamp": 1776944299874
   },
   "WTSS Journey 2 - Defender": {
     "CN": "世界巡回白银巨星征程2-防守球员",
@@ -880,7 +880,7 @@
   },
   "WTSS Journey 3 - Midfielder": {
     "CN": "世界巡回白银巨星征程3-中场球员",
-    "timestamp": 1776936881743
+    "timestamp": 1776944321570
   },
   "WTSS Journey 2 - Attacker": {
     "CN": "世界巡回白银巨星征程2-进攻球员",
@@ -897,5 +897,9 @@
   "Attacker Roundout": {
     "CN": "进攻球员完善",
     "timestamp": 1776937396135
+  },
+  "Back on Track": {
+    "CN": "重回正轨",
+    "timestamp": 1776976771343
   }
 }
