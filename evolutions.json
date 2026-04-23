@@ -845,5 +845,57 @@
   "Columbus Conductor": {
     "CN": "哥伦布指挥家",
     "timestamp": 1776877696274
+  },
+  "Defender Round Out": {
+    "CN": "防守球员完善",
+    "timestamp": 1776936650449
+  },
+  "Attacker Round Out": {
+    "CN": "进攻球员完善",
+    "timestamp": 1776936666664
+  },
+  "WTSS Journey 1 - Defender": {
+    "CN": "世界巡回白银巨星征程1-防守球员",
+    "timestamp": 1776936757575
+  },
+  "WTSS Journey 1 - Midfielder": {
+    "CN": "世界巡回白银巨星征程1-中场球员",
+    "timestamp": 1776936826863
+  },
+  "WTSS Journey 1 - Attacker": {
+    "CN": "世界巡回白银巨星征程1-进攻球员",
+    "timestamp": 1776936818040
+  },
+  "WTSS Journey 2 - Midfielder": {
+    "CN": "世界巡回白银巨星征程2-中场球员",
+    "timestamp": 1776936805000
+  },
+  "WTSS Journey 3 - Defender": {
+    "CN": "世界巡回白银巨星征程3-防守球员",
+    "timestamp": 1776936849409
+  },
+  "WTSS Journey 2 - Defender": {
+    "CN": "世界巡回白银巨星征程2-防守球员",
+    "timestamp": 1776936866112
+  },
+  "WTSS Journey 3 - Midfielder": {
+    "CN": "世界巡回白银巨星征程3-中场球员",
+    "timestamp": 1776936881743
+  },
+  "WTSS Journey 2 - Attacker": {
+    "CN": "世界巡回白银巨星征程2-进攻球员",
+    "timestamp": 1776936896425
+  },
+  "WTSS Journey 3 - Attacker": {
+    "CN": "世界巡回白银巨星征程3-进攻球员",
+    "timestamp": 1776936904056
+  },
+  "Defender Roundout": {
+    "CN": "防守球员完善",
+    "timestamp": 1776937385304
+  },
+  "Attacker Roundout": {
+    "CN": "进攻球员完善",
+    "timestamp": 1776937396135
   }
 }
