@@ -901,5 +901,21 @@
   "Back on Track": {
     "CN": "重回正轨",
     "timestamp": 1776976771343
+  },
+  "WTSS Attacker Boost": {
+    "CN": "世界巡回白银巨星进攻球员强化",
+    "timestamp": 1777005227181
+  },
+  "WTSS Defender Boost": {
+    "CN": "世界巡回白银巨星防守球员强化",
+    "timestamp": 1777005254653
+  },
+  "Jockey+ & Bruiser+": {
+    "CN": "金螃蟹步&金肌肉",
+    "timestamp": 1777005289572
+  },
+  "Intercept+ & Quick Step+": {
+    "CN": "金拦截&金火箭步",
+    "timestamp": 1777005322534
   }
 }
