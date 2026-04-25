@@ -917,5 +917,29 @@
   "Intercept+ & Quick Step+": {
     "CN": "金拦截&金火箭步",
     "timestamp": 1777005322534
+  },
+  "Power Up": {
+    "CN": "加大力度",
+    "timestamp": 1777067455842
+  },
+  "The King of Highbury": {
+    "CN": "海布里之王",
+    "timestamp": 1777067465613
+  },
+  "Tiki Taka+ & Incisive Pass": {
+    "CN": "金TikiTaka&银直塞",
+    "timestamp": 1777067511988
+  },
+  "Incisive Pass+ & Tiki Taka": {
+    "CN": "金直塞&银TikiTaka",
+    "timestamp": 1777067539335
+  },
+  "Quick Step and Bruiser": {
+    "CN": "银火箭步&银肌肉",
+    "timestamp": 1777067560296
+  },
+  "Pinged Pass and Finesse Shot": {
+    "CN": "银大力传球&银搓射",
+    "timestamp": 1777067578852
   }
 }
