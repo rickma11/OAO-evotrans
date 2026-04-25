@@ -941,5 +941,13 @@
   "Pinged Pass and Finesse Shot": {
     "CN": "银大力传球&银搓射",
     "timestamp": 1777067578852
+  },
+  "TIki Taka and Incisive Pass": {
+    "CN": "金TikiTaka&银直塞",
+    "timestamp": 1777088903937
+  },
+  "Incisive Pass and Tiki Taka": {
+    "CN": "金直塞&银TikiTaka",
+    "timestamp": 1777089088255
   }
 }
