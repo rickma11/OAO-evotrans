@@ -915,8 +915,8 @@
     "timestamp": 1777005289572
   },
   "Intercept+ & Quick Step+": {
-    "CN": "金拦截&金火箭步",
-    "timestamp": 1777005322534
+    "CN": "金拦截&金火箭",
+    "timestamp": 1777239778234
   },
   "Power Up": {
     "CN": "加大力度",
@@ -953,5 +953,9 @@
   "Fountain of Youth": {
     "CN": "青春之泉",
     "timestamp": 1777146518454
+  },
+  "The Trailblazer": {
+    "CN": "开拓者",
+    "timestamp": 1777239789278
   }
 }
