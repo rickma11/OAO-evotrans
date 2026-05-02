@@ -978,13 +978,9 @@
     "CN": "铬合金终结者",
     "timestamp": 1777578339238
   },
-  "Welsh Wonder Strike [Store]": {
-    "CN": "威尔士奇迹一击【商城包】",
-    "timestamp": 1777602318184
-  },
   "Cut In, Say Less": {
-    "CN": "内切, 无需多言",
-    "timestamp": 1777663952461
+    "CN": "内切，无需多言",
+    "timestamp": 1777709742475
   },
   "Long Ball Pass+ & Pinged Pass": {
     "CN": "金长传&银大力传球",
@@ -1013,5 +1009,9 @@
   "Speed to Finish": {
     "CN": "疾速终结",
     "timestamp": 1777684914058
+  },
+  "Welsh Wonder Strike [Store]": {
+    "CN": "威尔士奇迹一击【商城包】",
+    "timestamp": 1777716465851
   }
 }

@@ -1392,6 +1392,46 @@
       "webpagedata": "代币兑换",
       "shorten": "代币兑换",
       "timestamp": 1774095918791
+    },
+    "Versions": {
+      "webpagedata": "版本",
+      "shorten": "版本",
+      "timestamp": 1777712769059
+    },
+    "Tactics": {
+      "webpagedata": "战术",
+      "shorten": "战术",
+      "timestamp": 1777713135488
+    },
+    "Search": {
+      "webpagedata": "搜索",
+      "shorten": "搜索",
+      "timestamp": 1777712981288
+    },
+    "Evos": {
+      "webpagedata": "进化球员",
+      "shorten": "进化球员",
+      "timestamp": 1777713010994
+    },
+    "Settings": {
+      "webpagedata": "其他设置",
+      "shorten": "其他设置",
+      "timestamp": 1777713034863
+    },
+    "Formation:": {
+      "webpagedata": "阵型：",
+      "shorten": "阵型：",
+      "timestamp": 1777713109572
+    },
+    "Save": {
+      "webpagedata": "保存",
+      "shorten": "保存",
+      "timestamp": 1777713177844
+    },
+    "Change Formation": {
+      "webpagedata": "更换阵型",
+      "shorten": "更换阵型",
+      "timestamp": 1777713217434
     }
   },
   "futbin": {
