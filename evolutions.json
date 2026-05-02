@@ -993,5 +993,25 @@
   "Intercept & Aerial Fortress": {
     "CN": "银拦截&银空霸",
     "timestamp": 1777664411686
+  },
+  "From Distance": {
+    "CN": "远射",
+    "timestamp": 1777684803747
+  },
+  "Pass IQ": {
+    "CN": "传球智商",
+    "timestamp": 1777684832513
+  },
+  "Turbo Strength": {
+    "CN": "力量爆发",
+    "timestamp": 1777684854422
+  },
+  "Creative Playmaker": {
+    "CN": "创意组织核心",
+    "timestamp": 1777684888775
+  },
+  "Speed to Finish": {
+    "CN": "疾速终结",
+    "timestamp": 1777684914058
   }
 }
