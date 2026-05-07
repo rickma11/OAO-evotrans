@@ -912,7 +912,7 @@
   },
   "Jockey+ & Bruiser+": {
     "CN": "金螃蟹步&金肌肉",
-    "timestamp": 1777005289572
+    "timestamp": 1778183889577
   },
   "Intercept+ & Quick Step+": {
     "CN": "金拦截&金火箭",
@@ -1049,5 +1049,9 @@
   "Fullback Takeover": {
     "CN": "边后卫接管",
     "timestamp": 1778102795705
+  },
+  "Lucky Number Seven": {
+    "CN": "幸运数字7",
+    "timestamp": 1778183903075
   }
 }
