@@ -952,7 +952,8 @@
     },
     "Far Reach": {
       "webpagedata": "远距离出击",
-      "shorten": "远距离出击"
+      "shorten": "远扑",
+      "timestamp": 1778924116310
     },
     "Deflector": {
       "webpagedata": "偏转",
@@ -961,6 +962,11 @@
     "Ballcontrol": {
       "webpagedata": "控球",
       "shorten": "控球"
+    },
+    "Far Reach+": {
+      "webpagedata": "远距离出击+",
+      "shorten": "远扑+",
+      "timestamp": 1778924106774
     }
   },
   "futgg": {
