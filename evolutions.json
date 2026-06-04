@@ -1245,5 +1245,73 @@
   "Try Again Tomorrow": {
     "CN": "明天再来",
     "timestamp": 1780560926454
+  },
+  "Afterburner": {
+    "CN": "加力燃烧",
+    "timestamp": 1780564352750
+  },
+  "No Looking Back": {
+    "CN": "一往无前",
+    "timestamp": 1780564369198
+  },
+  "Covering Ground": {
+    "CN": "覆盖全场",
+    "timestamp": 1780564380423
+  },
+  "The Main Event": {
+    "CN": "主角登场",
+    "timestamp": 1780564916406
+  },
+  "Gold Standard": {
+    "CN": "黄金标准",
+    "timestamp": 1780565163302
+  },
+  "One Step Ahead": {
+    "CN": "先人一步",
+    "timestamp": 1780565182870
+  },
+  "Path to Glory": {
+    "CN": "功成名就之路",
+    "timestamp": 1780565200662
+  },
+  "Street Soccer": {
+    "CN": "街头足球",
+    "timestamp": 1780571382318
+  },
+  "El Káiser": {
+    "CN": "凯撒",
+    "timestamp": 1780571443245
+  },
+  "Chasing the Spotlight": {
+    "CN": "追逐聚光灯",
+    "timestamp": 1780571496213
+  },
+  "Five Star Phenom II": {
+    "CN": "五星奇才2",
+    "timestamp": 1780571632318
+  },
+  "Trequartista": {
+    "CN": "九号半",
+    "timestamp": 1780571690133
+  },
+  "The Iron 9": {
+    "CN": "钢铁9号",
+    "timestamp": 1780571719989
+  },
+  "Star Chaser": {
+    "CN": "追星者",
+    "timestamp": 1780571831885
+  },
+  "Pass, Eh": {
+    "CN": "传个球吧",
+    "timestamp": 1780571867565
+  },
+  "Memo's Legacy": {
+    "CN": "Memo 传奇",
+    "timestamp": 1780572174533
+  },
+  "Relentless Rise": {
+    "CN": "不懈崛起",
+    "timestamp": 1780572268917
   }
 }
