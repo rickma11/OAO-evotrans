@@ -184,6 +184,11 @@
       "webpagedata": "右脚",
       "shorten": "右脚",
       "timestamp": 1774271421021
+    },
+    "PlayStyles Lab": {
+      "webpagedata": "球员特技",
+      "shorten": "球员特技",
+      "timestamp": 1780559719950
     }
   },
   "sixStat": {
@@ -1438,6 +1443,16 @@
       "webpagedata": "更换阵型",
       "shorten": "更换阵型",
       "timestamp": 1777713217434
+    },
+    "Roles++": {
+      "webpagedata": "球员角色",
+      "shorten": "球员角色",
+      "timestamp": 1780560859701
+    },
+    "PlayStyles Lab": {
+      "webpagedata": "比赛风格实验室",
+      "shorten": "比赛风格实验室",
+      "timestamp": 1780562314942
     }
   },
   "futbin": {
