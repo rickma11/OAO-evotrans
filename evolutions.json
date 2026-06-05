@@ -1317,5 +1317,21 @@
   "Anfield's Wall": {
     "CN": "安菲尔德铁壁",
     "timestamp": 1780594069110
+  },
+  "Donovan精神": {
+    "CN": "Donovation",
+    "timestamp": 1780680945530
+  },
+  "FoF Pelé I - ST": {
+    "CN": "足球庆典Pelé I - ST",
+    "timestamp": 1780681201088
+  },
+  "FoF Pelé I - RW/LW": {
+    "CN": "足球庆典Pelé I - RW/LW",
+    "timestamp": 1780681215893
+  },
+  "FoF Pelé I - CM": {
+    "CN": "足球庆典Pelé I - CM",
+    "timestamp": 1780681228566
   }
 }
