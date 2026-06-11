@@ -1453,6 +1453,21 @@
       "webpagedata": "比赛风格实验室",
       "shorten": "比赛风格实验室",
       "timestamp": 1780562314942
+    },
+    "Season Pass Evos": {
+      "webpagedata": "通行证进化",
+      "shorten": "通行证进化",
+      "timestamp": 1781174530014
+    },
+    "Premium Season Pass Evos": {
+      "webpagedata": "高级通行证进化",
+      "shorten": "高级通行证进化",
+      "timestamp": 1781174545806
+    },
+    "Reward Evolutions": {
+      "webpagedata": "奖励进化",
+      "shorten": "奖励进化",
+      "timestamp": 1781174567261
     }
   },
   "futbin": {
