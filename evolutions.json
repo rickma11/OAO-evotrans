@@ -1540,19 +1540,23 @@
   },
   "El Bandido": {
     "CN": "暴徒",
-    "timestamp": 1782504503122
+    "timestamp": 1782504503122,
+    "source": "哥伦比亚任务"
   },
   "O Capitão": {
     "CN": "队长",
-    "timestamp": 1782504564554
+    "timestamp": 1782504564554,
+    "source": "巴西任务"
   },
   "The Little Boy from Rosario": {
     "CN": "来自罗萨里奥的小男孩",
-    "timestamp": 1782504604498
+    "timestamp": 1782504604498,
+    "source": "阿根廷任务"
   },
   "Deadball Mastery": {
     "CN": "定位球大师",
-    "timestamp": 1782504696473
+    "timestamp": 1782504696473,
+    "source": "乌拉圭任务"
   },
   "Pitch Protector": {
     "CN": "球场守护者",
@@ -1604,10 +1608,22 @@
   },
   "PhD In Dribbling": {
     "CN": "盘带博士",
-    "timestamp": 1782617106994
+    "timestamp": 1782617106994,
+    "source": "日本任务"
   },
   "Greats of the Game Icon": {
     "CN": "赛场传奇",
-    "timestamp": 1782617760065
+    "timestamp": 1782617760065,
+    "source": "进化装饰"
+  },
+  "GH 4th Low Driven Shot+": {
+    "CN": "荣耀猎手第4金：低射",
+    "timestamp": 1782661057535,
+    "source": "SBC"
+  },
+  "Glory Hunter - Amticipate": {
+    "CN": "荣耀猎手第4金：预判",
+    "timestamp": 1782661057538,
+    "source": "SBC"
   }
 }
