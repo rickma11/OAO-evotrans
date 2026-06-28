@@ -1561,5 +1561,53 @@
   "FoF Pelé II": {
     "CN": "足球庆典Pelé II",
     "timestamp": 1782579842441
+  },
+  "Glory Hunters": {
+    "CN": "荣誉猎手",
+    "timestamp": 1782601556819
+  },
+  "Glory Hunter - Anticipate": {
+    "CN": "荣耀猎手第4金：预判",
+    "timestamp": 1782616953634
+  },
+  "Glory Hunter - Intercept": {
+    "CN": "荣耀猎手第4金：拦截",
+    "timestamp": 1782616986643
+  },
+  "Glory Hunter - Quick Step": {
+    "CN": "荣耀猎手第4金：健步如飞",
+    "timestamp": 1782616996518
+  },
+  "Glory Hunter - Low Driven": {
+    "CN": "荣耀猎手第4金：大力低射",
+    "timestamp": 1782617025768
+  },
+  "Glory Hunter - Incisive": {
+    "CN": "荣耀猎手第4金：切入传球",
+    "timestamp": 1782617044464
+  },
+  "Glory Hunter - Bruiser": {
+    "CN": "荣耀猎手第4金：斗士",
+    "timestamp": 1782617052533
+  },
+  "Glory Hunter - Pinged": {
+    "CN": "荣耀猎手第4金：大力传球",
+    "timestamp": 1782617064358
+  },
+  "Greats of The Game Hero": {
+    "CN": "赛场传奇英雄",
+    "timestamp": 1782617078095
+  },
+  "Build Your Own FUT Birthday": {
+    "CN": "打造您自己的FUT生日球员",
+    "timestamp": 1782617096534
+  },
+  "PhD In Dribbling": {
+    "CN": "盘带博士",
+    "timestamp": 1782617106994
+  },
+  "Greats of the Game Icon": {
+    "CN": "赛场传奇",
+    "timestamp": 1782617760065
   }
 }
