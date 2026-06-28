@@ -1618,12 +1618,20 @@
   },
   "GH 4th Low Driven Shot+": {
     "CN": "荣耀猎手第4金：低射",
-    "timestamp": 1782661057535,
-    "source": "SBC"
+    "timestamp": 1782664291113
   },
   "Glory Hunter - Amticipate": {
     "CN": "荣耀猎手第4金：预判",
-    "timestamp": 1782661057538,
+    "timestamp": 1782664286035
+  },
+  "Defensive Deadline": {
+    "CN": "防守最后期限",
+    "timestamp": 1782666297854,
+    "source": "训练营"
+  },
+  "Net Breaker": {
+    "CN": "破门高手",
+    "timestamp": 1782666898322,
     "source": "SBC"
   }
 }
