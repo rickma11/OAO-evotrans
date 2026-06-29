@@ -1689,7 +1689,8 @@
     },
     "Rewards": {
       "webpagedata": "奖励",
-      "shorten": "奖励"
+      "shorten": "奖励",
+      "timestamp": 1782743384633
     },
     "Cosmetics": {
       "webpagedata": "外观",
@@ -1807,6 +1808,11 @@
       "webpagedata": "挑战任务",
       "shorten": "挑战任务",
       "timestamp": 1774280559135
+    },
+    "Glory Hunters": {
+      "webpagedata": "荣誉猎手",
+      "shorten": "荣誉猎手",
+      "timestamp": 1782748778807
     }
   },
   "easysbc": {
