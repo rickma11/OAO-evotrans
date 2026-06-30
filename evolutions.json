@@ -1654,9 +1654,10 @@
   },
   "GH 4th Anticipate+": {
     "CN": "荣耀猎手第4金：预判",
-    "timestamp": 1782750376461,
+    "timestamp": 1782825503951,
     "source": "追求荣耀任务",
-    "futgg_id": "2225"
+    "futgg_id": "2225",
+    "easysbc_id": "2335"
   },
   "GH 4th Bruiser+": {
     "CN": "荣耀猎手第4金：斗士",
@@ -1891,5 +1892,15 @@
     "CN": "凯撒",
     "timestamp": 1782795988366,
     "source": "队长的头槌任务"
+  },
+  "Fresh Legs": {
+    "CN": "替补奇兵",
+    "timestamp": 1782838946808,
+    "source": "进化"
+  },
+  "Chasing Greatness": {
+    "CN": "成就伟业",
+    "timestamp": 1782839006861,
+    "source": "进化"
   }
 }
