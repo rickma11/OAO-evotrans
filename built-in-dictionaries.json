@@ -189,6 +189,11 @@
       "webpagedata": "球员特技",
       "shorten": "球员特技",
       "timestamp": 1780559719950
+    },
+    "Glory Hunters": {
+      "webpagedata": "荣耀猎手",
+      "shorten": "荣耀猎手",
+      "timestamp": 1782924938906
     }
   },
   "sixStat": {
@@ -972,6 +977,30 @@
       "webpagedata": "远距离出击+",
       "shorten": "远扑+",
       "timestamp": 1778924106774
+    },
+    "1v1 Close Down": {
+      "webpagedata": "1对1紧逼",
+      "shorten": "1对1紧逼",
+      "timestamp": 1782919674941
+    },
+    "1v1 Close Down+": {
+      "webpagedata": "1对1紧逼+",
+      "shorten": "1对1紧逼",
+      "timestamp": 1782919900197
+    },
+    "Cross Claimer+": {
+      "webpagedata": "传中没收者+",
+      "shorten": "传中没收者+",
+      "timestamp": 1782919694940
+    },
+    "Deflector+": {
+      "webpagedata": "偏转+",
+      "shorten": "偏转+",
+      "timestamp": 1782919734170
+    },
+    "Far Throw+": {
+      "webpagedata": "远距离抛球+",
+      "timestamp": 1782919796540
     }
   },
   "futgg": {
@@ -1468,6 +1497,31 @@
       "webpagedata": "奖励进化",
       "shorten": "奖励进化",
       "timestamp": 1781174567261
+    },
+    "Squad Improvements": {
+      "webpagedata": "阵容提升",
+      "shorten": "阵容提升",
+      "timestamp": 1782922514135
+    },
+    "Statistics": {
+      "webpagedata": "数据统计",
+      "shorten": "数据统计",
+      "timestamp": 1782922540547
+    },
+    "Home": {
+      "webpagedata": "主页",
+      "shorten": "主页",
+      "timestamp": 1782922558202
+    },
+    "Sync Active Squad": {
+      "webpagedata": "同步实时数据",
+      "shorten": "同步实时数据",
+      "timestamp": 1782922578809
+    },
+    "Sync to Evo Lab": {
+      "webpagedata": "同步到进化实验室",
+      "shorten": "同步到进化实验室",
+      "timestamp": 1782923097215
     }
   },
   "futbin": {
