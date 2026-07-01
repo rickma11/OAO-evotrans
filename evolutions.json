@@ -1,89 +1,111 @@
-{
-  "4 Star Weak Foot": {
+[
+  {
+    "name": "4 Star Weak Foot",
     "CN": "四星逆足",
     "timestamp": 1782750208746
   },
-  "The Party is Inside": {
+  {
+    "name": "The Party is Inside",
     "CN": "中场派对",
     "timestamp": 1782750208746
   },
-  "Birthday Fullback": {
+  {
+    "name": "Birthday Fullback",
     "CN": "生日边后卫",
     "timestamp": 1782750208746
   },
-  "[OBJ] Jockey+": {
+  {
+    "name": "[OBJ] Jockey+",
     "CN": "【任务】跟防+",
     "timestamp": 1782750208746
   },
-  "[OBJ] Gamechanger+": {
+  {
+    "name": "[OBJ] Gamechanger+",
     "CN": "【任务】颠覆者+",
     "timestamp": 1782750208746
   },
-  "[OBJ] Low Driven Shot+": {
+  {
+    "name": "[OBJ] Low Driven Shot+",
     "CN": "【任务】大力低射+",
     "timestamp": 1782750208746
   },
-  "PlayStyle+ Bakery": {
+  {
+    "name": "PlayStyle+ Bakery",
     "CN": "PS+烘焙",
     "timestamp": 1782750208746
   },
-  "Cake & Rash": {
+  {
+    "name": "Cake & Rash",
     "CN": "蛋糕冲动",
     "timestamp": 1782750208746
   },
-  "CB Level up": {
+  {
+    "name": "CB Level up",
     "CN": "中后卫升级",
     "timestamp": 1782750208746
   },
-  "Relentless+": {
+  {
+    "name": "Relentless+",
     "CN": "坚持不懈+",
     "timestamp": 1782750208746
   },
-  "Enforcer+": {
+  {
+    "name": "Enforcer+",
     "CN": "执行者+",
     "timestamp": 1782750208746
   },
-  "Long Throw+": {
+  {
+    "name": "Long Throw+",
     "CN": "远距离界外球+",
     "timestamp": 1782750208746
   },
-  "Quick Step+": {
+  {
+    "name": "Quick Step+",
     "CN": "健步如飞+",
     "timestamp": 1782750208746
   },
-  "Jockey+": {
+  {
+    "name": "Jockey+",
     "CN": "跟防+",
     "timestamp": 1782750208746
   },
-  "Bruiser+": {
+  {
+    "name": "Bruiser+",
     "CN": "斗士+",
     "timestamp": 1782750208746
   },
-  "Slide Tackle+": {
+  {
+    "name": "Slide Tackle+",
     "CN": "滑铲+",
     "timestamp": 1782750208746
   },
-  "Block+": {
+  {
+    "name": "Block+",
     "CN": "封堵+",
     "timestamp": 1782750208746
   },
-  "Intercept+": {
+  {
+    "name": "Intercept+",
     "CN": "拦截+",
     "timestamp": 1782750208746
   },
-  "Anticipate+": {
+  {
+    "name": "Anticipate+",
     "CN": "预判+",
     "timestamp": 1782750208746
   },
-  "Aerial Fortress+": {
+  {
+    "name": "Aerial Fortress+",
     "CN": "空中堡垒+",
     "timestamp": 1782750208746
   },
-  "Gamechanger+": {
+  {
+    "name": "Gamechanger+",
     "CN": "颠覆者+",
     "timestamp": 1782750208746
   },
-  "Finesse Shot+": {
+  {
+    "name": "Finesse Shot+",
     "CN": "精准射门+",
     "timestamp": 1782747903096,
     "source": "加纳/摩洛哥任务",
@@ -91,1781 +113,2203 @@
     "futgg_id": "2207",
     "easysbc_id": "2255"
   },
-  "First Touch+": {
+  {
+    "name": "First Touch+",
     "CN": "第一脚触球+",
     "timestamp": 1782750208746
   },
-  "Dead Ball+": {
+  {
+    "name": "Dead Ball+",
     "CN": "死球+",
     "timestamp": 1782750208746
   },
-  "Chip Shot+": {
+  {
+    "name": "Chip Shot+",
     "CN": "吊射+",
     "timestamp": 1782750208746
   },
-  "Acrobatic+": {
+  {
+    "name": "Acrobatic+",
     "CN": "杂耍+",
     "timestamp": 1782750208746
   },
-  "Incisive Pass+": {
+  {
+    "name": "Incisive Pass+",
     "CN": "切入传球+",
     "timestamp": 1782750208746
   },
-  "Precision Header+": {
+  {
+    "name": "Precision Header+",
     "CN": "精准头球+",
     "timestamp": 1782750208746
   },
-  "Low Driven Shot+": {
+  {
+    "name": "Low Driven Shot+",
     "CN": "大力低射+",
     "timestamp": 1782750208747
   },
-  "Power Shot+": {
+  {
+    "name": "Power Shot+",
     "CN": "大力射门+",
     "timestamp": 1782750208747
   },
-  "Trickster+": {
+  {
+    "name": "Trickster+",
     "CN": "诡术师+",
     "timestamp": 1782750208747
   },
-  "Long Ball Pass+": {
+  {
+    "name": "Long Ball Pass+",
     "CN": "远距离传球+",
     "timestamp": 1782750208747
   },
-  "Technical+": {
+  {
+    "name": "Technical+",
     "CN": "技术+",
     "timestamp": 1782750208747
   },
-  "Inventive+": {
+  {
+    "name": "Inventive+",
     "CN": "别出心裁+",
     "timestamp": 1782750208747
   },
-  "Whipped Pass+": {
+  {
+    "name": "Whipped Pass+",
     "CN": "快速传球+",
     "timestamp": 1782750208747
   },
-  "Press Proven+": {
+  {
+    "name": "Press Proven+",
     "CN": "紧逼好手+",
     "timestamp": 1782750208747
   },
-  "Pinged Pass+": {
+  {
+    "name": "Pinged Pass+",
     "CN": "大力传球+",
     "timestamp": 1782750208747
   },
-  "Rapid+": {
+  {
+    "name": "Rapid+",
     "CN": "灵动迅捷+",
     "timestamp": 1782750208747
   },
-  "Trickster Boost": {
+  {
+    "name": "Trickster Boost",
     "CN": "诡术师强化",
     "timestamp": 1782750208747
   },
-  "Thunder Strike": {
+  {
+    "name": "Thunder Strike",
     "CN": "雷霆一击",
     "timestamp": 1782750208747
   },
-  "Birthday Warmup": {
+  {
+    "name": "Birthday Warmup",
     "CN": "生日热身",
     "timestamp": 1782750208747
   },
-  "Re-Enforced": {
+  {
+    "name": "Re-Enforced",
     "CN": "重新执行",
     "timestamp": 1782750208747
   },
-  "Go Long": {
+  {
+    "name": "Go Long",
     "CN": "目光长远",
     "timestamp": 1782750208747
   },
-  "Clinical Creator": {
+  {
+    "name": "Clinical Creator",
     "CN": "凌厉创造者",
     "timestamp": 1782750208747
   },
-  "Set Menu": {
+  {
+    "name": "Set Menu",
     "CN": "套餐菜单",
     "timestamp": 1782750208747
   },
-  "Bench Boost": {
+  {
+    "name": "Bench Boost",
     "CN": "替补强化",
     "timestamp": 1782750208747
   },
-  "Max Skills": {
+  {
+    "name": "Max Skills",
     "CN": "巅峰技巧",
     "timestamp": 1782750208747
   },
-  "Bronze Glow Up": {
+  {
+    "name": "Bronze Glow Up",
     "CN": "青铜球员突飞猛进",
     "timestamp": 1782750208747
   },
-  "Fantasy Staple": {
+  {
+    "name": "Fantasy Staple",
     "CN": "梦幻精选",
     "timestamp": 1782750208747
   },
-  "Fantasy FC Path": {
+  {
+    "name": "Fantasy FC Path",
     "CN": "梦幻FC征程",
     "timestamp": 1782750208747
   },
-  "Midfield Dynamo": {
+  {
+    "name": "Midfield Dynamo",
     "CN": "中场发动机",
     "timestamp": 1782750208747
   },
-  "Fantasy Captain ICON": {
+  {
+    "name": "Fantasy Captain ICON",
     "CN": "梦幻队长超级巨星",
     "timestamp": 1773305893793
   },
-  "Calm & Collected": {
+  {
+    "name": "Calm & Collected",
     "CN": "冷静沉稳",
     "timestamp": 1782750208747
   },
-  "Going on an Adventure": {
+  {
+    "name": "Going on an Adventure",
     "CN": "展开冒险",
     "timestamp": 1782750208747
   },
-  "Running Workout": {
+  {
+    "name": "Running Workout",
     "CN": "跑动训练",
     "timestamp": 1782750208747
   },
-  "Mindset Training": {
+  {
+    "name": "Mindset Training",
     "CN": "心态训练",
     "timestamp": 1782750208747
   },
-  "Refined Flank Runner": {
+  {
+    "name": "Refined Flank Runner",
     "CN": "雅致侧翼跑者",
     "timestamp": 1782750208747
   },
-  "Just Shoot": {
+  {
+    "name": "Just Shoot",
     "CN": "果断射门",
     "timestamp": 1782750208747
   },
-  "Iconic Attacker Glow Up": {
+  {
+    "name": "Iconic Attacker Glow Up",
     "CN": "超级巨星级进攻球员突飞猛进",
     "timestamp": 1782750208747
   },
-  "Iconic Defender Glow Up": {
+  {
+    "name": "Iconic Defender Glow Up",
     "CN": "超级巨星级防守球员突飞猛进",
     "timestamp": 1782750208747
   },
-  "Tiki Taka+ Icon": {
+  {
+    "name": "Tiki Taka+ Icon",
     "CN": "Tiki Taka+（适用于任意超级巨星）",
     "timestamp": 1782750208747
   },
-  "CAM & Roles++": {
+  {
+    "name": "CAM & Roles++",
     "CN": "前腰位置和角色++（适用于任意超级巨星）",
     "timestamp": 1782750208747
   },
-  "Fantasy FC": {
+  {
+    "name": "Fantasy FC",
     "CN": "梦幻FC",
     "timestamp": 1782750208747
   },
-  "New Spark": {
+  {
+    "name": "New Spark",
     "CN": "新星之火",
     "timestamp": 1782750208747
   },
-  "Time Warp Cosmetic": {
+  {
+    "name": "Time Warp Cosmetic",
     "CN": "时间扭曲（皮肤）",
     "timestamp": 1782750208747
   },
-  "In All Areas": {
+  {
+    "name": "In All Areas",
     "CN": "掌控全域",
     "timestamp": 1782750208747
   },
-  "World Tour Cosmetic": {
+  {
+    "name": "World Tour Cosmetic",
     "CN": "世界巡回（皮肤）",
     "timestamp": 1782750208747
   },
-  "Bulking Season": {
+  {
+    "name": "Bulking Season",
     "CN": "增肌期",
     "timestamp": 1782750208747
   },
-  "Relentless Shield": {
+  {
+    "name": "Relentless Shield",
     "CN": "不屈之盾",
     "timestamp": 1782750208747
   },
-  "Intercept Engine": {
+  {
+    "name": "Intercept Engine",
     "CN": "拦截引擎",
     "timestamp": 1782750208747
   },
-  "Versatile Striker": {
+  {
+    "name": "Versatile Striker",
     "CN": "全能前锋",
     "timestamp": 1782750208747
   },
-  "CAM Command": {
+  {
+    "name": "CAM Command",
     "CN": "前腰指令",
     "timestamp": 1782750208747
   },
-  "Wall in the Back": {
+  {
+    "name": "Wall in the Back",
     "CN": "后防铁壁",
     "timestamp": 1782750208747
   },
-  "Burst Boost": {
+  {
+    "name": "Burst Boost",
     "CN": "爆发加速",
     "timestamp": 1782750208747
   },
-  "Dribble Mastery": {
+  {
+    "name": "Dribble Mastery",
     "CN": "盘带大师",
     "timestamp": 1782750208747
   },
-  "Sharpshooter": {
+  {
+    "name": "Sharpshooter",
     "CN": "神射手",
     "timestamp": 1782750208747
   },
-  "Agile Maestro": {
+  {
+    "name": "Agile Maestro",
     "CN": "灵动大师",
     "timestamp": 1782750208747
   },
-  "Precision Passer": {
+  {
+    "name": "Precision Passer",
     "CN": "精准传球手",
     "timestamp": 1782750208747
   },
-  "Instant Impact": {
+  {
+    "name": "Instant Impact",
     "CN": "瞬间冲击",
     "timestamp": 1782750208747
   },
-  "Passing Pro": {
+  {
+    "name": "Passing Pro",
     "CN": "传球专家",
     "timestamp": 1782750208747
   },
-  "Climb The Ladder": {
+  {
+    "name": "Climb The Ladder",
     "CN": "攀升阶梯",
     "timestamp": 1782750208747
   },
-  "Inside Edge": {
+  {
+    "name": "Inside Edge",
     "CN": "内切利刃",
     "timestamp": 1782750208747
   },
-  "The Wizard": {
+  {
+    "name": "The Wizard",
     "CN": "巫师",
     "timestamp": 1782750208747
   },
-  "Fellaini The Big Fella 2": {
+  {
+    "name": "Fellaini The Big Fella 2",
     "CN": "大块头2",
     "timestamp": 1782750208747
   },
-  "Star in Motion": {
+  {
+    "name": "Star in Motion",
     "CN": "灵动之星",
     "timestamp": 1782750208747
   },
-  "Club Member Reward": {
+  {
+    "name": "Club Member Reward",
     "CN": "俱乐部会员奖励",
     "timestamp": 1782750208747
   },
-  "Prepare for the party": {
+  {
+    "name": "Prepare for the party",
     "CN": "准备派对",
     "timestamp": 1773106872451
   },
-  "5 Star Factory": {
+  {
+    "name": "5 Star Factory",
     "CN": "5星级工厂",
     "timestamp": 1773107844958
   },
-  "Candles & Cramps": {
+  {
+    "name": "Candles & Cramps",
     "CN": "蜡烛与抽筋",
     "timestamp": 1773192056821
   },
-  "Pressure? What Pressure": {
+  {
+    "name": "Pressure? What Pressure",
     "CN": "压力?什么压力?",
     "timestamp": 1773193134218
   },
-  "Winger Transformation": {
+  {
+    "name": "Winger Transformation",
     "CN": "边锋转型",
     "timestamp": 1773273269589
   },
-  "Dish 'em Out": {
+  {
+    "name": "Dish 'em Out",
     "CN": "秒传连连",
     "timestamp": 1773305185001
   },
-  "Make Your Idol - Attacker 1": {
+  {
+    "name": "Make Your Idol - Attacker 1",
     "CN": "塑造偶像一进攻球员1",
     "timestamp": 1773305401498
   },
-  "Make Your Idol - Midfielder 1": {
+  {
+    "name": "Make Your Idol - Midfielder 1",
     "CN": "塑造偶像一中场球员1",
     "timestamp": 1773305397838
   },
-  "Make Your Idol - Defender 1": {
+  {
+    "name": "Make Your Idol - Defender 1",
     "CN": "塑造偶像一防守球员1",
     "timestamp": 1773305394208
   },
-  "Make Your Idol - Defender 2": {
+  {
+    "name": "Make Your Idol - Defender 2",
     "CN": "塑造偶像一防守球员2",
     "timestamp": 1773305390606
   },
-  "Make Your Idol - Defender 3": {
+  {
+    "name": "Make Your Idol - Defender 3",
     "CN": "塑造偶像一防守球员3",
     "timestamp": 1773305385988
   },
-  "Make Your Idol - Attacker 2": {
+  {
+    "name": "Make Your Idol - Attacker 2",
     "CN": "塑造偶像一进攻球员2",
     "timestamp": 1773305381978
   },
-  "Make Your Idol - Attacker 3": {
+  {
+    "name": "Make Your Idol - Attacker 3",
     "CN": "塑造偶像一进攻球员3",
     "timestamp": 1773305377116
   },
-  "Make Your Idol - Midfielder 3": {
+  {
+    "name": "Make Your Idol - Midfielder 3",
     "CN": "塑造偶像一中场球员3",
     "timestamp": 1773305461751
   },
-  "Make Your Idol - Midfielder 2": {
+  {
+    "name": "Make Your Idol - Midfielder 2",
     "CN": "塑造偶像一中场球员2",
     "timestamp": 1773305470038
   },
-  "Make Your Idol - Starter": {
+  {
+    "name": "Make Your Idol - Starter",
     "CN": "塑造偶像一启程",
     "timestamp": 1773305499775
   },
-  "Architect of Play": {
+  {
+    "name": "Architect of Play",
     "CN": "组织建筑师",
     "timestamp": 1773305556414
   },
-  "Goal Machine": {
+  {
+    "name": "Goal Machine",
     "CN": "进球机器",
     "timestamp": 1773305594780
   },
-  "Sweep & Supply": {
+  {
+    "name": "Sweep & Supply",
     "CN": "清扫与输送",
     "timestamp": 1773305679509
   },
-  "Roadrunner": {
+  {
+    "name": "Roadrunner",
     "CN": "走鹃",
     "timestamp": 1773305756384
   },
-  "Locked & Loaded": {
+  {
+    "name": "Locked & Loaded",
     "CN": "严阵以待",
     "timestamp": 1773305808940
   },
-  "Up to Speed": {
+  {
+    "name": "Up to Speed",
     "CN": "跟上节奏",
     "timestamp": 1773305844843
   },
-  "Make Your ldol - Tiki Taka+": {
+  {
+    "name": "Make Your ldol - Tiki Taka+",
     "CN": "塑造偶像一Tiki Taka+",
     "timestamp": 1773306312231
   },
-  "Make Your Idol - Incisive Pass+": {
+  {
+    "name": "Make Your Idol - Incisive Pass+",
     "CN": "塑造偶像一切入传球+",
     "timestamp": 1773306341603
   },
-  "Make Your ldol - Low Driven+": {
+  {
+    "name": "Make Your ldol - Low Driven+",
     "CN": "塑造偶像一大力低射+",
     "timestamp": 1773306362824
   },
-  "Make Your ldol - Technical+": {
+  {
+    "name": "Make Your ldol - Technical+",
     "CN": "塑造偶像一技术+",
     "timestamp": 1773306378103
   },
-  "Make Your ldol - Jockey+": {
+  {
+    "name": "Make Your ldol - Jockey+",
     "CN": "塑造偶像一跟防+",
     "timestamp": 1773306391772
   },
-  "Make Your ldol - Intercept+": {
+  {
+    "name": "Make Your ldol - Intercept+",
     "CN": "塑造偶像一拦截+",
     "timestamp": 1773306411340
   },
-  "Make Your Idol - Finesse Shot+": {
+  {
+    "name": "Make Your Idol - Finesse Shot+",
     "CN": "塑造偶像一精准射门+",
     "timestamp": 1773306446562
   },
-  "Make Your ldol - First Touch+": {
+  {
+    "name": "Make Your ldol - First Touch+",
     "CN": "塑造偶像一第一脚触球+",
     "timestamp": 1773306466629
   },
-  "Make Your ldol - Pinged Pass+": {
+  {
+    "name": "Make Your ldol - Pinged Pass+",
     "CN": "塑造偶像一大力传球+",
     "timestamp": 1773306485528
   },
-  "Make Your ldol - Rapid+": {
+  {
+    "name": "Make Your ldol - Rapid+",
     "CN": "塑造偶像一灵动迅捷+",
     "timestamp": 1773306504497
   },
-  "Make Your Idol - Quick Step+": {
+  {
+    "name": "Make Your Idol - Quick Step+",
     "CN": "塑造偶像一健步如飞+",
     "timestamp": 1773306526834
   },
-  "Make Your Idol - Anticipate+": {
+  {
+    "name": "Make Your Idol - Anticipate+",
     "CN": "塑造偶像一预判+",
     "timestamp": 1773306563774
   },
-  "Season Ladder Excellence": {
+  {
+    "name": "Season Ladder Excellence",
     "CN": "赛季天梯卓越",
     "timestamp": 1773307584396
   },
-  "Make Your Idol - Intercept+": {
+  {
+    "name": "Make Your Idol - Intercept+",
     "CN": "塑造偶像一拦截+",
     "timestamp": 1773318569357
   },
-  "Make Your Idol - Jockey+": {
+  {
+    "name": "Make Your Idol - Jockey+",
     "CN": "塑造偶像一跟防+",
     "timestamp": 1773318598812
   },
-  "Make Your Idol - Technical+": {
+  {
+    "name": "Make Your Idol - Technical+",
     "CN": "塑造偶像一技术+",
     "timestamp": 1773318609462
   },
-  "Make Your Idol - Low Driven+": {
+  {
+    "name": "Make Your Idol - Low Driven+",
     "CN": "塑造偶像一大力低射+",
     "timestamp": 1773318623353
   },
-  "Make Your Idol - Tiki Taka+": {
+  {
+    "name": "Make Your Idol - Tiki Taka+",
     "CN": "塑造偶像一Tiki Taka+",
     "timestamp": 1773318898826
   },
-  "5 Star Skill Moves & Weak Foot Upgrade": {
+  {
+    "name": "5 Star Skill Moves & Weak Foot Upgrade",
     "CN": "5星级花式动作和逆足升级",
     "timestamp": 1773319094264
   },
-  "Tiki Taka+ & Low Driven Shot+": {
+  {
+    "name": "Tiki Taka+ & Low Driven Shot+",
     "CN": "TikiTaka+和大力低射+",
     "timestamp": 1773319114439
   },
-  "Cake Catcher": {
+  {
+    "name": "Cake Catcher",
     "CN": "蛋糕捕手",
     "timestamp": 1773351705341
   },
-  "5 Star Weak Foot Upgrade": {
+  {
+    "name": "5 Star Weak Foot Upgrade",
     "CN": "五星逆足升级",
     "timestamp": 1773407620435
   },
-  "5 Star Skill Moves Upgrade": {
+  {
+    "name": "5 Star Skill Moves Upgrade",
     "CN": "五星花式升级",
     "timestamp": 1773407635609
   },
-  "Make Your Idol - First Touch+": {
+  {
+    "name": "Make Your Idol - First Touch+",
     "CN": "塑造偶像一第一脚触球+",
     "timestamp": 1773407673976
   },
-  "Make Your Idol - Pinged Pass+": {
+  {
+    "name": "Make Your Idol - Pinged Pass+",
     "CN": "塑造偶像一大力传球+",
     "timestamp": 1773407709794
   },
-  "Make Your Idol - Rapid+": {
+  {
+    "name": "Make Your Idol - Rapid+",
     "CN": "塑造偶像一灵动迅捷+",
     "timestamp": 1773407764101
   },
-  "Old School Midfielder": {
+  {
+    "name": "Old School Midfielder",
     "CN": "传统中场球员",
     "timestamp": 1773433507996
   },
-  "Birthday Bonito": {
+  {
+    "name": "Birthday Bonito",
     "CN": "生日美丽足球",
     "timestamp": 1773433521890
   },
-  "5 Star Skill Moves": {
+  {
+    "name": "5 Star Skill Moves",
     "CN": "五星花式动作",
     "timestamp": 1773433923476
   },
-  "Brilliant Dribbler": {
+  {
+    "name": "Brilliant Dribbler",
     "CN": "杰出盘带者",
     "timestamp": 1773525893285
   },
-  "FUT Birthday Retro 20": {
+  {
+    "name": "FUT Birthday Retro 20",
     "CN": "FUT生日复古20卡面",
     "timestamp": 1773525915618
   },
-  "FUT Birthday Retro 19": {
+  {
+    "name": "FUT Birthday Retro 19",
     "CN": "FUT生日复古19卡面",
     "timestamp": 1773525938443
   },
-  "FUT Birthday Retro 18": {
+  {
+    "name": "FUT Birthday Retro 18",
     "CN": "FUT生日复古18卡面",
     "timestamp": 1773525950525
   },
-  "Turbocharged": {
+  {
+    "name": "Turbocharged",
     "CN": "涡轮增压",
     "timestamp": 1773561524762
   },
-  "Birthday Brunch": {
+  {
+    "name": "Birthday Brunch",
     "CN": "生日早午餐",
     "timestamp": 1773603134496
   },
-  "Party in the Middle": {
+  {
+    "name": "Party in the Middle",
     "CN": "中场派对",
     "timestamp": 1773690356907
   },
-  "5 Stars Weak Foot Upgrade": {
+  {
+    "name": "5 Stars Weak Foot Upgrade",
     "CN": "五星逆足提升",
     "timestamp": 1773709852863
   },
-  "Fly Fishing": {
+  {
+    "name": "Fly Fishing",
     "CN": "飞钓",
     "timestamp": 1773717103539
   },
-  "UCL Specialist": {
+  {
+    "name": "UCL Specialist",
     "CN": "UCL专家",
     "timestamp": 1773783447045
   },
-  "Low Driven+": {
+  {
+    "name": "Low Driven+",
     "CN": "大力低射+",
     "timestamp": 1773805008684
   },
-  "Quick Step +": {
+  {
+    "name": "Quick Step +",
     "CN": "健步如飞+",
     "timestamp": 1773805027584
   },
-  "5 Star Weak Foot Upgrades": {
+  {
+    "name": "5 Star Weak Foot Upgrades",
     "CN": "五星逆足升级",
     "timestamp": 1773805058770
   },
-  "5 Star Skill Moves and Weak Foot Upgrade": {
+  {
+    "name": "5 Star Skill Moves and Weak Foot Upgrade",
     "CN": "5星级花式动作和逆足升级",
     "timestamp": 1773805083543
   },
-  "Tiki Taka+ and Low Driven+": {
+  {
+    "name": "Tiki Taka+ and Low Driven+",
     "CN": "TikiTaka+和大力低射+",
     "timestamp": 1773805106902
   },
-  "Party at the Back": {
+  {
+    "name": "Party at the Back",
     "CN": "后场派对",
     "timestamp": 1773882522263
   },
-  "Party Exit": {
+  {
+    "name": "Party Exit",
     "CN": "派对散场",
     "timestamp": 1773964594899
   },
-  "National Captain": {
+  {
+    "name": "National Captain",
     "CN": "国家队长",
     "timestamp": 1774044625691
   },
-  "National Captain: Final Touch": {
+  {
+    "name": "National Captain: Final Touch",
     "CN": "国家队长: 画龙点睛",
     "timestamp": 1774044654793
   },
-  "5 Star Factory 2": {
+  {
+    "name": "5 Star Factory 2",
     "CN": "5星级工厂2",
     "timestamp": 1774044702558
   },
-  "Euro Minitrip": {
+  {
+    "name": "Euro Minitrip",
     "CN": "欧洲短途旅行",
     "timestamp": 1774044723667
   },
-  "South American Stars": {
+  {
+    "name": "South American Stars",
     "CN": "南美明星",
     "timestamp": 1774044738272
   },
-  "Euro Trio": {
+  {
+    "name": "Euro Trio",
     "CN": "欧洲三巨头",
     "timestamp": 1774044779695
   },
-  "Blonde Angel": {
+  {
+    "name": "Blonde Angel",
     "CN": "金发天使",
     "timestamp": 1774091706537
   },
-  "CAM Provisions": {
+  {
+    "name": "CAM Provisions",
     "CN": "前腰补给",
     "timestamp": 1774091771707
   },
-  "CDM Provisions": {
+  {
+    "name": "CDM Provisions",
     "CN": "后腰补给",
     "timestamp": 1774091817662
   },
-  "Guardian of the Line": {
+  {
+    "name": "Guardian of the Line",
     "CN": "防线守护者",
     "timestamp": 1774091965497
   },
-  "High-Speed Action": {
+  {
+    "name": "High-Speed Action",
     "CN": "高速行动",
     "timestamp": 1774131053798
   },
-  "Build your own FUT Birthday": {
+  {
+    "name": "Build your own FUT Birthday",
     "CN": "打造您自己的FUT生日球员",
     "timestamp": 1774131099145
   },
-  "FOF: Answer the Call": {
+  {
+    "name": "FOF: Answer the Call",
     "CN": "响应号召",
     "timestamp": 1774131114194
   },
-  "O Maestro da Copa": {
+  {
+    "name": "O Maestro da Copa",
     "CN": "杯赛大师",
     "timestamp": 1774203017919
   },
-  "Birthday Fullback [Store]": {
+  {
+    "name": "Birthday Fullback [Store]",
     "CN": "生日边后卫【商城包】",
     "timestamp": 1774203093572
   },
-  "Cake & Rash [Store]": {
+  {
+    "name": "Cake & Rash [Store]",
     "CN": "蛋糕冲动【商城包】",
     "timestamp": 1774203146342
   },
-  "5 Stars Skill Moves Upgrade": {
+  {
+    "name": "5 Stars Skill Moves Upgrade",
     "CN": "五星花式升级",
     "timestamp": 1774357079696
   },
-  "5 Stars Skill Moves & Weak Foot Upgrade": {
+  {
+    "name": "5 Stars Skill Moves & Weak Foot Upgrade",
     "CN": "5星级花式动作和逆足升级",
     "timestamp": 1774357097197
   },
-  "FOF Answer The Call": {
+  {
+    "name": "FOF Answer The Call",
     "CN": "响应号召",
     "timestamp": 1774359287308
   },
-  "Over the Top": {
+  {
+    "name": "Over the Top",
     "CN": "石破天惊",
     "timestamp": 1774401040517
   },
-  "Make Your Idol - Finesse+": {
+  {
+    "name": "Make Your Idol - Finesse+",
     "CN": "塑造偶像一精准射门+",
     "timestamp": 1774408545461
   },
-  "Top Scorer": {
+  {
+    "name": "Top Scorer",
     "CN": "王牌得分手",
     "timestamp": 1774482308559
   },
-  "Net Guardian": {
+  {
+    "name": "Net Guardian",
     "CN": "球门守护者",
     "timestamp": 1774574909554
   },
-  "Dutch Decider": {
+  {
+    "name": "Dutch Decider",
     "CN": "荷兰决胜者",
     "timestamp": 1774646572456
   },
-  "The Bullet Man": {
+  {
+    "name": "The Bullet Man",
     "CN": "子弹侠",
     "timestamp": 1774646584923
   },
-  "Dropping Deep": {
+  {
+    "name": "Dropping Deep",
     "CN": "深度回撤",
     "timestamp": 1774746862149
   },
-  "Hat Trick Delight": {
+  {
+    "name": "Hat Trick Delight",
     "CN": "帽子戏法狂欢",
     "timestamp": 1774829113160
   },
-  "Muscle Up": {
+  {
+    "name": "Muscle Up",
     "CN": "力量增强",
     "timestamp": 1774915549578
   },
-  "Momentum Shift": {
+  {
+    "name": "Momentum Shift",
     "CN": "动力转移",
     "timestamp": 1774915558344
   },
-  "Supersonic Strike": {
+  {
+    "name": "Supersonic Strike",
     "CN": "超音速攻势",
     "timestamp": 1774990582776
   },
-  "Welsh Wonder Strike": {
+  {
+    "name": "Welsh Wonder Strike",
     "CN": "威尔士奇迹一击",
     "timestamp": 1775088357389
   },
-  "Battle Till The End": {
+  {
+    "name": "Battle Till The End",
     "CN": "战斗到底",
     "timestamp": 1775184698086
   },
-  "Two Way Player I": {
+  {
+    "name": "Two Way Player I",
     "CN": "两用球员1",
     "timestamp": 1775250918580
   },
-  "Empress of the Box": {
+  {
+    "name": "Empress of the Box",
     "CN": "禁区女皇",
     "timestamp": 1775250931801
   },
-  "Two Way Player II": {
+  {
+    "name": "Two Way Player II",
     "CN": "两用球员2",
     "timestamp": 1775251236861
   },
-  "Fancy Footwork": {
+  {
+    "name": "Fancy Footwork",
     "CN": "华丽步伐",
     "timestamp": 1775265895070
   },
-  "Quad Threat": {
+  {
+    "name": "Quad Threat",
     "CN": "四重威胁",
     "timestamp": 1775265919478
   },
-  "All-Around Impact": {
+  {
+    "name": "All-Around Impact",
     "CN": "全面影响力",
     "timestamp": 1775265969935
   },
-  "Passing Pulse": {
+  {
+    "name": "Passing Pulse",
     "CN": "传递脉搏",
     "timestamp": 1775356514895
   },
-  "El Tiburón": {
+  {
+    "name": "El Tiburón",
     "CN": "鲨鱼",
     "timestamp": 1775356546603
   },
-  "The Very Best": {
+  {
+    "name": "The Very Best",
     "CN": "出类拔萃",
     "timestamp": 1775418337019
   },
-  "Blazing Winger": {
+  {
+    "name": "Blazing Winger",
     "CN": "疾速边锋",
     "timestamp": 1775520551785
   },
-  "Lisbon Lifeline": {
+  {
+    "name": "Lisbon Lifeline",
     "CN": "里斯本救赎",
     "timestamp": 1775596585653
   },
-  "Red Bull - Physical": {
+  {
+    "name": "Red Bull - Physical",
     "CN": "Red Bull - 体格",
     "timestamp": 1775637131633
   },
-  "Red Bull - Shooting": {
+  {
+    "name": "Red Bull - Shooting",
     "CN": "Red Bull - 射门",
     "timestamp": 1775637171627
   },
-  "Red Bull - Pace": {
+  {
+    "name": "Red Bull - Pace",
     "CN": "Red Bull - 速度",
     "timestamp": 1775637202682
   },
-  "Conductor’s Codex": {
+  {
+    "name": "Conductor’s Codex",
     "CN": "指挥家法则",
     "timestamp": 1775714604939
   },
-  "Crownbreaker Boost": {
+  {
+    "name": "Crownbreaker Boost",
     "CN": "偷冠球员提升道具",
     "timestamp": 1775723901872
   },
-  "Calm Under Pressure": {
+  {
+    "name": "Calm Under Pressure",
     "CN": "冷静面对压力",
     "timestamp": 1775754694062
   },
-  "Passing Technician": {
+  {
+    "name": "Passing Technician",
     "CN": "传球谋主",
     "timestamp": 1775870134234
   },
-  "Il Capitano": {
+  {
+    "name": "Il Capitano",
     "CN": "队长",
     "timestamp": 1775870186284
   },
-  "Into the Spotlight": {
+  {
+    "name": "Into the Spotlight",
     "CN": "万众瞩目",
     "timestamp": 1775870197533
   },
-  "Pace & Place": {
+  {
+    "name": "Pace & Place",
     "CN": "速度与制导",
     "timestamp": 1775881462257
   },
-  "Drifting Away": {
+  {
+    "name": "Drifting Away",
     "CN": "挪移而去",
     "timestamp": 1775881491231
   },
-  "whip it in": {
+  {
+    "name": "whip it in",
     "CN": "快点开始",
     "timestamp": 1775971803765
   },
-  "bottom corner": {
+  {
+    "name": "bottom corner",
     "CN": "底角",
     "timestamp": 1775971816904
   },
-  "Backline Boost": {
+  {
+    "name": "Backline Boost",
     "CN": "巩固后防",
     "timestamp": 1776052972097
   },
-  "Velocity Touch": {
+  {
+    "name": "Velocity Touch",
     "CN": "疾速触球",
     "timestamp": 1776053029511
   },
-  "Crunch Time": {
+  {
+    "name": "Crunch Time",
     "CN": "关键时刻",
     "timestamp": 1776053125065
   },
-  "Bottom Corner": {
+  {
+    "name": "Bottom Corner",
     "CN": "底角",
     "timestamp": 1776089536266
   },
-  "Whip It In": {
+  {
+    "name": "Whip It In",
     "CN": "传入禁区",
     "timestamp": 1776129191856
   },
-  "The Makélélé Role": {
+  {
+    "name": "The Makélélé Role",
     "CN": "马克莱莱角色",
     "timestamp": 1776126342032
   },
-  "Last Ditch Effort": {
+  {
+    "name": "Last Ditch Effort",
     "CN": "殊死一搏",
     "timestamp": 1776126393879
   },
-  "Aerial Impact": {
+  {
+    "name": "Aerial Impact",
     "CN": "制空影响力",
     "timestamp": 1776144013955
   },
-  "Beast Mode": {
+  {
+    "name": "Beast Mode",
     "CN": "野兽模式",
     "timestamp": 1776210830350
   },
-  "El Pistolero": {
+  {
+    "name": "El Pistolero",
     "CN": "神枪手",
     "timestamp": 1776211317029
   },
-  "Hawk Eyed": {
+  {
+    "name": "Hawk Eyed",
     "CN": "鹰眼",
     "timestamp": 1776312789163
   },
-  "Kinetic Boost": {
+  {
+    "name": "Kinetic Boost",
     "CN": "动能爆发",
     "timestamp": 1776312807650
   },
-  "Three to Remember": {
+  {
+    "name": "Three to Remember",
     "CN": "传世三刻",
     "timestamp": 1776373109307
   },
-  "The Timeless Maestro": {
+  {
+    "name": "The Timeless Maestro",
     "CN": "不朽大师",
     "timestamp": 1776445774107
   },
-  "Touchline Merchant": {
+  {
+    "name": "Touchline Merchant",
     "CN": "边线行者",
     "timestamp": 1776446998702
   },
-  "Clinical Finisher": {
+  {
+    "name": "Clinical Finisher",
     "CN": "凌厉终结者",
     "timestamp": 1776447303872
   },
-  "Clinical Passer": {
+  {
+    "name": "Clinical Passer",
     "CN": "凌厉传球手",
     "timestamp": 1776447310720
   },
-  "CB Distributor": {
+  {
+    "name": "CB Distributor",
     "CN": "中后卫出球手",
     "timestamp": 1776554500359
   },
-  "TOTS Honourable Mentions": {
+  {
+    "name": "TOTS Honourable Mentions",
     "CN": "TOTS荣誉提名",
     "timestamp": 1776566696921
   },
-  "The Swan of Utrecht": {
+  {
+    "name": "The Swan of Utrecht",
     "CN": "乌德勒支天鹅",
     "timestamp": 1776629117172
   },
-  "Express Delivery": {
+  {
+    "name": "Express Delivery",
     "CN": "特快专递",
     "timestamp": 1776725329966
   },
-  "Tricksy Hobbits": {
+  {
+    "name": "Tricksy Hobbits",
     "CN": "狡黠的霍比特人",
     "timestamp": 1776807937814
   },
-  "Columbus Conductor": {
+  {
+    "name": "Columbus Conductor",
     "CN": "哥伦布指挥家",
     "timestamp": 1776877696274
   },
-  "Defender Round Out": {
+  {
+    "name": "Defender Round Out",
     "CN": "防守球员完善",
     "timestamp": 1776936650449
   },
-  "Attacker Round Out": {
+  {
+    "name": "Attacker Round Out",
     "CN": "进攻球员完善",
     "timestamp": 1776936666664
   },
-  "WTSS Journey 1 - Defender": {
+  {
+    "name": "WTSS Journey 1 - Defender",
     "CN": "世界巡回白银巨星征程1-防守球员",
     "timestamp": 1776936757575
   },
-  "WTSS Journey 1 - Midfielder": {
+  {
+    "name": "WTSS Journey 1 - Midfielder",
     "CN": "世界巡回白银巨星征程1-中场球员",
     "timestamp": 1776936826863
   },
-  "WTSS Journey 1 - Attacker": {
+  {
+    "name": "WTSS Journey 1 - Attacker",
     "CN": "世界巡回白银巨星征程1-进攻球员",
     "timestamp": 1776936818040
   },
-  "WTSS Journey 2 - Midfielder": {
+  {
+    "name": "WTSS Journey 2 - Midfielder",
     "CN": "世界巡回白银巨星征程2-中场球员",
     "timestamp": 1776944349401
   },
-  "WTSS Journey 3 - Defender": {
+  {
+    "name": "WTSS Journey 3 - Defender",
     "CN": "世界巡回白银巨星征程3-防守球员",
     "timestamp": 1776944299874
   },
-  "WTSS Journey 2 - Defender": {
+  {
+    "name": "WTSS Journey 2 - Defender",
     "CN": "世界巡回白银巨星征程2-防守球员",
     "timestamp": 1776936866112
   },
-  "WTSS Journey 3 - Midfielder": {
+  {
+    "name": "WTSS Journey 3 - Midfielder",
     "CN": "世界巡回白银巨星征程3-中场球员",
     "timestamp": 1776944321570
   },
-  "WTSS Journey 2 - Attacker": {
+  {
+    "name": "WTSS Journey 2 - Attacker",
     "CN": "世界巡回白银巨星征程2-进攻球员",
     "timestamp": 1776936896425
   },
-  "WTSS Journey 3 - Attacker": {
+  {
+    "name": "WTSS Journey 3 - Attacker",
     "CN": "世界巡回白银巨星征程3-进攻球员",
     "timestamp": 1776936904056
   },
-  "Defender Roundout": {
+  {
+    "name": "Defender Roundout",
     "CN": "防守球员完善",
     "timestamp": 1776937385304
   },
-  "Attacker Roundout": {
+  {
+    "name": "Attacker Roundout",
     "CN": "进攻球员完善",
     "timestamp": 1776937396135
   },
-  "Back on Track": {
+  {
+    "name": "Back on Track",
     "CN": "重回正轨",
     "timestamp": 1776976771343
   },
-  "WTSS Attacker Boost": {
+  {
+    "name": "WTSS Attacker Boost",
     "CN": "世界巡回白银巨星进攻球员强化",
     "timestamp": 1777005227181
   },
-  "WTSS Defender Boost": {
+  {
+    "name": "WTSS Defender Boost",
     "CN": "世界巡回白银巨星防守球员强化",
     "timestamp": 1777005254653
   },
-  "Jockey+ & Bruiser+": {
+  {
+    "name": "Jockey+ & Bruiser+",
     "CN": "金螃蟹步&金肌肉",
     "timestamp": 1778183889577
   },
-  "Intercept+ & Quick Step+": {
+  {
+    "name": "Intercept+ & Quick Step+",
     "CN": "金拦截&金火箭",
     "timestamp": 1777239778234
   },
-  "Power Up": {
+  {
+    "name": "Power Up",
     "CN": "加大力度",
     "timestamp": 1777067455842
   },
-  "The King of Highbury": {
+  {
+    "name": "The King of Highbury",
     "CN": "海布里之王",
     "timestamp": 1777067465613
   },
-  "Tiki Taka+ & Incisive Pass": {
+  {
+    "name": "Tiki Taka+ & Incisive Pass",
     "CN": "金TikiTaka&银直塞",
     "timestamp": 1777067511988
   },
-  "Incisive Pass+ & Tiki Taka": {
+  {
+    "name": "Incisive Pass+ & Tiki Taka",
     "CN": "金直塞&银TikiTaka",
     "timestamp": 1777067539335
   },
-  "Quick Step and Bruiser": {
+  {
+    "name": "Quick Step and Bruiser",
     "CN": "银火箭步&银肌肉",
     "timestamp": 1777067560296
   },
-  "Pinged Pass and Finesse Shot": {
+  {
+    "name": "Pinged Pass and Finesse Shot",
     "CN": "银大力传球&银搓射",
     "timestamp": 1777067578852
   },
-  "TIki Taka and Incisive Pass": {
+  {
+    "name": "TIki Taka and Incisive Pass",
     "CN": "金TikiTaka&银直塞",
     "timestamp": 1777088903937
   },
-  "Incisive Pass and Tiki Taka": {
+  {
+    "name": "Incisive Pass and Tiki Taka",
     "CN": "金直塞&银TikiTaka",
     "timestamp": 1777089088255
   },
-  "Fountain of Youth": {
+  {
+    "name": "Fountain of Youth",
     "CN": "青春之泉",
     "timestamp": 1777146518454
   },
-  "The Trailblazer": {
+  {
+    "name": "The Trailblazer",
     "CN": "开拓者",
     "timestamp": 1777239789278
   },
-  "Tie Interceptor": {
+  {
+    "name": "Tie Interceptor",
     "CN": "僵局拦截者",
     "timestamp": 1777318138110
   },
-  "In Form": {
+  {
+    "name": "In Form",
     "CN": "状态正佳",
     "timestamp": 1777338369643
   },
-  "Rapid Gains": {
+  {
+    "name": "Rapid Gains",
     "CN": "快速增肌",
     "timestamp": 1777418714020
   },
-  "Flint & Steel": {
+  {
+    "name": "Flint & Steel",
     "CN": "燧石与钢",
     "timestamp": 1777498066207
   },
-  "Chrome Finishers": {
+  {
+    "name": "Chrome Finishers",
     "CN": "铬合金终结者",
     "timestamp": 1777578339238
   },
-  "Cut In, Say Less": {
+  {
+    "name": "Cut In, Say Less",
     "CN": "内切，无需多言",
     "timestamp": 1777709742475
   },
-  "Long Ball Pass+ & Pinged Pass": {
+  {
+    "name": "Long Ball Pass+ & Pinged Pass",
     "CN": "金长传&银大力传球",
     "timestamp": 1777664329983
   },
-  "Intercept & Aerial Fortress": {
+  {
+    "name": "Intercept & Aerial Fortress",
     "CN": "银拦截&银空霸",
     "timestamp": 1777664411686
   },
-  "From Distance": {
+  {
+    "name": "From Distance",
     "CN": "远射",
     "timestamp": 1777684803747
   },
-  "Pass IQ": {
+  {
+    "name": "Pass IQ",
     "CN": "传球智商",
     "timestamp": 1777684832513
   },
-  "Turbo Strength": {
+  {
+    "name": "Turbo Strength",
     "CN": "力量爆发",
     "timestamp": 1777684854422
   },
-  "Creative Playmaker": {
+  {
+    "name": "Creative Playmaker",
     "CN": "创意组织核心",
     "timestamp": 1777684888775
   },
-  "Speed to Finish": {
+  {
+    "name": "Speed to Finish",
     "CN": "疾速终结",
     "timestamp": 1777684914058
   },
-  "Welsh Wonder Strike [Store]": {
+  {
+    "name": "Welsh Wonder Strike [Store]",
     "CN": "威尔士奇迹一击【商城包】",
     "timestamp": 1777716465851
   },
-  "Curve Your Enthusiasm": {
+  {
+    "name": "Curve Your Enthusiasm",
     "CN": "热情弧线",
     "timestamp": 1777743100543
   },
-  "Lightning Wingback": {
+  {
+    "name": "Lightning Wingback",
     "CN": "闪电边翼卫",
     "timestamp": 1777844831336
   },
-  "Tiki Taka+": {
+  {
+    "name": "Tiki Taka+",
     "CN": "金TikiTaka",
     "timestamp": 1777859560977
   },
-  "Steel Guard": {
+  {
+    "name": "Steel Guard",
     "CN": "钢铁卫士",
     "timestamp": 1777929982486
   },
-  "Technical+ and Finesse Shot": {
+  {
+    "name": "Technical+ and Finesse Shot",
     "CN": "金游龙&银搓射",
     "timestamp": 1777929999554
   },
-  "Anticipate+ and Intercept": {
+  {
+    "name": "Anticipate+ and Intercept",
     "CN": "金狐狸&银拦截",
     "timestamp": 1777930017433
   },
-  "Versatile Defender": {
+  {
+    "name": "Versatile Defender",
     "CN": "全能防守球员",
     "timestamp": 1777953793586
   },
-  "Gear 5": {
+  {
+    "name": "Gear 5",
     "CN": "装备5",
     "timestamp": 1778009360776
   },
-  "Fullback Takeover": {
+  {
+    "name": "Fullback Takeover",
     "CN": "边后卫接管",
     "timestamp": 1778102795705
   },
-  "Lucky Number Seven": {
+  {
+    "name": "Lucky Number Seven",
     "CN": "幸运数字7",
     "timestamp": 1778183903075
   },
-  "Le Président": {
+  {
+    "name": "Le Président",
     "CN": "总统",
     "timestamp": 1778270649109
   },
-  "Intercept and Pinged Pass": {
+  {
+    "name": "Intercept and Pinged Pass",
     "CN": "银拦截&银大力传球",
     "timestamp": 1778270669737
   },
-  "Tiki Taka and Low Driven Shot": {
+  {
+    "name": "Tiki Taka and Low Driven Shot",
     "CN": "银TIKITAKA&银低射",
     "timestamp": 1778270728313
   },
-  "Cat Like Reflexes": {
+  {
+    "name": "Cat Like Reflexes",
     "CN": "猫般反应",
     "timestamp": 1778346194543
   },
-  "Maestro Unbound": {
+  {
+    "name": "Maestro Unbound",
     "CN": "不羁大师",
     "timestamp": 1778432612573
   },
-  "Quick Step+ and Jockey": {
+  {
+    "name": "Quick Step+ and Jockey",
     "CN": "金火箭&银螃蟹步",
     "timestamp": 1778534128400
   },
-  "Polished Pivot": {
+  {
+    "name": "Polished Pivot",
     "CN": "全能枢纽",
     "timestamp": 1778534187720
   },
-  "Quick Twitch": {
+  {
+    "name": "Quick Twitch",
     "CN": "迅捷反射",
     "timestamp": 1778633127533
   },
-  "Midfield Migration": {
+  {
+    "name": "Midfield Migration",
     "CN": "中场迁移",
     "timestamp": 1778701937433
   },
-  "Keep the Ball": {
+  {
+    "name": "Keep the Ball",
     "CN": "保住球权",
     "timestamp": 1778786252955
   },
-  "Total Football": {
+  {
+    "name": "Total Football",
     "CN": "全攻全守",
     "timestamp": 1778875748252
   },
-  "TOTS Career Path - Starter": {
+  {
+    "name": "TOTS Career Path - Starter",
     "CN": "TOTS生涯征程—起点",
     "timestamp": 1778875761002
   },
-  "Backline Instinct": {
+  {
+    "name": "Backline Instinct",
     "CN": "后防本能",
     "timestamp": 1778904930717
   },
-  "Tri-Control": {
+  {
+    "name": "Tri-Control",
     "CN": "三控",
     "timestamp": 1778923930574
   },
-  "Five Star Phenom": {
+  {
+    "name": "Five Star Phenom",
     "CN": "五星奇才",
     "timestamp": 1778951279662
   },
-  "TOTS Career Path II - LM": {
+  {
+    "name": "TOTS Career Path II - LM",
     "CN": "TOTS生涯征程2—左前卫",
     "timestamp": 1779053044281
   },
-  "TOTS Career Path II - RM": {
+  {
+    "name": "TOTS Career Path II - RM",
     "CN": "TOTS生涯征程2—右前卫",
     "timestamp": 1779053061993
   },
-  "TOTS Career Path II - CAM": {
+  {
+    "name": "TOTS Career Path II - CAM",
     "CN": "TOTS生涯征程2—前腰",
     "timestamp": 1779053076052
   },
-  "Elite Link-Up": {
+  {
+    "name": "Elite Link-Up",
     "CN": "精英串联",
     "timestamp": 1779131185142
   },
-  "Sterling Ascension": {
+  {
+    "name": "Sterling Ascension",
     "CN": "英才崛起",
     "timestamp": 1779201381134
   },
-  "Attacking Excellence": {
+  {
+    "name": "Attacking Excellence",
     "CN": "卓越进攻",
     "timestamp": 1779201507254
   },
-  "Defensive Perfection": {
+  {
+    "name": "Defensive Perfection",
     "CN": "无暇防守",
     "timestamp": 1779201530159
   },
-  "Defensive Masterclass": {
+  {
+    "name": "Defensive Masterclass",
     "CN": "防守大师班",
     "timestamp": 1779229081793
   },
-  "TOTS Career Path III - CM": {
+  {
+    "name": "TOTS Career Path III - CM",
     "CN": "TOTS生涯征程3—中前卫",
     "timestamp": 1779323329343
   },
-  "TOTS Career Path III - LW": {
+  {
+    "name": "TOTS Career Path III - LW",
     "CN": "TOTS生涯征程3—左边锋",
     "timestamp": 1779323348094
   },
-  "TOTS Career Path III - RW": {
+  {
+    "name": "TOTS Career Path III - RW",
     "CN": "TOTS生涯征程3—右边锋",
     "timestamp": 1779323361778
   },
-  "Composed Authority": {
+  {
+    "name": "Composed Authority",
     "CN": "沉着统率",
     "timestamp": 1779383711349
   },
-  "Making the Case": {
+  {
+    "name": "Making the Case",
     "CN": "证明实力",
     "timestamp": 1779484539365
   },
-  "Polished Perfection": {
+  {
+    "name": "Polished Perfection",
     "CN": "雕琢完美",
     "timestamp": 1779484555438
   },
-  "Iconic Attack": {
+  {
+    "name": "Iconic Attack",
     "CN": "巨星级进攻",
     "timestamp": 1779504174904
   },
-  "Poldi's Strike": {
+  {
+    "name": "Poldi's Strike",
     "CN": "Poldi出击",
     "timestamp": 1779569087614
   },
-  "Dash & Dazzle": {
+  {
+    "name": "Dash & Dazzle",
     "CN": "炫目冲锋",
     "timestamp": 1779642261397
   },
-  "Spinning Top": {
+  {
+    "name": "Spinning Top",
     "CN": "陀螺",
     "timestamp": 1779758410869
   },
-  "Perfect Timing": {
+  {
+    "name": "Perfect Timing",
     "CN": "完美时机",
     "timestamp": 1779774309265
   },
-  "Intercept+ and Pinged Pass": {
+  {
+    "name": "Intercept+ and Pinged Pass",
     "CN": "金拦截&银大力传球",
     "timestamp": 1779796645989
   },
-  "Anticipate Quick Step and Bruiser": {
+  {
+    "name": "Anticipate Quick Step and Bruiser",
     "CN": "银预判+银火箭+银肌肉",
     "timestamp": 1779796751444
   },
-  "Tater TOTS": {
+  {
+    "name": "Tater TOTS",
     "CN": "土豆TOTS",
     "timestamp": 1779835594959
   },
-  "The GOATkeeper": {
+  {
+    "name": "The GOATkeeper",
     "CN": "史上最佳门将",
     "timestamp": 1779918397562
   },
-  "Prime Heroes": {
+  {
+    "name": "Prime Heroes",
     "CN": "至尊英雄",
     "timestamp": 1780090737245
   },
-  "History in Ten": {
+  {
+    "name": "History in Ten",
     "CN": "十年风云",
     "timestamp": 1780090744761
   },
-  "Smooth Operator": {
+  {
+    "name": "Smooth Operator",
     "CN": "游刃有余",
     "timestamp": 1780090751316
   },
-  "Goal Bound": {
+  {
+    "name": "Goal Bound",
     "CN": "志在破门",
     "timestamp": 1780161474250
   },
-  "Born to Roam": {
+  {
+    "name": "Born to Roam",
     "CN": "漫游灵魂",
     "timestamp": 1780261303272
   },
-  "Rock & Resolve": {
+  {
+    "name": "Rock & Resolve",
     "CN": "磐石与决心",
     "timestamp": 1780360425000
   },
-  "Street Slick": {
+  {
+    "name": "Street Slick",
     "CN": "街头锋芒",
     "timestamp": 1780447330478
   },
-  "Perfect Poise": {
+  {
+    "name": "Perfect Poise",
     "CN": "镇定自若",
     "timestamp": 1780518034793
   },
-  "Old School Winger": {
+  {
+    "name": "Old School Winger",
     "CN": "守旧派边锋",
     "timestamp": 1782747594097,
     "source": "通行证1级"
   },
-  "Try Again Tomorrow": {
+  {
+    "name": "Try Again Tomorrow",
     "CN": "明天再来",
     "timestamp": 1782747585535,
     "source": "通行证8级"
   },
-  "Afterburner": {
+  {
+    "name": "Afterburner",
     "CN": "加力燃烧",
     "timestamp": 1782747604748,
     "source": "高级通行证10级"
   },
-  "No Looking Back": {
+  {
+    "name": "No Looking Back",
     "CN": "一往无前",
     "timestamp": 1780564369198
   },
-  "Covering Ground": {
+  {
+    "name": "Covering Ground",
     "CN": "覆盖全场",
     "timestamp": 1782747610971,
     "source": "高级通行证1级"
   },
-  "The Main Event": {
+  {
+    "name": "The Main Event",
     "CN": "主角登场",
     "timestamp": 1782746104395,
     "source": "代币商场"
   },
-  "Gold Standard": {
+  {
+    "name": "Gold Standard",
     "CN": "黄金标准",
     "timestamp": 1782746117852,
     "source": "代币商城"
   },
-  "One Step Ahead": {
+  {
+    "name": "One Step Ahead",
     "CN": "先人一步",
     "timestamp": 1782746121064,
     "source": "代币商城"
   },
-  "Path to Glory": {
+  {
+    "name": "Path to Glory",
     "CN": "功成名就之路",
     "timestamp": 1782743867952,
     "source": "代币商场"
   },
-  "Street Soccer": {
+  {
+    "name": "Street Soccer",
     "CN": "街头足球",
     "timestamp": 1782746419662,
     "source": "街头足球任务"
   },
-  "El Káiser": {
+  {
+    "name": "El Káiser",
     "CN": "凯撒",
     "timestamp": 1782746458628,
     "source": "队长的头槌任务"
   },
-  "Chasing the Spotlight": {
+  {
+    "name": "Chasing the Spotlight",
     "CN": "追逐聚光灯",
     "timestamp": 1782746241691,
     "source": "北美洲任务"
   },
-  "Five Star Phenom II": {
+  {
+    "name": "Five Star Phenom II",
     "CN": "五星奇才2",
     "timestamp": 1782746171123,
     "source": "第8赛季表演赛任务"
   },
-  "Trequartista": {
+  {
+    "name": "Trequartista",
     "CN": "九号半",
     "timestamp": 1782746159592,
     "source": "第8赛季表演赛任务"
   },
-  "The Iron 9": {
+  {
+    "name": "The Iron 9",
     "CN": "钢铁9号",
     "timestamp": 1782746155930,
     "source": "第8赛季表演赛任务"
   },
-  "Star Chaser": {
+  {
+    "name": "Star Chaser",
     "CN": "追星者",
     "timestamp": 1782746352631,
     "source": "美国任务"
   },
-  "Pass, Eh": {
+  {
+    "name": "Pass, Eh",
     "CN": "传个球吧",
     "timestamp": 1782746342666,
     "source": "加拿大任务"
   },
-  "Memo's Legacy": {
+  {
+    "name": "Memo's Legacy",
     "CN": "Memo 传奇",
     "timestamp": 1782746379115,
     "source": "墨西哥任务"
   },
-  "Relentless Rise": {
+  {
+    "name": "Relentless Rise",
     "CN": "不懈崛起",
     "timestamp": 1782746436079,
     "source": "海地/巴拿马任务"
   },
-  "Anfield's Wall": {
+  {
+    "name": "Anfield's Wall",
     "CN": "安菲尔德铁壁",
     "timestamp": 1780594069110
   },
-  "FoF Pelé I - ST": {
+  {
+    "name": "FoF Pelé I - ST",
     "CN": "足球庆典Pelé I - ST",
     "timestamp": 1782743895403,
     "source": "进化"
   },
-  "FoF Pelé I - RW/LW": {
+  {
+    "name": "FoF Pelé I - RW/LW",
     "CN": "足球庆典Pelé I - RW/LW",
     "timestamp": 1782743892653,
     "source": "进化"
   },
-  "FoF Pelé I - CM": {
+  {
+    "name": "FoF Pelé I - CM",
     "CN": "足球庆典Pelé I - CM",
     "timestamp": 1782743888837,
     "source": "进化"
   },
-  "Inch Perfect": {
+  {
+    "name": "Inch Perfect",
     "CN": "不差分毫",
     "timestamp": 1780782712578
   },
-  "Defense Wins Championships": {
+  {
+    "name": "Defense Wins Championships",
     "CN": "夺冠要靠防守",
     "timestamp": 1780895426493
   },
-  "Donovation": {
+  {
+    "name": "Donovation",
     "CN": "Donovan精神",
     "timestamp": 1780923412169
   },
-  "Hawk Eye": {
+  {
+    "name": "Hawk Eye",
     "CN": "鹰眼",
     "timestamp": 1780954256056
   },
-  "Free Kick Mastery": {
+  {
+    "name": "Free Kick Mastery",
     "CN": "任意球大师",
     "timestamp": 1781024940056
   },
-  "Final Preparations": {
+  {
+    "name": "Final Preparations",
     "CN": "最终准备",
     "timestamp": 1781024963932
   },
-  "Backbone Brilliance": {
+  {
+    "name": "Backbone Brilliance",
     "CN": "卓越骨干",
     "timestamp": 1781167942701
   },
-  "La Pulga": {
+  {
+    "name": "La Pulga",
     "CN": "小跳蚤",
     "timestamp": 1781208844182
   },
-  "Hold the Fort": {
+  {
+    "name": "Hold the Fort",
     "CN": "坚守堡垒",
     "timestamp": 1781299409398
   },
-  "Go on Son": {
+  {
+    "name": "Go on Son",
     "CN": "向孙兴慜看齐",
     "timestamp": 1781299429159
   },
-  "Hidden Gem": {
+  {
+    "name": "Hidden Gem",
     "CN": "璞玉浑金",
     "timestamp": 1782746010757,
     "source": "乌兹别克任务"
   },
-  "The Kiwi Wall": {
+  {
+    "name": "The Kiwi Wall",
     "CN": "新西兰铁壁",
     "timestamp": 1782746022050,
     "source": "新西兰任务"
   },
-  "Tiny Tim": {
+  {
+    "name": "Tiny Tim",
     "CN": "小Tim",
     "timestamp": 1782747377663,
     "source": "完美凌空抽射任务"
   },
-  "PhD in Dribbling": {
+  {
+    "name": "PhD in Dribbling",
     "CN": "盘带博士",
     "timestamp": 1782746029405,
     "source": "日本任务"
   },
-  "Oxygen Tank": {
+  {
+    "name": "Oxygen Tank",
     "CN": "氧气罐",
     "timestamp": 1782746038889,
     "source": "韩国任务"
   },
-  "Golden Sprint": {
+  {
+    "name": "Golden Sprint",
     "CN": "黄金冲刺",
     "timestamp": 1782746048069,
     "source": "沙特任务"
   },
-  "Continental Cannon": {
+  {
+    "name": "Continental Cannon",
     "CN": "洲际重炮",
     "timestamp": 1782746073658,
     "source": "亚洲/大洋洲任务"
   },
-  "Shadow Step": {
+  {
+    "name": "Shadow Step",
     "CN": "幻影步伐",
     "timestamp": 1781370530760
   },
-  "Complete Connection": {
+  {
+    "name": "Complete Connection",
     "CN": "完成连接",
     "timestamp": 1781854401868
   },
-  "Woodsy's Way": {
+  {
+    "name": "Woodsy's Way",
     "CN": "woodsy之道",
     "timestamp": 1781543553140
   },
-  "No Payne No Gain": {
+  {
+    "name": "No Payne No Gain",
     "CN": "没有Payne就没有收获",
     "timestamp": 1781643702113
   },
-  "National Pride": {
+  {
+    "name": "National Pride",
     "CN": "国家骄傲",
     "timestamp": 1781795512113
   },
-  "Wave Your Flag": {
+  {
+    "name": "Wave Your Flag",
     "CN": "挥舞旗帜",
     "timestamp": 1781803136408
   },
-  "Cameroon King": {
+  {
+    "name": "Cameroon King",
     "CN": "喀麦隆之王",
     "timestamp": 1782743307813,
     "source": "进化"
   },
-  "Built for Glory": {
+  {
+    "name": "Built for Glory",
     "CN": "建功立业",
     "timestamp": 1782743302872,
     "source": "进化"
   },
-  "Attacking Artistry": {
+  {
+    "name": "Attacking Artistry",
     "CN": "进攻艺术",
     "timestamp": 1782742943329,
     "source": "训练营"
   },
-  "The Egyptian King": {
+  {
+    "name": "The Egyptian King",
     "CN": "埃及之王",
     "timestamp": 1782742928039,
     "source": "埃及任务"
   },
-  "Leopard's Roar": {
+  {
+    "name": "Leopard's Roar",
     "CN": "猎豹咆哮",
     "timestamp": 1782742894870,
     "source": "刚果+佛得角任务"
   },
-  "Do it like Yaya": {
+  {
+    "name": "Do it like Yaya",
     "CN": "效仿YAYA",
     "timestamp": 1782742913406,
     "source": "科特迪瓦任务"
   },
-  "I Do Absolutes": {
+  {
+    "name": "I Do Absolutes",
     "CN": "斩钉截铁",
     "timestamp": 1782742799259,
     "source": "塞内加尔任务"
   },
-  "Rapid+ & Intercept+": {
+  {
+    "name": "Rapid+ & Intercept+",
     "CN": "金跑跑&金拦截",
     "timestamp": 1782742775175,
     "source": "主题色彩联赛任务"
   },
-  "Enforcer+ & Quick Step+": {
+  {
+    "name": "Enforcer+ & Quick Step+",
     "CN": "金护球&金火箭",
     "timestamp": 1782742767116,
     "source": "主题色彩联赛任务"
   },
-  "Slalom Dribbling": {
+  {
+    "name": "Slalom Dribbling",
     "CN": "回旋盘带",
     "timestamp": 1782742751945,
     "source": "主题色彩联赛任务"
   },
-  "Deadeye": {
+  {
+    "name": "Deadeye",
     "CN": "神枪手",
     "timestamp": 1782742692765,
     "source": "通行证"
   },
-  "Anchor Down": {
+  {
+    "name": "Anchor Down",
     "CN": "稳固锚定",
     "timestamp": 1782743298706,
     "source": "进化"
   },
-  "Greats of the Game Hero": {
+  {
+    "name": "Greats of the Game Hero",
     "CN": "赛场传奇英雄",
     "timestamp": 1782742616280,
     "source": "代币商场"
   },
-  "Piscinin": {
+  {
+    "name": "Piscinin",
     "CN": "小个子",
     "timestamp": 1782743295940,
     "source": "进化"
   },
-  "Steady Eddie": {
+  {
+    "name": "Steady Eddie",
     "CN": "稳定先生",
     "timestamp": 1782743292588,
     "source": "进化"
   },
-  "Own the Box": {
+  {
+    "name": "Own the Box",
     "CN": "主宰禁区",
     "timestamp": 1782742953427,
     "source": "训练营"
   },
-  "Maradona of the Carpathians": {
+  {
+    "name": "Maradona of the Carpathians",
     "CN": "喀尔巴阡Maradona",
     "timestamp": 1782743810858,
     "source": "进化"
   },
-  "Sharp Senses": {
+  {
+    "name": "Sharp Senses",
     "CN": "敏锐感知",
     "timestamp": 1782743288758,
     "source": "进化"
   },
-  "Rounded Royalty": {
+  {
+    "name": "Rounded Royalty",
     "CN": "全能王者",
     "timestamp": 1782743285353,
     "source": "进化"
   },
-  "GH 4th Finesse Shot+": {
+  {
+    "name": "GH 4th Finesse Shot+",
     "CN": "荣耀猎手第4金：精准射门",
     "timestamp": 1782504281975
   },
-  "GH 4th Intercept+": {
+  {
+    "name": "GH 4th Intercept+",
     "CN": "荣耀猎手第4金：拦截",
     "timestamp": 1782750427445,
     "source": "追求荣耀任务"
   },
-  "GH 4th Pinged Pass+": {
+  {
+    "name": "GH 4th Pinged Pass+",
     "CN": "荣耀猎手第4金：大力传球",
     "timestamp": 1782504014641
   },
-  "GH 4th Incisive Pass+": {
+  {
+    "name": "GH 4th Incisive Pass+",
     "CN": "荣耀猎手第4金：切入传球",
     "timestamp": 1782750432923,
     "source": "追求荣耀任务"
   },
-  "GH 4th Anticipate+": {
+  {
+    "name": "GH 4th Anticipate+",
     "CN": "荣耀猎手第4金：预判",
     "timestamp": 1782825503951,
     "source": "追求荣耀任务",
     "futgg_id": "2225",
     "easysbc_id": "2335"
   },
-  "GH 4th Bruiser+": {
+  {
+    "name": "GH 4th Bruiser+",
     "CN": "荣耀猎手第4金：斗士",
     "timestamp": 1782504184944
   },
-  "GH 4th Rapid+": {
+  {
+    "name": "GH 4th Rapid+",
     "CN": "荣耀猎手第4金：灵动迅捷",
     "timestamp": 1782504159412
   },
-  "GH 4th Quick Step+": {
+  {
+    "name": "GH 4th Quick Step+",
     "CN": "荣耀猎手第4金：健步如飞",
     "timestamp": 1782504150015
   },
-  "GH 4th Technical+": {
+  {
+    "name": "GH 4th Technical+",
     "CN": "荣耀猎手第4金：技术",
     "timestamp": 1782504139553
   },
-  "Given the Keys": {
+  {
+    "name": "Given the Keys",
     "CN": "赋予掌控权",
     "timestamp": 1782742329686,
     "source": "荣耀时刻任务"
   },
-  "El Bandido": {
+  {
+    "name": "El Bandido",
     "CN": "暴徒",
     "timestamp": 1782504503122,
     "source": "哥伦比亚任务"
   },
-  "O Capitão": {
+  {
+    "name": "O Capitão",
     "CN": "队长",
     "timestamp": 1782504564554,
     "source": "巴西任务"
   },
-  "The Little Boy from Rosario": {
+  {
+    "name": "The Little Boy from Rosario",
     "CN": "来自罗萨里奥的小男孩",
     "timestamp": 1782504604498,
     "source": "阿根廷任务"
   },
-  "Deadball Mastery": {
+  {
+    "name": "Deadball Mastery",
     "CN": "定位球大师",
     "timestamp": 1782504696473,
     "source": "乌拉圭任务"
   },
-  "Pitch Protector": {
+  {
+    "name": "Pitch Protector",
     "CN": "球场守护者",
     "timestamp": 1782743281322,
     "source": "进化"
   },
-  "FoF Pelé II": {
+  {
+    "name": "FoF Pelé II",
     "CN": "足球庆典Pelé II",
     "timestamp": 1782743276645,
     "source": "进化"
   },
-  "Glory Hunters": {
+  {
+    "name": "Glory Hunters",
     "CN": "荣耀猎手",
     "timestamp": 1782750920982,
     "source": "进化-装饰",
     "futbin_id": "1067",
     "futgg_id": "2242"
   },
-  "Glory Hunter - Anticipate": {
+  {
+    "name": "Glory Hunter - Anticipate",
     "CN": "荣耀猎手第4金：预判",
     "timestamp": 1782750571417,
     "source": "罗梅罗SBC",
     "futbin_id": "1068"
   },
-  "Glory Hunter - Intercept": {
+  {
+    "name": "Glory Hunter - Intercept",
     "CN": "荣耀猎手第4金：拦截",
     "timestamp": 1782616986643
   },
-  "Glory Hunter - Quick Step": {
+  {
+    "name": "Glory Hunter - Quick Step",
     "CN": "荣耀猎手第4金：健步如飞",
     "timestamp": 1782616996518
   },
-  "Glory Hunter - Low Driven": {
+  {
+    "name": "Glory Hunter - Low Driven",
     "CN": "荣耀猎手第4金：大力低射",
     "timestamp": 1782617025768
   },
-  "Glory Hunter - Incisive": {
+  {
+    "name": "Glory Hunter - Incisive",
     "CN": "荣耀猎手第4金：切入传球",
     "timestamp": 1782617044464
   },
-  "Glory Hunter - Bruiser": {
+  {
+    "name": "Glory Hunter - Bruiser",
     "CN": "荣耀猎手第4金：斗士",
     "timestamp": 1782617052533
   },
-  "Glory Hunter - Pinged": {
+  {
+    "name": "Glory Hunter - Pinged",
     "CN": "荣耀猎手第4金：大力传球",
     "timestamp": 1782617064358
   },
-  "Greats of The Game Hero": {
+  {
+    "name": "Greats of The Game Hero",
     "CN": "赛场传奇英雄",
     "timestamp": 1782742603071,
     "source": "代币商场"
   },
-  "Build Your Own FUT Birthday": {
+  {
+    "name": "Build Your Own FUT Birthday",
     "CN": "打造您自己的FUT生日球员",
     "timestamp": 1782741968552,
     "source": "商城包"
   },
-  "PhD In Dribbling": {
+  {
+    "name": "PhD In Dribbling",
     "CN": "盘带博士",
     "timestamp": 1782617106994,
     "source": "日本任务"
   },
-  "Greats of the Game Icon": {
+  {
+    "name": "Greats of the Game Icon",
     "CN": "赛场传奇",
     "timestamp": 1782742570768,
     "source": "进化-装饰"
   },
-  "GH 4th Low Driven Shot+": {
+  {
+    "name": "GH 4th Low Driven Shot+",
     "CN": "荣耀猎手第4金：低射",
     "timestamp": 1782664291113
   },
-  "Glory Hunter - Amticipate": {
+  {
+    "name": "Glory Hunter - Amticipate",
     "CN": "荣耀猎手第4金：预判",
     "timestamp": 1782749374753,
     "source": "罗梅罗SBC",
     "futbin_id": "1068"
   },
-  "Defensive Deadline": {
+  {
+    "name": "Defensive Deadline",
     "CN": "防守最后期限",
     "timestamp": 1782666297854,
     "source": "训练营"
   },
-  "Net Breaker": {
+  {
+    "name": "Net Breaker",
     "CN": "破门高手",
     "timestamp": 1782751098515,
     "source": "破门高手进化SBC"
   },
-  "Glory Hunter - Finesse": {
+  {
+    "name": "Glory Hunter - Finesse",
     "CN": "荣耀猎手第4金：精准射门",
     "timestamp": 1782749581968,
     "source": "比赛风格+8选2SBC",
     "futbin_id": "1054"
   },
-  "Veni Vidi Vini": {
+  {
+    "name": "Veni Vidi Vini",
     "CN": "Veni Vidi Vini",
     "timestamp": 1782743792835,
     "source": "进化"
   },
-  "Intro to Training Camp EVOs I": {
+  {
+    "name": "Intro to Training Camp EVOs I",
     "CN": "训练营进化入门1",
     "timestamp": 1782744645206,
     "source": "训练营"
   },
-  "Intro to Training Camp EVOs II": {
+  {
+    "name": "Intro to Training Camp EVOs II",
     "CN": "训练营进化入门2",
     "timestamp": 1782744657822,
     "source": "训练营"
   },
-  "Old School Winger [SP 1]": {
+  {
+    "name": "Old School Winger [SP 1]",
     "CN": "守旧派边锋",
     "timestamp": 1782747519309,
     "source": "通行证1级"
   },
-  "Try Again Tomorrow [SP 8]": {
+  {
+    "name": "Try Again Tomorrow [SP 8]",
     "CN": "明天再来",
     "timestamp": 1782747525762,
     "source": "通行证8级"
   },
-  "Afterburner [SP+ 10]": {
+  {
+    "name": "Afterburner [SP+ 10]",
     "CN": "加力燃烧",
     "timestamp": 1782747532206,
     "source": "高级通行证10级"
   },
-  "No Looking Back [SP+ 18]": {
+  {
+    "name": "No Looking Back [SP+ 18]",
     "CN": "一往无前",
     "timestamp": 1782747538899,
     "source": "高级通行证18级"
   },
-  "Covering Ground [SP+ 1]": {
+  {
+    "name": "Covering Ground [SP+ 1]",
     "CN": "覆盖全场",
     "timestamp": 1782747544440,
     "source": "高级通行证1级"
   },
-  "Finesse Shot+ [SP+ 28]": {
+  {
+    "name": "Finesse Shot+ [SP+ 28]",
     "CN": "精准射门+",
     "timestamp": 1782747552821,
     "source": "高级通行证28级"
   },
-  "Deadeye [SP 21]": {
+  {
+    "name": "Deadeye [SP 21]",
     "CN": "神枪手",
     "timestamp": 1782747559650,
     "source": "通行证21级"
   },
-  "Season Ladder Excellence [SP 27]": {
+  {
+    "name": "Season Ladder Excellence [SP 27]",
     "CN": "赛季天梯卓越",
     "timestamp": 1782747565495,
     "source": "通行证27级"
   },
-  "Intercept+ [SP 27]": {
+  {
+    "name": "Intercept+ [SP 27]",
     "CN": "拦截+",
     "timestamp": 1782747575114,
     "source": "通行证27级"
   },
-  "GH 4th Anticipate+#2": {
+  {
+    "name": "GH 4th Anticipate+",
     "CN": "荣耀猎手第4金：预判",
     "timestamp": 1782750403609,
     "source": "罗梅罗SBC",
     "futgg_id": "2243"
   },
-  "Glory Hunter - Anticipate#2": {
+  {
+    "name": "Glory Hunter - Anticipate",
     "CN": "荣耀猎手第4金：预判",
     "timestamp": 1782750618236,
     "source": "比赛风格+8选2SBC",
     "futbin_id": "1053"
   },
-  "Anticipate+#2": {
+  {
+    "name": "Anticipate+",
     "CN": "预判+",
     "timestamp": 1782751460546,
     "source": "荣耀时刻任务",
@@ -1873,34 +2317,49 @@
     "futgg_id": "2231",
     "easysbc_id": "2367"
   },
-  "Flow State": {
+  {
+    "name": "Flow State",
     "CN": "心流状态",
     "timestamp": 1782752508545,
     "source": "进化"
   },
-  "Total Glory": {
+  {
+    "name": "Total Glory",
     "CN": "至高荣耀",
     "timestamp": 1782772648149,
     "source": "猛攻/摆大巴任务"
   },
-  "Creative Outlet": {
+  {
+    "name": "Creative Outlet",
     "CN": "创意出口",
     "timestamp": 1782789343149,
     "source": "足球庆典试炼2任务"
   },
-  "El Kaiser": {
+  {
+    "name": "El Kaiser",
     "CN": "凯撒",
     "timestamp": 1782795988366,
     "source": "队长的头槌任务"
   },
-  "Fresh Legs": {
+  {
+    "name": "Fresh Legs",
     "CN": "替补奇兵",
     "timestamp": 1782838946808,
     "source": "进化"
   },
-  "Chasing Greatness": {
+  {
+    "name": "Chasing Greatness",
     "CN": "成就伟业",
     "timestamp": 1782839006861,
     "source": "进化"
+  },
+  {
+    "name": "Anticipate+",
+    "CN": "预判+",
+    "timestamp": 1782907441717,
+    "source": "阵型精通任务",
+    "futbin_id": "719",
+    "futgg_id": "1871",
+    "easysbc_id": "1875"
   }
-}
+]
