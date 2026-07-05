@@ -1133,8 +1133,9 @@
       "shorten": "当前选择一个版本"
     },
     "Best Possible Path": {
-      "webpagedata": "当前可用最佳进化路线",
-      "shorten": "当前可用最佳进化路线"
+      "webpagedata": "最佳进化路径",
+      "shorten": "最佳进化路径",
+      "timestamp": 1783255328006
     },
     "View Upgrades": {
       "webpagedata": "显示升级内容",
@@ -1249,8 +1250,9 @@
       "shorten": "所有进化"
     },
     "ACTIVE": {
-      "webpagedata": "可用进化路径",
-      "shorten": "可用进化路径"
+      "webpagedata": "上架中",
+      "shorten": "上架中",
+      "timestamp": 1783258238744
     },
     "GENERATE PATHS": {
       "webpagedata": "生成进化路径",
@@ -1522,6 +1524,146 @@
       "webpagedata": "同步到进化实验室",
       "shorten": "同步到进化实验室",
       "timestamp": 1782923097215
+    },
+    "Recommended PlayStyles by Role": {
+      "webpagedata": "按角色推荐",
+      "shorten": "按角色推荐",
+      "timestamp": 1783255212773
+    },
+    "Player Information": {
+      "webpagedata": "球员信息",
+      "shorten": "球员信息",
+      "timestamp": 1783255225695
+    },
+    "Recommended Paths": {
+      "webpagedata": "推荐路径",
+      "shorten": "推荐路径",
+      "timestamp": 1783255256471
+    },
+    "Community Leaderboard": {
+      "webpagedata": "社区排行榜",
+      "shorten": "社区排行榜",
+      "timestamp": 1783255273632
+    },
+    "Sync your evolutions": {
+      "webpagedata": "同步您的进化",
+      "shorten": "同步您的进化",
+      "timestamp": 1783255292495
+    },
+    "Best Players": {
+      "webpagedata": "最佳球员",
+      "shorten": "最佳球员",
+      "timestamp": 1783255353146
+    },
+    "Past Games": {
+      "webpagedata": "历史游戏版本",
+      "shorten": "历史游戏版本",
+      "timestamp": 1783255413110
+    },
+    "Community Chemistry Styles": {
+      "webpagedata": "化学推荐",
+      "shorten": "化学推荐",
+      "timestamp": 1783255467013
+    },
+    "Chem (": {
+      "webpagedata": "化学 (",
+      "shorten": "化学 (",
+      "timestamp": 1783255603020
+    },
+    "ALL": {
+      "webpagedata": "所有",
+      "shorten": "所有",
+      "timestamp": 1783255778243
+    },
+    "evolutions": {
+      "webpagedata": "进化",
+      "shorten": "进化",
+      "timestamp": 1783255883553
+    },
+    "hidden (excluded or used)": {
+      "webpagedata": "隐藏（已使用）",
+      "shorten": "隐藏（已使用）",
+      "timestamp": 1783255901898
+    },
+    "Refresh Now": {
+      "webpagedata": "立即刷新",
+      "shorten": "立即刷新",
+      "timestamp": 1783257213019
+    },
+    "Base Player Upgrades": {
+      "webpagedata": "基础球员进化",
+      "shorten": "基础球员进化",
+      "timestamp": 1783257337047
+    },
+    "Quick Upgrades": {
+      "webpagedata": "快速进化",
+      "shorten": "快速进化",
+      "timestamp": 1783257352648
+    },
+    "Base Player Evos": {
+      "webpagedata": "基础球员进化",
+      "shorten": "基础球员进化",
+      "timestamp": 1783257413666
+    },
+    "Your Eligible Players": {
+      "webpagedata": "可进化球员",
+      "shorten": "可进化球员",
+      "timestamp": 1783257427669
+    },
+    "All Upgrades": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化",
+      "timestamp": 1783257585458
+    },
+    "Excluded Evolution": {
+      "webpagedata": "排除进化",
+      "shorten": "排除进化",
+      "timestamp": 1783257844913
+    },
+    "You have no eligible base players.": {
+      "webpagedata": "你没有符合要求的球员",
+      "shorten": "你没有符合要求的球员",
+      "timestamp": 1783257996737
+    },
+    "No players found": {
+      "webpagedata": "未找到球员",
+      "shorten": "未找到球员",
+      "timestamp": 1783258021365
+    },
+    "Excluded": {
+      "webpagedata": "已排除",
+      "shorten": "已排除",
+      "timestamp": 1783258085473
+    },
+    "There are no evolutions available.": {
+      "webpagedata": "没有可用进化",
+      "shorten": "没有可用进化",
+      "timestamp": 1783258102208
+    },
+    "Eligible": {
+      "webpagedata": "可用进化",
+      "shorten": "可用进化",
+      "timestamp": 1783258119768
+    },
+    "Used": {
+      "webpagedata": "已使用",
+      "shorten": "已使用",
+      "timestamp": 1783258137350
+    },
+    "New": {
+      "webpagedata": "新增",
+      "shorten": "新增",
+      "timestamp": 1783260655657
+    },
+    "Sync": {
+      "webpagedata": "同步",
+      "shorten": "同步",
+      "timestamp": 1783260680773
+    },
+    "Synced": {
+      "webpagedata": "已同步",
+      "shorten": "已同步",
+      "timestamp": 1783260715045
     }
   },
   "futbin": {
