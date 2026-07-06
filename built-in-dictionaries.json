@@ -1245,10 +1245,6 @@
       "webpagedata": "所有进化",
       "shorten": "所有进化"
     },
-    "ALL EVOS": {
-      "webpagedata": "所有进化",
-      "shorten": "所有进化"
-    },
     "ACTIVE": {
       "webpagedata": "上架中",
       "shorten": "上架中",
@@ -1664,6 +1660,11 @@
       "webpagedata": "已同步",
       "shorten": "已同步",
       "timestamp": 1783260715045
+    },
+    "All Evos": {
+      "webpagedata": "所有进化",
+      "shorten": "所有进化",
+      "timestamp": 1783350796166
     }
   },
   "futbin": {
@@ -1789,7 +1790,8 @@
     },
     "Evolutions": {
       "webpagedata": "进化",
-      "shorten": "进化"
+      "shorten": "进化",
+      "timestamp": 1783336075719
     },
     "Community": {
       "webpagedata": "社区",
@@ -1886,15 +1888,17 @@
     "Rewards": {
       "webpagedata": "奖励",
       "shorten": "奖励",
-      "timestamp": 1782743384633
+      "timestamp": 1783356979618
     },
     "Cosmetics": {
-      "webpagedata": "外观",
-      "shorten": "外观"
+      "webpagedata": "装饰",
+      "shorten": "装饰",
+      "timestamp": 1783336042957
     },
     "Expiring Soon": {
-      "webpagedata": "即将过期",
-      "shorten": "即将过期"
+      "webpagedata": "即将到期",
+      "shorten": "即将到期",
+      "timestamp": 1783336021054
     },
     "Popular Players": {
       "webpagedata": "热门进化球员",
@@ -2009,6 +2013,16 @@
       "webpagedata": "荣誉猎手",
       "shorten": "荣誉猎手",
       "timestamp": 1782748778807
+    },
+    "All": {
+      "webpagedata": "所有",
+      "shorten": "所有",
+      "timestamp": 1783335961581
+    },
+    "FoF: Pelé": {
+      "webpagedata": "足球庆典Pelé",
+      "shorten": "足球庆典Pelé",
+      "timestamp": 1783336224308
     }
   },
   "easysbc": {
