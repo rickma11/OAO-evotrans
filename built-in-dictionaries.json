@@ -1665,6 +1665,16 @@
       "webpagedata": "所有进化",
       "shorten": "所有进化",
       "timestamp": 1783350796166
+    },
+    "Best position (default)": {
+      "webpagedata": "最佳位置（默认）",
+      "shorten": "最佳位置（默认）",
+      "timestamp": 1783419979561
+    },
+    "GG Rating: Best position": {
+      "webpagedata": "GG Rating: 最佳位置",
+      "shorten": "GG Rating: 最佳位置",
+      "timestamp": 1783420050441
     }
   },
   "futbin": {
