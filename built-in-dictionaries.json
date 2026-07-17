@@ -1680,6 +1680,26 @@
       "webpagedata": "任务",
       "shorten": "任务",
       "timestamp": 1783657985445
+    },
+    "Drafts": {
+      "webpagedata": "草稿",
+      "shorten": "草稿",
+      "timestamp": 1784263728540
+    },
+    "Build": {
+      "webpagedata": "模拟",
+      "shorten": "模拟",
+      "timestamp": 1784263756948
+    },
+    "Save Player": {
+      "webpagedata": "保存球员",
+      "shorten": "保存球员",
+      "timestamp": 1784263981860
+    },
+    "Save Draft": {
+      "webpagedata": "保存草稿",
+      "shorten": "保存草稿",
+      "timestamp": 1784263991652
     }
   },
   "futbin": {
