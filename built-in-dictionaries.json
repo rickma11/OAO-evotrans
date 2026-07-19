@@ -1700,6 +1700,46 @@
       "webpagedata": "保存草稿",
       "shorten": "保存草稿",
       "timestamp": 1784263991652
+    },
+    "Evolution Upgrades": {
+      "webpagedata": "进化提升内容",
+      "shorten": "进化提升内容",
+      "timestamp": 1784490187869
+    },
+    "Trending Evolved Players": {
+      "webpagedata": "热门进化球员",
+      "shorten": "热门进化球员",
+      "timestamp": 1784490403784
+    },
+    "Details": {
+      "webpagedata": "详情",
+      "shorten": "详情",
+      "timestamp": 1784490285502
+    },
+    "How do I unlock this?": {
+      "webpagedata": "获得途径",
+      "shorten": "获得途径",
+      "timestamp": 1784490326683
+    },
+    "Eligible Players": {
+      "webpagedata": "可进化球员",
+      "shorten": "可进化球员",
+      "timestamp": 1784490349177
+    },
+    "Evolved Players": {
+      "webpagedata": "进化球员",
+      "shorten": "进化球员",
+      "timestamp": 1784490376509
+    },
+    "Analysis": {
+      "webpagedata": "分析",
+      "shorten": "分析",
+      "timestamp": 1784490438711
+    },
+    "Standard Season Pass": {
+      "webpagedata": "基础通行证",
+      "shorten": "基础通行证",
+      "timestamp": 1784490478564
     }
   },
   "futbin": {
