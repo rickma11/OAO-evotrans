@@ -732,6 +732,11 @@
       "webpagedata": "全能中场",
       "shorten": "全能中场",
       "timestamp": 1774364268958
+    },
+    "Wideback": {
+      "webpagedata": "边后卫",
+      "shorten": "边后卫",
+      "timestamp": 1786536967670
     }
   },
   "chemistry": {
@@ -1795,6 +1800,11 @@
       "webpagedata": "无可用进化路径",
       "shorten": "无可用进化路径",
       "timestamp": 1784869182767
+    },
+    "Player History": {
+      "webpagedata": "球员历史版本",
+      "shorten": "球员历史版本",
+      "timestamp": 1786537173282
     }
   },
   "futbin": {
