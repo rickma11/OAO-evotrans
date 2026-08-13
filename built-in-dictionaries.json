@@ -129,20 +129,24 @@
       "shorten": "位置总数"
     },
     "PlayStyle": {
-      "webpagedata": "银特技总数",
-      "shorten": "银特技总数"
+      "webpagedata": "比赛风格总数",
+      "shorten": "比赛风格总数",
+      "timestamp": 1786617130561
     },
     "Max PS": {
-      "webpagedata": "银特技总数最多",
-      "shorten": "银特技总数最多"
+      "webpagedata": "比赛风格总数最多",
+      "shorten": "比赛风格总数最多",
+      "timestamp": 1786617136616
     },
     "PlayStyle+": {
-      "webpagedata": "金特技总数",
-      "shorten": "金特技总数"
+      "webpagedata": "比赛风格+总数",
+      "shorten": "比赛风格+总数",
+      "timestamp": 1786617145496
     },
     "Max PS+": {
-      "webpagedata": "金特技总数最多",
-      "shorten": "金特技总数最多"
+      "webpagedata": "比赛风格+总数最多",
+      "shorten": "比赛风格+总数最多",
+      "timestamp": 1786617153559
     },
     "Not Rarity": {
       "webpagedata": "排除稀有程度",
@@ -186,9 +190,9 @@
       "timestamp": 1774271421021
     },
     "PlayStyles Lab": {
-      "webpagedata": "球员特技",
-      "shorten": "球员特技",
-      "timestamp": 1780559719950
+      "webpagedata": "比赛风格实验室",
+      "shorten": "比赛风格实验室",
+      "timestamp": 1786617119586
     },
     "Glory Hunters": {
       "webpagedata": "荣耀猎手",
@@ -847,8 +851,9 @@
   },
   "playstyles": {
     "PlayStyles+": {
-      "webpagedata": "金特技",
-      "shorten": "金特技"
+      "webpagedata": "比赛风格+",
+      "shorten": "比赛风格+",
+      "timestamp": 1786617179166
     },
     "Goalkeeping": {
       "webpagedata": "守门",
@@ -1119,12 +1124,14 @@
       "shorten": "市场价格"
     },
     "PLAYSTYLES": {
-      "webpagedata": "球员特技",
-      "shorten": "特技"
+      "webpagedata": "比赛风格",
+      "shorten": "比赛风格",
+      "timestamp": 1786617212924
     },
     "PlayStyles": {
-      "webpagedata": "球员特技",
-      "shorten": "特技"
+      "webpagedata": "比赛风格",
+      "shorten": "比赛风格",
+      "timestamp": 1786617216684
     },
     "CHEM LINKS": {
       "webpagedata": "化学链接",
@@ -1442,9 +1449,9 @@
       "timestamp": 1773194922628
     },
     "Recommended PlayStyles": {
-      "webpagedata": "特技搭配推荐",
-      "shorten": "特技搭配推荐",
-      "timestamp": 1773455961989
+      "webpagedata": "比赛风格搭配推荐",
+      "shorten": "比赛风格搭配推荐",
+      "timestamp": 1786617206109
     },
     "New Players": {
       "webpagedata": "新球员",
@@ -1817,8 +1824,9 @@
       "shorten": "新球员"
     },
     "Playstyles": {
-      "webpagedata": "球员特技",
-      "shorten": "球员特技"
+      "webpagedata": "比赛风格",
+      "shorten": "比赛风格",
+      "timestamp": 1786617225588
     },
     "Evolution Players": {
       "webpagedata": "进化球员",
@@ -2002,8 +2010,9 @@
       "shorten": "进化数据提升最高的路径"
     },
     "Path with most Play Styles added": {
-      "webpagedata": "进化特技加成最多的路径",
-      "shorten": "进化特技加成最多的路径"
+      "webpagedata": "比赛风格加成最多的进化路径",
+      "shorten": "比赛风格加成最多的进化路径",
+      "timestamp": 1786617244787
     },
     "Path with most Roles added": {
       "webpagedata": "进化角色加成最高的路径",
@@ -2085,9 +2094,9 @@
       "shorten": "战术"
     },
     "PlayStyles": {
-      "webpagedata": "球员特技",
-      "shorten": "特技",
-      "timestamp": 1773065701757
+      "webpagedata": "比赛风格",
+      "shorten": "比赛风格",
+      "timestamp": 1786617222140
     },
     "SM & WF": {
       "webpagedata": "花式&逆足",
