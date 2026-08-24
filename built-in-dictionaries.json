@@ -1812,6 +1812,66 @@
       "webpagedata": "球员历史版本",
       "shorten": "球员历史版本",
       "timestamp": 1786537173282
+    },
+    "FC 27 Ratings": {
+      "webpagedata": "FC27球员",
+      "shorten": "FC27球员",
+      "timestamp": 1787548023141
+    },
+    "Leaderboards": {
+      "webpagedata": "排行榜",
+      "shorten": "排行榜",
+      "timestamp": 1787548069035
+    },
+    "All Leaderboards": {
+      "webpagedata": "所有",
+      "shorten": "所有",
+      "timestamp": 1787548097515
+    },
+    "Fastest": {
+      "webpagedata": "速度",
+      "shorten": "速度",
+      "timestamp": 1787548192803
+    },
+    "Tallest": {
+      "webpagedata": "身高",
+      "shorten": "身高",
+      "timestamp": 1787548189163
+    },
+    "Shooting": {
+      "webpagedata": "射门",
+      "shorten": "射门",
+      "timestamp": 1787548185061
+    },
+    "Passing": {
+      "webpagedata": "传球",
+      "shorten": "传球",
+      "timestamp": 1787548210266
+    },
+    "Dribbling": {
+      "webpagedata": "盘带",
+      "shorten": "盘带",
+      "timestamp": 1787548225194
+    },
+    "Defending": {
+      "webpagedata": "防守",
+      "shorten": "防守",
+      "timestamp": 1787548237129
+    },
+    "Physical": {
+      "webpagedata": "身体",
+      "shorten": "身体",
+      "timestamp": 1787548248322
+    },
+    "Total Stats": {
+      "webpagedata": "总评",
+      "shorten": "总评",
+      "timestamp": 1787548259416
+    },
+    "In-Game Stats": {
+      "webpagedata": "IGS总评",
+      "shorten": "IGS总评",
+      "timestamp": 1787548312813
     }
   },
   "futbin": {
