@@ -1872,6 +1872,26 @@
       "webpagedata": "IGS总评",
       "shorten": "IGS总评",
       "timestamp": 1787548312813
+    },
+    "Handling": {
+      "webpagedata": "接球",
+      "shorten": "接球",
+      "timestamp": 1787718310982
+    },
+    "Speed": {
+      "webpagedata": "速度",
+      "shorten": "速度",
+      "timestamp": 1787718329078
+    },
+    "FC 27 Rating Confirmed": {
+      "webpagedata": "FC 27 总评",
+      "shorten": "FC 27 总评",
+      "timestamp": 1787718381115
+    },
+    "Full individual chemistry": {
+      "webpagedata": "满化学默契",
+      "shorten": "满化学默契",
+      "timestamp": 1787718411552
     }
   },
   "futbin": {
