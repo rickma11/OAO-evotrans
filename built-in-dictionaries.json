@@ -243,6 +243,11 @@
       "webpagedata": "最佳进化",
       "shorten": "最佳进化",
       "timestamp": 1786421274903
+    },
+    "Journey of Nations": {
+      "webpagedata": "国家之旅",
+      "shorten": "国家之旅",
+      "timestamp": 1788969586704
     }
   },
   "sixStat": {
@@ -507,6 +512,41 @@
       "webpagedata": "任意球精度",
       "shorten": "任意球精度",
       "timestamp": 1774276335008
+    },
+    "Dribbling (Att.)": {
+      "webpagedata": "盘带",
+      "shorten": "盘带",
+      "timestamp": 1788969192724
+    },
+    "GK Diving": {
+      "webpagedata": "门将 飞身扑救",
+      "shorten": "门将 飞身扑救",
+      "timestamp": 1788969342840
+    },
+    "GK Handling": {
+      "webpagedata": "门将 接球",
+      "shorten": "门将 接球",
+      "timestamp": 1788969338817
+    },
+    "GK Kicking": {
+      "webpagedata": "门将 开球",
+      "shorten": "门将 开球",
+      "timestamp": 1788969334307
+    },
+    "GK Reflexes": {
+      "webpagedata": "门将 反应能力",
+      "shorten": "门将 反应能力",
+      "timestamp": 1788969326735
+    },
+    "GK Speed": {
+      "webpagedata": "门将 冲刺速度",
+      "shorten": "门将 冲刺速度",
+      "timestamp": 1788969289032
+    },
+    "GK Positioning": {
+      "webpagedata": "门将 站位",
+      "shorten": "门将 站位",
+      "timestamp": 1788969306437
     }
   },
   "roles": {
@@ -2158,6 +2198,201 @@
       "webpagedata": "化学 & 角色信息",
       "shorten": "化学 & 角色信息",
       "timestamp": 1788959465221
+    },
+    "Expired": {
+      "webpagedata": "已过期",
+      "shorten": "已过期",
+      "timestamp": 1788967460138
+    },
+    "Mark as Completed": {
+      "webpagedata": "标记已完成",
+      "shorten": "标记已完成",
+      "timestamp": 1788967501303
+    },
+    "Share": {
+      "webpagedata": "分享",
+      "shorten": "分享",
+      "timestamp": 1788967559101
+    },
+    "Select a Manager": {
+      "webpagedata": "选择经理",
+      "shorten": "选择经理",
+      "timestamp": 1788967582466
+    },
+    "Bench": {
+      "webpagedata": "替补席",
+      "shorten": "替补席",
+      "timestamp": 1788967640944
+    },
+    "Manager": {
+      "webpagedata": "经理",
+      "shorten": "经理",
+      "timestamp": 1788967832608
+    },
+    "Reset": {
+      "webpagedata": "重置",
+      "shorten": "重置",
+      "timestamp": 1788967895399
+    },
+    "Submit by": {
+      "webpagedata": "提交截止日期",
+      "shorten": "提交截止日期",
+      "timestamp": 1788968113777
+    },
+    "Expiry": {
+      "webpagedata": "到期时间",
+      "shorten": "到期时间",
+      "timestamp": 1788968126353
+    },
+    "Coins Cost": {
+      "webpagedata": "金币费用",
+      "shorten": "金币费用",
+      "timestamp": 1788968171119
+    },
+    "Points Cost": {
+      "webpagedata": "绿点费用",
+      "shorten": "绿点费用",
+      "timestamp": 1788968162488
+    },
+    "Wins": {
+      "webpagedata": "胜利场次",
+      "shorten": "胜利场次",
+      "timestamp": 1788968240823
+    },
+    "Clean Sheets": {
+      "webpagedata": "零封场次",
+      "shorten": "零封场次",
+      "timestamp": 1788968229355
+    },
+    "Online Required": {
+      "webpagedata": "线上场次",
+      "shorten": "线上场次",
+      "timestamp": 1788968261046
+    },
+    "Recommended Position": {
+      "webpagedata": "位置推荐",
+      "shorten": "位置推荐",
+      "timestamp": 1788968326751
+    },
+    "Completion Difficulty": {
+      "webpagedata": "完成难度",
+      "shorten": "完成难度",
+      "timestamp": 1788968346891
+    },
+    "Number of Games": {
+      "webpagedata": "比赛场次",
+      "shorten": "比赛场次",
+      "timestamp": 1788968383909
+    },
+    "Number of Wins": {
+      "webpagedata": "胜利场次",
+      "shorten": "胜利场次",
+      "timestamp": 1788968375865
+    },
+    "Stats Boost": {
+      "webpagedata": "数据提升",
+      "shorten": "数据提升",
+      "timestamp": 1788968401636
+    },
+    "Only Primary Positions": {
+      "webpagedata": "仅限主要位置",
+      "shorten": "仅限主要位置",
+      "timestamp": 1788968468864
+    },
+    "Has All Selected Positions": {
+      "webpagedata": "全部所选择位置",
+      "shorten": "全部所选择位置",
+      "timestamp": 1788968494683
+    },
+    "Has Any Selected PlayStyles": {
+      "webpagedata": "拥有任意已选择的比赛风格",
+      "shorten": "拥有任意已选择的比赛风格",
+      "timestamp": 1788968574670
+    },
+    "Miscellaneous": {
+      "webpagedata": "其他",
+      "shorten": "其他",
+      "timestamp": 1788968594573
+    },
+    "Show Only Market Players": {
+      "webpagedata": "仅限市场可交易球员",
+      "shorten": "仅限市场可交易球员",
+      "timestamp": 1788968811770
+    },
+    "Show Only Challenge Players": {
+      "webpagedata": "仅限SBC/任务球员",
+      "shorten": "仅限SBC/任务球员",
+      "timestamp": 1788968879835
+    },
+    "SBC Players Only": {
+      "webpagedata": "仅限SBC球员",
+      "shorten": "仅限SBC球员",
+      "timestamp": 1788968701730
+    },
+    "Season Pass Players Only": {
+      "webpagedata": "仅限通行证球员",
+      "shorten": "仅限通行证球员",
+      "timestamp": 1788968726266
+    },
+    "Objective Players Only": {
+      "webpagedata": "仅限任务球员",
+      "shorten": "仅限任务球员",
+      "timestamp": 1788968855326
+    },
+    "Active SBC Players Only": {
+      "webpagedata": "仅限当前在线SBC球员",
+      "shorten": "仅限当前在线SBC球员",
+      "timestamp": 1788968905815
+    },
+    "Active Objective Players Only": {
+      "webpagedata": "仅限当前在线任务球员",
+      "shorten": "仅限当前在线任务球员",
+      "timestamp": 1788968926341
+    },
+    "Active Season Pass Only": {
+      "webpagedata": "仅限当前在线通行证球员",
+      "shorten": "仅限当前在线通行证球员",
+      "timestamp": 1788968945517
+    },
+    "Has Real Face": {
+      "webpagedata": "是否真脸",
+      "shorten": "是否真脸",
+      "timestamp": 1788969118024
+    },
+    "Go Back": {
+      "webpagedata": "回到上一级",
+      "shorten": "回到上一级",
+      "timestamp": 1788969152559
+    },
+    "Season Pass": {
+      "webpagedata": "赛季通行证",
+      "shorten": "赛季通行证",
+      "timestamp": 1788969458356
+    },
+    "Seasonal": {
+      "webpagedata": "赛季",
+      "shorten": "赛季",
+      "timestamp": 1788969477934
+    },
+    "Campaign": {
+      "webpagedata": "活动",
+      "shorten": "活动",
+      "timestamp": 1788969495158
+    },
+    "Live Events": {
+      "webpagedata": "实时赛事",
+      "shorten": "实时赛事",
+      "timestamp": 1788969599075
+    },
+    "Milestones": {
+      "webpagedata": "里程碑",
+      "shorten": "里程碑",
+      "timestamp": 1788969621595
+    },
+    "Filters": {
+      "webpagedata": "筛选条件",
+      "shorten": "筛选条件",
+      "timestamp": 1788969773531
     }
   },
   "futbin": {
