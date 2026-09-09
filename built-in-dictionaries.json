@@ -1105,7 +1105,8 @@
     },
     "Past and Present": {
       "webpagedata": "过去与现在",
-      "shorten": "过去与现在"
+      "shorten": "过去与现在",
+      "timestamp": 1788958898285
     },
     "OVERVIEW": {
       "webpagedata": "总览",
@@ -1892,6 +1893,271 @@
       "webpagedata": "满化学默契",
       "shorten": "满化学默契",
       "timestamp": 1787718411552
+    },
+    "Trending": {
+      "webpagedata": "热门",
+      "shorten": "热门",
+      "timestamp": 1788955890515
+    },
+    "Recent": {
+      "webpagedata": "最近",
+      "shorten": "最近",
+      "timestamp": 1788955934102
+    },
+    "Upgraded": {
+      "webpagedata": "趋势",
+      "shorten": "趋势",
+      "timestamp": 1788955954212
+    },
+    "Featured": {
+      "webpagedata": "精选",
+      "shorten": "精选",
+      "timestamp": 1788956002846
+    },
+    "Quick Links": {
+      "webpagedata": "快速入口",
+      "shorten": "快速入口",
+      "timestamp": 1788956030802
+    },
+    "What's New": {
+      "webpagedata": "新内容",
+      "shorten": "新内容",
+      "timestamp": 1788956224977
+    },
+    "What's Hot": {
+      "webpagedata": "热门内容",
+      "shorten": "热门内容",
+      "timestamp": 1788956246911
+    },
+    "Saved Filters": {
+      "webpagedata": "已保存的筛选规则",
+      "shorten": "已保存的筛选规则",
+      "timestamp": 1788956566222
+    },
+    "Number of Playstyles": {
+      "webpagedata": "比赛风格数量",
+      "shorten": "比赛风格数量",
+      "timestamp": 1788956598422
+    },
+    "Number of Playstyles+": {
+      "webpagedata": "比赛风格+数量",
+      "shorten": "比赛风格+数量",
+      "timestamp": 1788956628673
+    },
+    "Number of All Playstyles": {
+      "webpagedata": "所有比赛风格数量",
+      "shorten": "所有比赛风格数量",
+      "timestamp": 1788956645721
+    },
+    "Total IGs": {
+      "webpagedata": "IGs分数",
+      "shorten": "IGs分数",
+      "timestamp": 1788956665777
+    },
+    "Total Face Stats": {
+      "webpagedata": "卡面总评",
+      "shorten": "卡面总评",
+      "timestamp": 1788956682904
+    },
+    "Created At": {
+      "webpagedata": "加入时间",
+      "shorten": "加入时间",
+      "timestamp": 1788956714497
+    },
+    "Sort": {
+      "webpagedata": "排序",
+      "shorten": "排序",
+      "timestamp": 1788956792446
+    },
+    "Best PlayStyles by Role": {
+      "webpagedata": "各角色的最佳游戏风格搭配",
+      "shorten": "各角色的最佳游戏风格搭配",
+      "timestamp": 1788956977002
+    },
+    "Token Store": {
+      "webpagedata": "代币商城",
+      "shorten": "代币商城",
+      "timestamp": 1788957003350
+    },
+    "Store Expires In": {
+      "webpagedata": "商店过期时间",
+      "shorten": "商店过期时间",
+      "timestamp": 1788957031817
+    },
+    "Weekly Limit": {
+      "webpagedata": "每周限额",
+      "shorten": "每周限额",
+      "timestamp": 1788957047042
+    },
+    "Weekly Reset In": {
+      "webpagedata": "每周重置时间",
+      "shorten": "每周重置时间",
+      "timestamp": 1788957065241
+    },
+    "Resources": {
+      "webpagedata": "资源",
+      "shorten": "资源",
+      "timestamp": 1788957143254
+    },
+    "Market": {
+      "webpagedata": "市场",
+      "shorten": "市场",
+      "timestamp": 1788957164061
+    },
+    "Community": {
+      "webpagedata": "社区",
+      "shorten": "社区",
+      "timestamp": 1788957432850
+    },
+    "Live Hub": {
+      "webpagedata": "卡面升级追踪",
+      "shorten": "卡面升级追踪",
+      "timestamp": 1788957644633
+    },
+    "Upcoming Fixtures": {
+      "webpagedata": "即将到来的赛程",
+      "shorten": "即将到来的赛程",
+      "timestamp": 1788957670030
+    },
+    "Competitions": {
+      "webpagedata": "赛事",
+      "shorten": "赛事",
+      "timestamp": 1788957698225
+    },
+    "Recently Upgraded": {
+      "webpagedata": "最近升级",
+      "shorten": "最近升级",
+      "timestamp": 1788957725476
+    },
+    "Campaigns": {
+      "webpagedata": "活动",
+      "shorten": "活动",
+      "timestamp": 1788957766585
+    },
+    "Fixtures": {
+      "webpagedata": "赛程",
+      "shorten": "赛程",
+      "timestamp": 1788957825886
+    },
+    "Standings": {
+      "webpagedata": "积分榜",
+      "shorten": "积分榜",
+      "timestamp": 1788958192567
+    },
+    "Campaign Squads": {
+      "webpagedata": "活动阵容",
+      "shorten": "活动阵容",
+      "timestamp": 1788958367847
+    },
+    "Connect your EA Account": {
+      "webpagedata": "关联EA账号",
+      "shorten": "关联EA账号",
+      "timestamp": 1788958620189
+    },
+    "Collections": {
+      "webpagedata": "收集图鉴",
+      "shorten": "收集图鉴",
+      "timestamp": 1788958654444
+    },
+    "Connect with EA Account": {
+      "webpagedata": "关联EA账号",
+      "shorten": "关联EA账号",
+      "timestamp": 1788958674412
+    },
+    "All Collections": {
+      "webpagedata": "所有收集",
+      "shorten": "所有收集",
+      "timestamp": 1788958717367
+    },
+    "My Players": {
+      "webpagedata": "我的球员",
+      "shorten": "我的球员",
+      "timestamp": 1788958733361
+    },
+    "Create Your Own": {
+      "webpagedata": "创建自己的收藏",
+      "shorten": "创建自己的收藏",
+      "timestamp": 1788958761060
+    },
+    "Card Creator": {
+      "webpagedata": "卡片创造",
+      "shorten": "卡片创造",
+      "timestamp": 1788958924920
+    },
+    "Upgrade Hub": {
+      "webpagedata": "升级中心",
+      "shorten": "升级中心",
+      "timestamp": 1788958977368
+    },
+    "Player Pools": {
+      "webpagedata": "球员卡池",
+      "shorten": "球员卡池",
+      "timestamp": 1788959015159
+    },
+    "Promos": {
+      "webpagedata": "卡池活动",
+      "shorten": "卡池活动",
+      "timestamp": 1788959059612
+    },
+    "Games": {
+      "webpagedata": "游戏",
+      "shorten": "游戏",
+      "timestamp": 1788959079666
+    },
+    "FUT Grid": {
+      "webpagedata": "FUT网格",
+      "shorten": "FUT网格",
+      "timestamp": 1788959091772
+    },
+    "News": {
+      "webpagedata": "新闻",
+      "shorten": "新闻",
+      "timestamp": 1788959113594
+    },
+    "Tier Lists": {
+      "webpagedata": "排行榜工具",
+      "shorten": "排行榜工具",
+      "timestamp": 1788959145556
+    },
+    "Evo Leaderboards": {
+      "webpagedata": "进化排行榜",
+      "shorten": "进化排行榜",
+      "timestamp": 1788959182051
+    },
+    "GG Creators": {
+      "webpagedata": "GG创作者",
+      "shorten": "GG创作者",
+      "timestamp": 1788959211046
+    },
+    "Tools": {
+      "webpagedata": "工具",
+      "shorten": "工具",
+      "timestamp": 1788959287915
+    },
+    "Download Card": {
+      "webpagedata": "下载卡片",
+      "shorten": "下载卡片",
+      "timestamp": 1788959314850
+    },
+    "Card Settings": {
+      "webpagedata": "卡片设置",
+      "shorten": "卡片设置",
+      "timestamp": 1788959349496
+    },
+    "Scoring": {
+      "webpagedata": "射门",
+      "shorten": "射门",
+      "timestamp": 1788959366960
+    },
+    "Custom Image & Filters": {
+      "webpagedata": "自定义卡面",
+      "shorten": "自定义卡面",
+      "timestamp": 1788959400760
+    },
+    "Chemistry & Squad Builder": {
+      "webpagedata": "化学 & 角色信息",
+      "shorten": "化学 & 角色信息",
+      "timestamp": 1788959465221
     }
   },
   "futbin": {
