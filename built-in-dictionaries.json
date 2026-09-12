@@ -1955,14 +1955,14 @@
       "timestamp": 1787548248322
     },
     "Total Stats": {
-      "webpagedata": "总评",
-      "shorten": "总评",
-      "timestamp": 1787548259416
+      "webpagedata": "评分",
+      "shorten": "评分",
+      "timestamp": 1789225389461
     },
     "In-Game Stats": {
-      "webpagedata": "IGS总评",
-      "shorten": "IGS总评",
-      "timestamp": 1787548312813
+      "webpagedata": "IGS评分",
+      "shorten": "IGS评分",
+      "timestamp": 1789225383903
     },
     "Handling": {
       "webpagedata": "接球",
@@ -1975,9 +1975,9 @@
       "timestamp": 1787718329078
     },
     "FC 27 Rating Confirmed": {
-      "webpagedata": "FC 27 总评",
-      "shorten": "FC 27 总评",
-      "timestamp": 1787718381115
+      "webpagedata": "FC27评分",
+      "shorten": "FC27评分",
+      "timestamp": 1789225376746
     },
     "Full individual chemistry": {
       "webpagedata": "满化学默契",
@@ -2045,9 +2045,9 @@
       "timestamp": 1788956665777
     },
     "Total Face Stats": {
-      "webpagedata": "卡面总评",
-      "shorten": "卡面总评",
-      "timestamp": 1788956682904
+      "webpagedata": "卡面评分",
+      "shorten": "卡面评分",
+      "timestamp": 1789225362913
     },
     "Created At": {
       "webpagedata": "加入时间",
@@ -2503,6 +2503,46 @@
       "webpagedata": "我的阵容",
       "shorten": "我的阵容",
       "timestamp": 1789053219402
+    },
+    "FC 27 Players": {
+      "webpagedata": "FC27球员",
+      "shorten": "FC27球员",
+      "timestamp": 1789224968988
+    },
+    "FC 27 Ratings Hub": {
+      "webpagedata": "FC27评分中心",
+      "shorten": "FC27评分中心",
+      "timestamp": 1789225350575
+    },
+    "Ratings": {
+      "webpagedata": "评分",
+      "shorten": "评分",
+      "timestamp": 1789225324329
+    },
+    "Downgrades": {
+      "webpagedata": "降分",
+      "shorten": "降分",
+      "timestamp": 1789225244560
+    },
+    "Recent Changes": {
+      "webpagedata": "最近更新",
+      "shorten": "最近更新",
+      "timestamp": 1789225201983
+    },
+    "Biggest upgrades": {
+      "webpagedata": "最大提升",
+      "shorten": "最大提升",
+      "timestamp": 1789225222110
+    },
+    "Biggest downgrades": {
+      "webpagedata": "最大降分",
+      "shorten": "最大降分",
+      "timestamp": 1789225238350
+    },
+    "FC 27 ratings by club": {
+      "webpagedata": "FC27俱乐部球员评分",
+      "shorten": "FC27俱乐部球员评分",
+      "timestamp": 1789225316157
     }
   },
   "futbin": {
@@ -2876,9 +2916,9 @@
       "timestamp": 1789051906358
     },
     "Rating Combinations": {
-      "webpagedata": "总评组合",
-      "shorten": "总评组合",
-      "timestamp": 1789051947653
+      "webpagedata": "评分组合",
+      "shorten": "评分组合",
+      "timestamp": 1789225404526
     },
     "SBC Combinations Calculator": {
       "webpagedata": "SBC计算器",
