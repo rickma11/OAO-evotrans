@@ -288,6 +288,31 @@
       "webpagedata": "经理",
       "shorten": "经理",
       "timestamp": 1789055920030
+    },
+    "Bronze": {
+      "webpagedata": "铜",
+      "shorten": "铜",
+      "timestamp": 1789485100124
+    },
+    "Silver": {
+      "webpagedata": "银",
+      "shorten": "银",
+      "timestamp": 1789485102419
+    },
+    "Gold": {
+      "webpagedata": "金",
+      "shorten": "金",
+      "timestamp": 1789485110191
+    },
+    "Base Hall of FUT": {
+      "webpagedata": "名人堂",
+      "shorten": "名人堂",
+      "timestamp": 1789485122026
+    },
+    "Base Icon": {
+      "webpagedata": "基础传奇",
+      "shorten": "基础传奇",
+      "timestamp": 1789485130974
     }
   },
   "sixStat": {
