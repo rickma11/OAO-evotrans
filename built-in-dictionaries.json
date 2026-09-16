@@ -313,6 +313,21 @@
       "webpagedata": "基础传奇",
       "shorten": "基础传奇",
       "timestamp": 1789485130974
+    },
+    "Team of the week": {
+      "webpagedata": "TOTW周黑",
+      "shorten": "TOTW周黑",
+      "timestamp": 1789579715191
+    },
+    "Base Hero": {
+      "webpagedata": "基础英雄",
+      "shorten": "基础英雄",
+      "timestamp": 1789579761313
+    },
+    "Squad Foundations": {
+      "webpagedata": "基础阵容",
+      "shorten": "基础阵容",
+      "timestamp": 1789579773349
     }
   },
   "sixStat": {
