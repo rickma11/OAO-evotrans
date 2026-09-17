@@ -305,9 +305,9 @@
       "timestamp": 1789485110191
     },
     "Base Hall of FUT": {
-      "webpagedata": "名人堂",
-      "shorten": "名人堂",
-      "timestamp": 1789485122026
+      "webpagedata": "FUT名人堂",
+      "shorten": "FUT名人堂",
+      "timestamp": 1789661424607
     },
     "Base Icon": {
       "webpagedata": "基础传奇",
@@ -363,6 +363,21 @@
       "webpagedata": "全息版",
       "shorten": "全息版",
       "timestamp": 1789653374932
+    },
+    "Ones to Watch": {
+      "webpagedata": "焦点球员",
+      "shorten": "焦点球员",
+      "timestamp": 1789658197961
+    },
+    "Debut International Icon": {
+      "webpagedata": "首秀国际超级巨星",
+      "shorten": "首秀国际超级巨星",
+      "timestamp": 1789661666737
+    },
+    "Ads & Sponsorships": {
+      "webpagedata": "广告赞助",
+      "shorten": "广告赞助",
+      "timestamp": 1789664231229
     }
   },
   "sixStat": {
