@@ -333,6 +333,36 @@
       "webpagedata": "焦点球员",
       "shorten": "焦点球员",
       "timestamp": 1789606061269
+    },
+    "Pathway Evolutions": {
+      "webpagedata": "路线进化",
+      "shorten": "路线进化",
+      "timestamp": 1789648942166
+    },
+    "Evolutions": {
+      "webpagedata": "进化",
+      "shorten": "进化",
+      "timestamp": 1789648950269
+    },
+    "New": {
+      "webpagedata": "新",
+      "shorten": "新",
+      "timestamp": 1789648981828
+    },
+    "Training Camp": {
+      "webpagedata": "训练营",
+      "shorten": "训练营",
+      "timestamp": 1789648994796
+    },
+    "Standard": {
+      "webpagedata": "基础版",
+      "shorten": "基础版",
+      "timestamp": 1789653339819
+    },
+    "Holographic": {
+      "webpagedata": "全息版",
+      "shorten": "全息版",
+      "timestamp": 1789653374932
     }
   },
   "sixStat": {
