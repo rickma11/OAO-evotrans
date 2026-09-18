@@ -473,6 +473,11 @@
       "webpagedata": "联赛和国家进阶",
       "shorten": "联赛和国家进阶",
       "timestamp": 1789747365355
+    },
+    "Anfield Ambition": {
+      "webpagedata": "安菲尔德雄心",
+      "shorten": "安菲尔德雄心",
+      "timestamp": 1789757127804
     }
   },
   "sixStat": {
@@ -2728,6 +2733,11 @@
       "webpagedata": "FC27俱乐部球员评分",
       "shorten": "FC27俱乐部球员评分",
       "timestamp": 1789225316157
+    },
+    "Tracker": {
+      "webpagedata": "追踪",
+      "shorten": "追踪",
+      "timestamp": 1789755782811
     }
   },
   "futbin": {
