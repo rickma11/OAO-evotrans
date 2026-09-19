@@ -1,0 +1,18 @@
+{
+  "basic": {
+    "China": {
+      "webpagedata": "中国"
+    }
+  },
+  "sbc": {
+    "Bronze Upgrade": {
+      "webpagedata": "青铜升级"
+    },
+    "Gold Upgrade": {
+      "webpagedata": "黄金升级"
+    },
+    "Silver Upgrade": {
+      "webpagedata": "白银升级"
+    }
+  }
+}
