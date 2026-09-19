@@ -4,66 +4,7 @@
       "webpagedata": "球员名称",
       "shorten": "名称"
     },
-    "Jumbo Gold Pack": {
-      "webpagedata": "大型黄金组合包",
-      "shorten": "大型黄金组合包"
-    },
-    "Small Gold Pack": {
-      "webpagedata": "小型黄金组合包",
-      "shorten": "小型黄金组合包"
-    },
-    "Small Electrum Players Pack": {
-      "webpagedata": "小型琥珀金球员组合包",
-      "shorten": "小型琥珀金球员组合包"
-    },
-    "Gold Pack": {
-      "webpagedata": "黄金组合包",
-      "shorten": "黄金组合包"
-    },
-    "Large Electrum Players Pack": {
-      "webpagedata": "大型琥珀金球员组合包",
-      "shorten": "大型琥珀金球员组合包"
-    },
-    "Small Gold Players Pack": {
-      "webpagedata": "小型黄金球员组合包",
-      "shorten": "小型黄金球员组合包"
-    },
-    "Gold Player Pack": {
-      "webpagedata": "黄金球员组合包",
-      "shorten": "黄金球员组合包"
-    },
-    "Silver Players Pack": {
-      "webpagedata": "白银球员组合包",
-      "shorten": "白银球员组合包"
-    },
-    "Small Silver Players Pack": {
-      "webpagedata": "小型白银球员组合包",
-      "shorten": "小型白银球员组合包"
-    },
-    "Bronze Players Pack": {
-      "webpagedata": "青铜球员组合包",
-      "shorten": "青铜球员组合包"
-    },
-    "Large Silver Players Pack": {
-      "webpagedata": "大型白银球员组合包",
-      "shorten": "大型白银球员组合包"
-    },
-    "Large Gold Pack": {
-      "webpagedata": "大型黄金组合包",
-      "shorten": "大型黄金组合包"
-    },
-    "Mixed Players Pack": {
-      "webpagedata": "混合球员组合包",
-      "shorten": "混合球员组合包"
-    },
-    "Silver Pack": {
-      "webpagedata": "白银组合包",
-      "shorten": "白银组合包"
-    },
-    "Gold Players Pack": {
-      "webpagedata": "黄金球员组合包",
-      "shorten": "黄金球员组合包"
-    },
+    
     "Club": {
       "webpagedata": "所属俱乐部",
       "shorten": "俱乐部"
@@ -449,35 +390,10 @@
       "shorten": "基础",
       "timestamp": 1789742954753
     },
-    "Marquee Matchups": {
-      "webpagedata": "重大比赛",
-      "shorten": "重大比赛",
-      "timestamp": 1789746462697
-    },
-    "Silver Upgrade": {
-      "webpagedata": "白银升级",
-      "shorten": "白银升级",
-      "timestamp": 1789747292605
-    },
-    "Gold Upgrade": {
-      "webpagedata": "黄金升级",
-      "shorten": "黄金升级",
-      "timestamp": 1789747312955
-    },
-    "Bronze Upgrade": {
-      "webpagedata": "青铜升级",
-      "shorten": "青铜升级",
-      "timestamp": 1789747324926
-    },
-    "League & Nation Advanced": {
-      "webpagedata": "联赛和国家进阶",
-      "shorten": "联赛和国家进阶",
-      "timestamp": 1789747365355
-    },
-    "Anfield Ambition": {
-      "webpagedata": "安菲尔德雄心",
-      "shorten": "安菲尔德雄心",
-      "timestamp": 1789757127804
+    "Partnerships": {
+      "webpagedata": "合作伙伴",
+      "shorten": "合作伙伴",
+      "timestamp": 1789793161991
     }
   },
   "sixStat": {
