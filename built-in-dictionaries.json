@@ -4,7 +4,6 @@
       "webpagedata": "球员名称",
       "shorten": "名称"
     },
-    
     "Club": {
       "webpagedata": "所属俱乐部",
       "shorten": "俱乐部"
@@ -394,6 +393,18 @@
       "webpagedata": "合作伙伴",
       "shorten": "合作伙伴",
       "timestamp": 1789793161991
+    },
+    "Ones to Watch Retro 18": {
+      "webpagedata": "焦点球员复古18",
+      "timestamp": 1789891636896
+    },
+    "Ones to Watch Retro 19": {
+      "webpagedata": "焦点球员复古19",
+      "timestamp": 1789891650661
+    },
+    "Ones to Watch Retro 20": {
+      "webpagedata": "焦点球员复古20",
+      "timestamp": 1789891664805
     }
   },
   "sixStat": {
