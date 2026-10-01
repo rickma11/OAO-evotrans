@@ -409,6 +409,14 @@
     "Destined for Glory": {
       "webpagedata": "命定荣耀",
       "timestamp": 1790360062479
+    },
+    "POTM Serie A": {
+      "webpagedata": "意甲月最佳",
+      "timestamp": 1790868815063
+    },
+    "POTM Bundesliga": {
+      "webpagedata": "德甲月最佳",
+      "timestamp": 1790868900543
     }
   },
   "sixStat": {
