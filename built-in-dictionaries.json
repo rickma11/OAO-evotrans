@@ -417,6 +417,14 @@
     "POTM Bundesliga": {
       "webpagedata": "德甲月最佳",
       "timestamp": 1790868900543
+    },
+    "POTM Premier League": {
+      "webpagedata": "英超月最佳",
+      "timestamp": 1790953844118
+    },
+    "POTM LaLiga EA Sports": {
+      "webpagedata": "西甲月最佳",
+      "timestamp": 1790964260354
     }
   },
   "sixStat": {
