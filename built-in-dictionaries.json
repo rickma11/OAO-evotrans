@@ -429,6 +429,10 @@
     "FUT Champions": {
       "webpagedata": "FUT冠军",
       "timestamp": 1790991984691
+    },
+    "POTM Liga F": {
+      "webpagedata": "西女甲月最佳",
+      "timestamp": 1791324136275
     }
   },
   "sixStat": {
@@ -2689,6 +2693,14 @@
       "webpagedata": "追踪",
       "shorten": "追踪",
       "timestamp": 1789755782811
+    },
+    "Expires": {
+      "webpagedata": "剩余时间",
+      "timestamp": 1791270286619
+    },
+    "Transfer List": {
+      "webpagedata": "转会列表",
+      "timestamp": 1791271107478
     }
   },
   "futbin": {
@@ -3400,6 +3412,14 @@
       "webpagedata": "FC赛季",
       "shorten": "FC赛季",
       "timestamp": 1789056747865
+    },
+    "Streamlined SBC Solver": {
+      "webpagedata": "简化版SBC求解器",
+      "timestamp": 1791273146845
+    },
+    "Cheapest Item Score": {
+      "webpagedata": "最低商品积分",
+      "timestamp": 1791273208465
     }
   },
   "easysbc": {
