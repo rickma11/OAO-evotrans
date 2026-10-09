@@ -433,6 +433,10 @@
     "POTM Liga F": {
       "webpagedata": "西女甲月最佳",
       "timestamp": 1791347687078
+    },
+    "Future Stars": {
+      "webpagedata": "明日之星",
+      "timestamp": 1791568202722
     }
   },
   "sixStat": {
@@ -2701,6 +2705,26 @@
     "Transfer List": {
       "webpagedata": "转会列表",
       "timestamp": 1791271107478
+    },
+    "FUT Gallery": {
+      "webpagedata": "FUT收藏馆",
+      "timestamp": 1791555936135
+    },
+    "All Players": {
+      "webpagedata": "所有球员",
+      "timestamp": 1791555962922
+    },
+    "SBC Rating Combinations": {
+      "webpagedata": "SBC总评计算器",
+      "timestamp": 1791555984361
+    },
+    "Managers": {
+      "webpagedata": "经理",
+      "timestamp": 1791556005791
+    },
+    "Chemistry Styles": {
+      "webpagedata": "化学风格",
+      "timestamp": 1791556019656
     }
   },
   "futbin": {
