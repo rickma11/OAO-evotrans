@@ -445,6 +445,11 @@
     "POTM Ligue 1": {
       "webpagedata": "法甲月最佳",
       "timestamp": 1791911027219
+    },
+    "Cosmetics": {
+      "webpagedata": "装饰",
+      "shorten": "装饰",
+      "timestamp": 1792214593572
     }
   },
   "sixStat": {
