@@ -1,5 +1,18 @@
 name: Sync from Gitee
 
+# 把 Gitee（权威源）的文件镜像到 GitHub，作为插件的备用下载源：
+#
+#   master 分支：remote-loader/ 目录
+#     —— Loader 的 versionCheckUrls 与 version.json 的 codeUrls 第 2/3 源
+#        （raw.githubusercontent.com / cdn.jsdelivr.net 的 @master）指向这里。
+#        没有这些文件时，Gitee 一旦被墙/被拦，首装用户直接不可用。
+#
+#   main 分支：根目录字典文件
+#     —— bundle 内各字典多源链的第 2/3 源（raw.githubusercontent / jsDelivr 的 @main）
+#        指向这里；evolutions1.json / miniapp-dictionaries.json 等此前从未同步过。
+#
+# 主源（Gitee）在 Loader 里始终优先，本镜像只在 Gitee 不可达时兜底。
+# version.json 也同步：GitHub 副本最多滞后一个周期（5h），仅影响 Gitee 不可达时的用户。
 on:
   schedule:
     - cron: '0 */5 * * *'
@@ -15,74 +28,69 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
-      - name: Debug information
-        run: |
-          echo "=== Debug Information ==="
-          pwd
-          ls -la
-          git status
-          git branch -a
-          git remote -v
-          
+
       - name: Fetch files from Gitee
+        env:
+          GITEE: https://gitee.com/rickma11/OAO-evotrans/raw/master
         run: |
-          echo "=== Fetching files from Gitee ==="
-          
-          echo "Downloading evolutions.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/evolutions.json" -o evolutions.json
-          if [ $? -eq 0 ]; then
-            echo "Download successful. File size: $(ls -la evolutions.json)"
-          else
-            echo "Download failed"
-            exit 1
-          fi
-          
-          echo "Downloading built-in-dictionaries.json from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/built-in-dictionaries.json" -o built-in-dictionaries.json
-          if [ $? -eq 0 ]; then
-            echo "Download successful. File size: $(ls -la built-in-dictionaries.json)"
-          else
-            echo "Download failed"
-            exit 1
-          fi
-          
-          echo "Downloading OAO-FC26 UT模式翻译插件.user.js from Gitee..."
-          curl -v -L "https://gitee.com/rickma11/OAO-evotrans/raw/master/OAO-FC26%20UT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js" -o "OAO-FC26 UT模式翻译插件.user.js"
-          if [ $? -eq 0 ]; then
-            echo "Download successful. File size: $(ls -la "OAO-FC26 UT模式翻译插件.user.js")"
-          else
-            echo "Download failed"
-            exit 1
-          fi
-          
-      - name: Check for changes
-        id: check_changes
+          set -uo pipefail
+          mkdir -p remote-loader
+
+          # dl <本地路径> <URL> <required|optional>
+          # 必需文件缺失即失败（这些是 Loader/字典兜底的核心）；可选文件失败只告警跳过
+          dl() {
+            if curl -fsSL --max-time 60 -o "$1" "$2" && [ -s "$1" ]; then
+              echo "OK   $1"
+            else
+              rm -f "$1"
+              if [ "$3" = "required" ]; then
+                echo "ERROR 必需文件下载失败: $1 <- $2"
+                exit 1
+              fi
+              echo "WARN 可选文件下载失败，跳过: $1"
+            fi
+          }
+
+          # ---- 必需文件 ----
+          dl remote-loader/oao-bundle.js        "$GITEE/remote-loader/oao-bundle.js"        required
+          dl remote-loader/version.json         "$GITEE/remote-loader/version.json"         required
+          dl evolutions1.json                   "$GITEE/evolutions1.json"                   required
+          dl miniapp-dictionaries.json          "$GITEE/miniapp-dictionaries.json"          required
+          dl built-in-dictionaries.json         "$GITEE/built-in-dictionaries.json"         required
+          dl playstyle-recommend.json           "$GITEE/playstyle-recommend.json"           required
+
+          # ---- 可选文件（Gitee 上删了就不镜像，不影响其它文件同步）----
+          dl "remote-loader/OAO-FCUT模式翻译插件.user.js" "$GITEE/remote-loader/OAO-FCUT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js" optional
+          dl evolutions.json                    "$GITEE/evolutions.json"                    optional
+          dl catch-evo.json                     "$GITEE/catch-evo.json"                     optional
+          dl "OAO-FC26 UT模式翻译插件.user.js"   "$GITEE/OAO-FC26%20UT%E6%A8%A1%E5%BC%8F%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6.user.js" optional
+
+          # ---- 最基本的内容校验：防空文件 / 错误页 ----
+          [ -s remote-loader/version.json ] || { echo "ERROR: version.json 为空"; exit 1; }
+          head -c 1 remote-loader/version.json | grep -q '{' || { echo "ERROR: version.json 不是 JSON"; exit 1; }
+          head -c 200 remote-loader/oao-bundle.js | grep -q 'OAO' || { echo "ERROR: oao-bundle.js 内容异常"; exit 1; }
+
+      - name: Commit and push to main + master
         run: |
-          echo "=== Checking for changes ==="
-          git status
-          git add evolutions.json built-in-dictionaries.json "OAO-FC26 UT模式翻译插件.user.js"
-          
-          if git diff --staged --quiet; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected"
-            git diff --staged
-          fi
-          
-      - name: Commit and push changes
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          echo "=== Committing and pushing changes ==="
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git status
+          # 只暂存本 workflow 管理的文件（不用 -A，避免误 stage 其它改动）
+          for f in evolutions.json evolutions1.json built-in-dictionaries.json catch-evo.json \
+                   miniapp-dictionaries.json playstyle-recommend.json \
+                   "OAO-FC26 UT模式翻译插件.user.js" \
+                   remote-loader/oao-bundle.js remote-loader/version.json \
+                   "remote-loader/OAO-FCUT模式翻译插件.user.js"; do
+            if [ -e "$f" ]; then git add -- "$f"; else echo "SKIP add（不存在）: $f"; fi
+          done
+          if git diff --staged --quiet; then
+            echo "No changes to sync"
+            exit 0
+          fi
+          git diff --staged --stat
           git commit -m "Sync files from Gitee [skip ci]"
-          git status
-          git push origin HEAD:main -v
-          
-      - name: No changes
-        if: steps.check_changes.outputs.has_changes == 'false'
-        run: echo "No changes to sync"
+          git push origin HEAD:main
+          # master 是纯镜像分支（Loader 备用源 URL 指向 master/remote-loader/），
+          # 与 main 保持同一份内容；两分支历史无关，故需要 --force。
+          # 注意：不要在 master 上直接提交，会被下次同步覆盖。
+          git push --force origin HEAD:master
+          echo "Synced to main and master"
