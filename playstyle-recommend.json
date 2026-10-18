@@ -1,0 +1,318 @@
+{
+  "version": "2.0.0",
+  "playStyleIds": {
+    "1": "Finesse Shot",
+    "2": "Chip Shot",
+    "3": "Power Shot",
+    "4": "Dead Ball",
+    "5": "Precision Header",
+    "6": "Acrobatic",
+    "7": "Low Driven Shot",
+    "8": "Gamechanger",
+    "9": "Incisive Pass",
+    "10": "Pinged Pass",
+    "11": "Long Ball Pass",
+    "12": "Tiki Taka",
+    "13": "Whipped Pass",
+    "14": "Inventive",
+    "15": "Jockey",
+    "16": "Block",
+    "17": "Intercept",
+    "18": "Anticipate",
+    "19": "Slide Tackle",
+    "20": "Aerial Fortress",
+    "21": "Technical",
+    "22": "Rapid",
+    "23": "First Touch",
+    "24": "Trickster",
+    "25": "Press Proven",
+    "26": "Quick Step",
+    "27": "Relentless",
+    "28": "Long Throw",
+    "29": "Bruiser",
+    "30": "Enforcer",
+    "31": "Far Throw",
+    "32": "Footwork",
+    "33": "Cross Claimer",
+    "34": "1v1 Close Down",
+    "35": "Far Reach",
+    "36": "Deflector"
+  },
+  "categories": {
+    "Finishing": [1, 2, 3, 4, 5, 6, 7, 8],
+    "Passing": [9, 10, 11, 12, 13, 14],
+    "Defending": [15, 16, 17, 18, 19, 20],
+    "Ball Control": [21, 22, 23, 24, 25],
+    "Physical": [26, 27, 28, 29, 30],
+    "Goalkeeping": [31, 32, 33, 34, 35, 36]
+  },
+  "positionGroups": {
+    "GK": {
+      "label": "门将",
+      "roles": [
+        {
+          "role": "GoalKeeper",
+          "roleLabel": "守门员",
+          "silver": [12, 11, 31, 10, 26, 15, 20],
+          "gold": [35, 32, 34, 36, 33]
+        },
+        {
+          "role": "SweeperKeeper",
+          "roleLabel": "清道夫门将",
+          "silver": [12, 11, 31, 10, 26, 15, 20],
+          "gold": [35, 32, 34, 36, 33]
+        },
+        {
+          "role": "PlayKeeper",
+          "roleLabel": "出球型门将",
+          "silver": [12, 11, 31, 10, 26, 15, 20],
+          "gold": [35, 32, 34, 36, 33]
+        }
+      ]
+    },
+    "CB": {
+      "label": "中后卫",
+      "roles": [
+        {
+          "role": "Defender",
+          "roleLabel": "后卫",
+          "gold": [18, 17, 29, 15, 26],
+          "silver":[12, 9, 10, 27, 20, 16, 19]
+        },
+        {
+          "role": "Interceptor",
+          "roleLabel": "拦截者",
+          "gold": [18, 17, 29, 15, 26],
+          "silver":[12, 9, 10, 27, 20, 16, 19]
+        },
+        {
+          "role": "BallPlayDefender",
+          "roleLabel": "控球后卫",
+          "gold": [18, 17, 29, 15, 26],
+          "silver":[12, 9, 10, 27, 20, 16, 19]
+        },
+        {
+          "role": "FullBack2",
+          "roleLabel": "边后卫",
+          "gold": [18, 17, 29, 15, 26],
+          "silver":[12, 9, 10, 27, 20, 16, 19]
+        }
+      ]
+    },
+    "RB/LB": {
+      "label": "边后卫",
+      "roles": [
+        {
+          "role": "FullBack",
+          "roleLabel": "边后卫",
+          "gold": [29, 17, 26, 15, 18],
+          "silver":[12, 10, 9, 27, 16, 20, 19, 13]
+        },
+        {
+          "role": "WingBack",
+          "roleLabel": "边翼卫",
+          "gold": [29, 17, 26, 15, 10],
+          "silver": [12, 9, 27, 18, 16, 25, 20, 22]
+        },
+        {
+          "role": "PseudoDefender",
+          "roleLabel": "伪后卫",
+          "gold": [29, 17, 26, 15, 10],
+          "silver": [12, 9, 27, 18, 16, 25, 20, 22]
+        },
+        {
+          "role": "AttackWingBack",
+          "roleLabel": "进攻型边翼卫",
+          "gold": [29, 17, 26, 15, 9],
+          "silver":[12, 10, 27, 18, 16, 25, 22, 1]
+        },
+        {
+          "role": "InvertedWingBack",
+          "roleLabel": "内收型边翼卫",
+          "gold": [29, 17, 26, 15, 9],
+          "silver":[12, 10, 27, 18, 16, 25, 22, 1]
+        }
+      ]
+    },
+    "CDM": {
+      "label": "后腰",
+      "roles": [
+        {
+          "role": "DefensiveMid2",
+          "roleLabel": "镇守",
+          "gold": [17, 29, 10, 9, 26],
+"silver":[12, 21, 23, 25, 18, 15, 27]
+        },
+        {
+          "role": "CentralMidfielder",
+          "roleLabel": "中前卫",
+          "gold": [18, 17, 29, 15, 26],
+"silver":[12, 9, 10, 23, 25, 27, 20, 16]
+        },
+        {
+          "role": "HalfBack",
+          "roleLabel": "半边卫",
+          "silver": [],
+          "gold": []
+        },
+        {
+          "role": "DeepLyingPlaymaker2",
+          "roleLabel": "拖后型组织核心",
+          "gold": [29, 17, 9, 10, 26],
+"silver":[12, 21, 23, 25, 18, 27, 22]
+        },
+        {
+          "role": "BoxStriker2",
+          "roleLabel": "禁区冲击者",
+          "gold": [1, 9, 10, 17, 26],
+"silver": [12, 22, 23, 21, 29, 18, 25, 27]
+        }
+      ]
+    },
+    "CM": {
+      "label": "中前卫",
+      "roles": [
+        {
+          "role": "BoxToBox",
+          "roleLabel": "全能中场",
+          "gold": [1, 9, 10, 17, 22],
+"silver":[12, 26, 23, 21, 29, 18, 25, 27]
+        },
+        {
+          "role": "DefensiveMid",
+          "roleLabel": "镇守",
+          "gold": [17, 29, 10, 9, 26],
+"silver":[12, 21, 23, 25, 18, 15, 1, 27]
+        },
+        {
+          "role": "DeepLyingPlaymaker",
+          "roleLabel": "拖后组织核心",
+          "gold": [1, 29, 17, 9, 10],
+"silver":[12, 21, 23, 25, 18, 27, 26, 22]
+        },
+        {
+          "role": "Playmaker2",
+          "roleLabel": "组织核心",
+          "gold": [1, 22, 9, 10, 12],
+"silver":[21, 7, 8, 23, 26, 25, 14, 24]
+        },
+        {
+          "role": "HalfWinger2",
+          "roleLabel": "半边锋",
+          "gold": [1, 9, 10, 22, 26],
+"silver":[12, 7, 8, 23, 21, 24, 25, 14]
+        }
+      ]
+    },
+    "CAM": {
+      "label": "前腰",
+      "roles": [
+        {
+          "role": "Playmaker",
+          "roleLabel": "组织核心",
+          "gold": [1, 22, 9, 10, 21],
+"silver":[12, 7, 8, 23, 26, 25, 14, 30]
+        },
+        {
+          "role": "Shadow Striker",
+          "roleLabel": "影子前锋",
+          "gold": [1, 7, 9, 22, 21],
+"silver":[12, 10, 8, 23, 26, 25, 24, 14]
+        },
+        {
+          "role": "Classic 10",
+          "roleLabel": "经典十号",
+          "gold": [1, 7, 9, 22, 21],
+"silver":[12, 10, 8, 23, 26, 25, 24, 14]
+        },
+        {
+          "role": "Half Winger",
+          "roleLabel": "半边锋",
+          "gold": [1, 7, 10, 22, 26],
+"silver":[12, 9, 8, 23, 21, 24, 25, 14]
+        }
+      ]
+    },
+    "RM/LM": {
+      "label": "边前卫",
+      "roles": [
+        {
+          "role": "Inside Forward",
+          "roleLabel": "内锋",
+          "gold": [1, 7, 9, 22, 26],
+"silver":[12, 10, 8, 23, 21, 25, 24, 14]
+        },
+        {
+          "role": "Winger",
+          "roleLabel": "边锋",
+          "gold": [1, 7, 10, 22, 26],
+"silver":[12, 9, 8, 23, 21, 25, 24, 14]
+        },
+        {
+          "role": "Wide Playmaker",
+          "roleLabel": "边路组织核心",
+          "gold": [1, 22, 9, 10, 26],
+"silver":[12, 7, 8, 23, 25, 14, 21]
+        },
+        {
+          "role": "Wide Midfielder",
+          "roleLabel": "边中场",
+          "gold": [1, 22, 9, 10, 26],
+"silver":[12, 23, 25, 14, 21, 13, 17, 29]
+        }
+      ]
+    },
+    "RW/LW": {
+      "label": "边锋",
+      "roles": [
+        {
+          "role": "Inside Forward",
+          "roleLabel": "内锋",
+          "gold": [1, 7, 9, 22, 26],
+"silver":[12, 10, 8, 23, 21, 25, 24, 14]
+        },
+        {
+          "role": "Winger",
+          "roleLabel": "边锋",
+          "gold": [1, 7, 10, 22, 26],
+"silver":[12, 9, 8, 23, 21, 25, 24, 14]
+        },
+        {
+          "role": "Wide Playmaker",
+          "roleLabel": "边路组织核心",
+          "gold": [1, 22, 9, 10, 26],
+"silver":[12, 7, 8, 23, 25, 14, 21]
+        }
+      ]
+    },
+    "ST": {
+      "label": "前锋",
+      "roles": [
+        {
+          "role": "Target Forward",
+          "roleLabel": "站桩中锋",
+          "gold": [1, 22, 9, 7, 30],
+"silver": [12, 10, 8, 23, 21, 26, 25, 5]
+        },
+        {
+          "role": "Advance Forward",
+          "roleLabel": "突前型前锋",
+          "gold": [1, 7, 9, 22, 26],
+"silver": [12, 10, 8, 23, 21, 25, 24, 30]
+        },
+        {
+          "role": "Poacher",
+          "roleLabel": "禁区之王",
+          "gold": [1, 7, 21, 22, 26],
+"silver": [12, 10, 8, 23, 9, 25, 24, 30]
+        },
+        {
+          "role": "False 9",
+          "roleLabel": "伪 9 号",
+          "gold": [1, 12, 9, 22, 26],
+"silver": [24, 10, 8, 23, 7, 25, 21, 30]
+        }
+      ]
+    }
+  }
+}

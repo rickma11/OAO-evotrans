@@ -1,0 +1,22 @@
+{
+  "version": "27.0.3.3",
+  "loader_version": "27.0.3",
+  "bundles": [
+    {
+      "id": "oao-translate",
+      "version": "27.0.3.3",
+      "enabled": true,
+      "release_date": "2026-10-07",
+  "update_notes": [
+    "FUTBIN/fut.gg 球员详情页增加球员评测入口，可跳转查看球员评测",
+    "插件更新方式调整成远端加载，减少后续插件频繁更新的操作",
+    "快捷入口「球员特技」「加速类型」更新成FC27版本"
+  ],
+      "codeUrls": [
+        "https://gitee.com/rickma11/OAO-evotrans/raw/master/remote-loader/oao-bundle.js",
+        "https://raw.githubusercontent.com/rickma11/OAO-evotrans/master/remote-loader/oao-bundle.js",
+        "https://cdn.jsdelivr.net/gh/rickma11/OAO-evotrans@master/remote-loader/oao-bundle.js"
+      ]
+    }
+  ]
+}
