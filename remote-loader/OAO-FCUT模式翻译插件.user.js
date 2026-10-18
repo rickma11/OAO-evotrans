@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OAO-FCUT模式翻译插件
 // @namespace    https://github.com/
-// @version      27.0.3
+// @version      27.0.4
 // @description  中文翻译Futbin、Futgg、EASYSBC网站的英文信息，包括球员信息、进化名称等（远程代码自动更新版：本文件为 Loader，负责拉取并执行远端 bundle 清单，无需再到油叉更新）
 // @author       我要欧啊欧
 // @match        https://www.fut.gg/*
@@ -42,6 +42,10 @@
  *      每个 bundle 独立比对缓存版本 -> 版本变化才多源下载 -> 独立缓存 -> 用 new Function 注入 GM API 执行。
  *   4. 单个 bundle 拉取/执行失败只影响自己（try/catch 隔离），不影响其他 bundle 与整体可用性。
  *   5. 拉取失败则回退到上次缓存。
+ *   6. 多源下载采用「并行竞速 + 主源优先」：所有源同时发起，主源（Gitee）成功则必须采用主源
+ *      （避免 jsDelivr/GitHub 等 CDN 的陈旧副本被当成新版本缓存），主源失败/超时则采用最先成功的镜像。
+ *   7. 彻底失败（首装无缓存可回退）时会在页面右下角弹出错误卡片 + 重试按钮，并自动重试
+ *      （每 30s 一次、最多 5 次；切回标签页也会立刻重试一次）——避免玩家「装了插件却毫无反应且无法自救」。
  *
  * 多 bundle 拓展方式（以后加 oao-sbc 等附属插件）：
  *   在 version.json 的 bundles[] 里追加一项即可，例如
@@ -73,7 +77,7 @@
     // 优先读本地 manifest.json（支持多 bundle 开发），没有则回退到单 oao-bundle.js（仅 translate）
     localDevBase: "http://127.0.0.1:5112",
     localDevLegacyUrl: "http://127.0.0.1:5112/oao-bundle.js",
-    localTimeout: 3000,
+    localTimeout: 800, // 本地探测从 3s 缩到 800ms：普通用户每进页面都会探一次 127.0.0.1:5112，超时太长会拖慢首装启动
 
     // 远端版本清单（多源兜底，返回 { version, bundles: [...] }）
     versionCheckUrls: [
@@ -150,6 +154,54 @@
     throw lastErr || new Error(label + " 全部源失败");
   }
 
+  // 并行竞速 + 主源优先（替代上面的顺序尝试，用于内核与清单下载）
+  // 设计要点：
+  //   1) 所有源同时发起，谁先成功就用谁 —— 主源被墙/被 VPN 绕走时，不必干等主源超时。
+  //   2) 但「主源（第一个，Gitee）一旦成功就必须采用」：jsDelivr/GitHub 等 CDN 可能仍缓存着
+  //      上一个版本的副本（jsDelivr 分支引用默认缓存约 12h），若让 CDN 抢先就会把陈旧内核
+  //      当成新版本缓存下来，之后一直不更新。主源优先可保证拿到的是权威最新副本。
+  //   3) 主源失败/超时 -> 采用最先成功的镜像；只要确定能返回就立即返回，不做无谓等待。
+  async function fetchCodePreferPrimary(urls, timeout, stampKey, stampVal) {
+    const list = (urls || []).filter(function (u) { return typeof u === "string" && u.trim(); });
+    if (!list.length) throw new Error("没有可用的下载源");
+    const key = stampKey || "_t";
+    const val = stampVal || Date.now();
+    const total = list.length;
+    const settled = new Array(total).fill(null);
+    let firstOk = -1;
+
+    await new Promise(function (resolve) {
+      let left = total;
+      const check = function () {
+        if (settled[0]) {
+          if (settled[0].ok) return resolve();        // 主源成功 -> 立即采用（权威最新）
+          if (firstOk >= 0) return resolve();         // 主源失败且已有镜像成功 -> 立即采用
+        }
+        if (left === 0) return resolve();             // 全部源都已出结果
+      };
+      list.forEach(function (u, i) {
+        fetchCode(withQuery(u, key, val), timeout).then(
+          function (code) {
+            settled[i] = { ok: true, code: code };
+            if (firstOk < 0) firstOk = i;
+            left--;
+            check();
+          },
+          function (err) {
+            settled[i] = { ok: false, err: err };
+            left--;
+            check();
+          }
+        );
+      });
+    });
+
+    if (settled[0] && settled[0].ok) return settled[0].code;
+    if (firstOk >= 0) return settled[firstOk].code;
+    const failed = settled.find(function (s) { return s && s.err; });
+    throw (failed && failed.err) || new Error("所有下载源均失败");
+  }
+
   async function fetchCode(url, timeout) {
     const code = await fetchText(url, timeout);
     if (!code || !code.trim()) {
@@ -221,7 +273,7 @@
   }
 
   async function fetchManifest() {
-    const text = await fetchFirst(CONFIG.versionCheckUrls, CONFIG.remoteTimeout, "version.json");
+    const text = await fetchCodePreferPrimary(CONFIG.versionCheckUrls, CONFIG.remoteTimeout);
     return normalizeManifest(JSON.parse(text), false);
   }
 
@@ -284,7 +336,7 @@
     const enabled = GM_getValue(toggleKey, bundle.enabled);
     if (!enabled) {
       console.log("[OAO-Loader] bundle 已禁用，跳过：" + bundle.id);
-      return;
+      return false;
     }
 
     const cachedCode = GM_getValue(codeKey, null);
@@ -297,14 +349,12 @@
     } else {
       console.log("[OAO-Loader] 下载 bundle：" + bundle.id + " @ " + bundle.version);
       let lastErr;
-      for (const u of bundle.codeUrls) {
-        try {
-          code = await fetchCode(withQuery(u, "v", bundle.version), CONFIG.remoteTimeout);
-          break;
-        } catch (e) {
-          lastErr = e;
-          console.warn("[OAO-Loader] bundle 源失败：" + u, e);
-        }
+      try {
+        // 并行竞速 + 主源优先：主源（Gitee）成功就用主源，避免 CDN 陈旧副本被当成新版本缓存
+        code = await fetchCodePreferPrimary(bundle.codeUrls, CONFIG.remoteTimeout, "v", bundle.version);
+      } catch (e) {
+        lastErr = e;
+        console.warn("[OAO-Loader] bundle 所有源失败：" + bundle.id, e);
       }
       if (!code) {
         if (cachedCode) {
@@ -322,25 +372,132 @@
 
     try {
       executeBundle(code, bundle);
+      return true;
     } catch (e) {
       // 执行失败：若用的是刚下载的新代码，尝试回退缓存再执行一次
       if (code !== cachedCode && cachedCode) {
         console.warn("[OAO-Loader] 新代码执行失败，回退缓存重试：" + bundle.id, e);
         executeBundle(cachedCode, bundle);
+        return true;
       } else {
         throw e;
       }
     }
   }
 
+  // ------------------------------------------------------------
+  // 加载失败的用户可见提示 + 自动/手动重试
+  // 背景：以前下载失败只 console.error，玩家完全无感知——插件装着却毫无反应，也无法自救。
+  // ------------------------------------------------------------
+  const LOADER_ERROR_ID = "oao-loader-error";
+  const MAX_AUTO_RETRY = 5;        // 自动重试次数上限
+  const AUTO_RETRY_DELAY = 30000;  // 自动重试间隔（ms）
+  let retryCount = 0;
+
+  function hideLoaderError() {
+    try {
+      const old = document.getElementById(LOADER_ERROR_ID);
+      if (old && old.remove) old.remove();
+    } catch (e) { /* ignore */ }
+  }
+
+  function showLoaderError(detail) {
+    hideLoaderError();
+    try {
+      const box = document.createElement("div");
+      box.id = LOADER_ERROR_ID;
+      box.style.cssText =
+        "position:fixed;right:16px;bottom:16px;z-index:2147483647;width:328px;box-sizing:border-box;" +
+        "background:#1b1f27;color:#e8eaf0;border:1px solid #3a4150;border-radius:10px;" +
+        "box-shadow:0 8px 28px rgba(0,0,0,.45);padding:14px 16px;" +
+        "font:13px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;";
+
+      const title = document.createElement("div");
+      title.textContent = "OAO 翻译插件 · 加载失败";
+      title.style.cssText = "font-weight:700;font-size:14px;margin-bottom:6px;color:#ffb020;";
+
+      const body = document.createElement("div");
+      body.textContent = detail || "内核文件下载失败，插件暂不可用。";
+      body.style.cssText = "margin-bottom:8px;";
+
+      const tips = document.createElement("div");
+      tips.textContent =
+        "可依次尝试：① 关闭 VPN / 代理后点「重试」；② 更换网络（如手机热点）；③ 更换浏览器；" +
+        "④ 确认能正常打开 gitee.com。若持续失败，可在控制台查看 [OAO-Loader] 日志反馈。";
+      tips.style.cssText = "margin-bottom:12px;color:#aab2c0;font-size:12px;";
+
+      const row = document.createElement("div");
+
+      const retryBtn = document.createElement("button");
+      retryBtn.type = "button";
+      retryBtn.textContent = "重试";
+      retryBtn.style.cssText =
+        "margin-right:8px;padding:5px 16px;border:0;border-radius:6px;background:#2f6fed;" +
+        "color:#fff;cursor:pointer;font-size:13px;";
+      retryBtn.addEventListener("click", function () {
+        hideLoaderError();
+        void init();
+      });
+
+      const closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.textContent = "关闭";
+      closeBtn.style.cssText =
+        "padding:5px 16px;border:1px solid #3a4150;border-radius:6px;background:transparent;" +
+        "color:#aab2c0;cursor:pointer;font-size:13px;";
+      closeBtn.addEventListener("click", hideLoaderError);
+
+      row.appendChild(retryBtn);
+      row.appendChild(closeBtn);
+      box.appendChild(title);
+      box.appendChild(body);
+      box.appendChild(tips);
+      box.appendChild(row);
+      (document.body || document.documentElement).appendChild(box);
+    } catch (e) {
+      console.warn("[OAO-Loader] 无法展示错误提示：", e);
+    }
+  }
+
+  function scheduleAutoRetry() {
+    if (retryCount >= MAX_AUTO_RETRY) return;
+    retryCount++;
+    setTimeout(function () { void init(); }, AUTO_RETRY_DELAY);
+  }
+
+  // 切回标签页时立刻重试一次：网络抖动往往在切换网络后就恢复了
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) return;
+    if (retryCount >= MAX_AUTO_RETRY) return;
+    retryCount++;
+    void init();
+  });
+
   async function loadProduction() {
-    const manifest = await fetchManifest();
+    let manifest;
+    try {
+      manifest = await fetchManifest();
+    } catch (error) {
+      console.error("[OAO-Loader] 版本清单拉取失败：", error);
+      showLoaderError("版本清单下载失败，无法获取内核文件（通常是网络问题）。");
+      scheduleAutoRetry();
+      return;
+    }
+
+    let anyExecuted = false;
     for (const bundle of manifest.bundles) {
       try {
-        await loadBundle(bundle);
+        if (await loadBundle(bundle)) anyExecuted = true;
       } catch (e) {
         console.error("[OAO-Loader] bundle 加载失败（已隔离）：" + bundle.id, e);
       }
+    }
+
+    if (anyExecuted) {
+      hideLoaderError();
+    } else {
+      showLoaderError("内核文件下载失败，插件暂不可用（首次安装无本地缓存时必然如此）。");
+      scheduleAutoRetry();
     }
   }
 
@@ -403,6 +560,8 @@
       await loadProduction();
     } catch (error) {
       console.error("[OAO-Loader] 初始化失败：", error);
+      showLoaderError("初始化失败：" + String((error && error.message) || error));
+      scheduleAutoRetry();
     } finally {
       isLoading = false;
     }
