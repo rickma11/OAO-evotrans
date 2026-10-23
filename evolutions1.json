@@ -4718,5 +4718,44 @@
     "timestamp": 1792668191308,
     "source": "通行证26级",
     "futbin_id": "110"
+  },
+  {
+    "name": "Center Spectre",
+    "CN": "中场幽影",
+    "timestamp": 1792774871710,
+    "source": "进化"
+  },
+  {
+    "name": "The Haunted Wall",
+    "CN": "鬼魅铁壁",
+    "timestamp": 1792775692103,
+    "source": "500尖叫代币"
+  },
+  {
+    "name": "Wicked Winger",
+    "CN": "邪恶边锋",
+    "timestamp": 1792775718898,
+    "source": "900尖叫代币"
+  },
+  {
+    "name": "Shadow Striker++",
+    "CN": "影子前锋++",
+    "timestamp": 1792775758706,
+    "source": "继承奖励",
+    "futgg_id": "2621"
+  },
+  {
+    "name": "Anticipate",
+    "CN": "预判",
+    "timestamp": 1792775777890,
+    "source": "继承奖励",
+    "futgg_id": "2629"
+  },
+  {
+    "name": "Pinged Pass",
+    "CN": "大力传球",
+    "timestamp": 1792775797486,
+    "source": "继承奖励",
+    "futgg_id": "2630"
   }
 ]
