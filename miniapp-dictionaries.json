@@ -329,6 +329,21 @@
       "webpagedata": "冰岛女子足球超级联赛",
       "shorten": "冰女超",
       "timestamp": 1789983145843
+    },
+    "Liga Bulgaria": {
+      "webpagedata": "保加利亚甲级联赛",
+      "shorten": "保甲",
+      "timestamp": 1792810732123
+    },
+    "Norge Kvinner Liga": {
+      "webpagedata": "挪威女子足球联赛",
+      "shorten": "挪女超",
+      "timestamp": 1792810737102
+    },
+    "Ísland Kvennadeild": {
+      "webpagedata": "冰岛女子足球联赛",
+      "shorten": "冰女超",
+      "timestamp": 1792810726467
     }
   },
   "sbc": {
