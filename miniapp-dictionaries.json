@@ -848,6 +848,30 @@
     "Boo Hoo Party": {
       "webpagedata": "鬼哭派对",
       "timestamp": 1793211847634
+    },
+    "Champions": {
+      "webpagedata": "冠军赛",
+      "timestamp": 1793248604451
+    },
+    "Mastery": {
+      "webpagedata": "大师",
+      "timestamp": 1793248611468
+    },
+    "Milestone": {
+      "webpagedata": "里程碑",
+      "timestamp": 1793248476102
+    },
+    "Co-Op": {
+      "webpagedata": "合作",
+      "timestamp": 1793248500743
+    },
+    "Squad Building": {
+      "webpagedata": "阵容创建",
+      "timestamp": 1793248524134
+    },
+    "Gallery": {
+      "webpagedata": "收藏馆",
+      "timestamp": 1793248538071
     }
   },
   "EVO": {
