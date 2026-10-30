@@ -351,46 +351,46 @@
     }
   },
   "sbc": {
-  "FC Heritage Circuit Professional Event": {
-    "webpagedata": "FC 传承巡回职业赛事",
-    "timestamp": 1793206302573
-  },
-  "FC Heritage Circuit Semi-Pro Event": {
-    "webpagedata": "FC 传承巡回半职业赛事",
-    "timestamp": 1793206302573
-  },
-  "Season 2 Daily Knockout Tournament": {
-    "webpagedata": "第 2 赛季每日淘汰锦标赛",
-    "timestamp": 1793206302573
-  },
-  "FC Heritage Circuit Tournament": {
-    "webpagedata": "FC传承巡回锦标赛",
-    "timestamp": 1793206302573
-  },
-  "FC Heritage Circuit Kick Off Event": {
-    "webpagedata": "FC传承巡回开幕赛事",
-    "timestamp": 1793206302573
-  },
-  "FC Heritage Circuit World Class Event": {
-    "webpagedata": "FC传承巡回世界级赛事",
-    "timestamp": 1793206302573
-  },
-  "Season 2 Daily Knockout Tournament Weekly Play": {
-    "webpagedata": "第2赛季每日淘汰锦标赛每周参赛",
-    "timestamp": 1793206302573
-  },
-  "FC Heritage Circuit Completionist": {
-    "webpagedata": "FC传承巡回完美主义者",
-    "timestamp": 1793206302573
-  },
-  "Season 2 Daily Knockout Tournament Weekly Play Completionist": {
-    "webpagedata": "第2赛季每日淘汰锦标赛每周参赛完美主义者",
-    "timestamp": 1793206302573
-  },
-  "Claim the Armband": {
-    "webpagedata": "领取臂章",
-    "timestamp": 1793206302573
-  },
+    "FC Heritage Circuit Professional Event": {
+      "webpagedata": "FC 传承巡回职业赛事",
+      "timestamp": 1793206302573
+    },
+    "FC Heritage Circuit Semi-Pro Event": {
+      "webpagedata": "FC 传承巡回半职业赛事",
+      "timestamp": 1793206302573
+    },
+    "Season 2 Daily Knockout Tournament": {
+      "webpagedata": "第 2 赛季每日淘汰锦标赛",
+      "timestamp": 1793206302573
+    },
+    "FC Heritage Circuit Tournament": {
+      "webpagedata": "FC传承巡回锦标赛",
+      "timestamp": 1793206302573
+    },
+    "FC Heritage Circuit Kick Off Event": {
+      "webpagedata": "FC传承巡回开幕赛事",
+      "timestamp": 1793206302573
+    },
+    "FC Heritage Circuit World Class Event": {
+      "webpagedata": "FC传承巡回世界级赛事",
+      "timestamp": 1793206302573
+    },
+    "Season 2 Daily Knockout Tournament Weekly Play": {
+      "webpagedata": "第2赛季每日淘汰锦标赛每周参赛",
+      "timestamp": 1793206302573
+    },
+    "FC Heritage Circuit Completionist": {
+      "webpagedata": "FC传承巡回完美主义者",
+      "timestamp": 1793206302573
+    },
+    "Season 2 Daily Knockout Tournament Weekly Play Completionist": {
+      "webpagedata": "第2赛季每日淘汰锦标赛每周参赛完美主义者",
+      "timestamp": 1793206302573
+    },
+    "Claim the Armband": {
+      "webpagedata": "领取臂章",
+      "timestamp": 1793206302573
+    },
     "Marquee Matchups": {
       "webpagedata": "重大比赛",
       "shorten": "重大比赛",
@@ -932,6 +932,34 @@
     "1 Of 3": {
       "webpagedata": "3选1",
       "timestamp": 1793249808700
+    },
+    "1 of 4 Chemistry Styles Pick": {
+      "webpagedata": "默契风格4选1挑选",
+      "timestamp": 1793308387163
+    },
+    "Weekly Objectives": {
+      "webpagedata": "每周目标",
+      "timestamp": 1793353930310
+    },
+    "in any FUT game mode": {
+      "webpagedata": "在任意FUT游戏模式",
+      "timestamp": 1793353964492
+    },
+    "using a player from Germany": {
+      "webpagedata": "使用德国球员",
+      "timestamp": 1793354032192
+    },
+    "in Squad Battles on min. Semi-Pro difficulty": {
+      "webpagedata": "在SQB半职业难度",
+      "timestamp": 1793354145978
+    },
+    "in Squad Battles on any difficulty": {
+      "webpagedata": "在SQB任意难度",
+      "timestamp": 1793354576642
+    },
+    "points": {
+      "webpagedata": "积分",
+      "timestamp": 1793354592986
     }
   },
   "EVO": {
