@@ -1696,6 +1696,22 @@
     "Max. 88 Base Hero Upgrade": {
       "webpagedata": "总评最高88基础英雄升级",
       "timestamp": 1793649489578
+    },
+    "MLS & NWSL": {
+      "webpagedata": "美职联&美女足",
+      "timestamp": 1793670265434
+    },
+    "LALIGA & Liga F": {
+      "webpagedata": "西甲&西女足",
+      "timestamp": 1793670289451
+    },
+    "Serie A & ROSHN Saudi League": {
+      "webpagedata": "意甲&沙特联",
+      "timestamp": 1793670312751
+    },
+    "Premier League & Barclays WSL": {
+      "webpagedata": "英超&英女足",
+      "timestamp": 1793670328121
     }
   },
   "EVO": {
