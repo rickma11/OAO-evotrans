@@ -456,8 +456,8 @@
       "timestamp": 1792258166577
     },
     "FC Heritage": {
-      "webpagedata": "fc传承",
-      "timestamp": 1792666160197
+      "webpagedata": "FC传承",
+      "timestamp": 1793773741549
     },
     "Thunderstruck": {
       "webpagedata": "雷霆万钧",
@@ -551,10 +551,6 @@
       "webpagedata": "先手",
       "timestamp": 1792833180914
     },
-    "Requires First Owner players.": {
-      "webpagedata": "需要先手球员。",
-      "timestamp": 1792833180914
-    },
     "Gallery Tokens": {
       "webpagedata": "收藏馆代币",
       "timestamp": 1792834295849
@@ -582,6 +578,10 @@
     "Showdown": {
       "webpagedata": "大对决",
       "timestamp": 1793258569830
+    },
+    "Showdown Upgrade": {
+      "webpagedata": "大对决升级",
+      "timestamp": 1793772031756
     }
   },
   "sixStat": {
