@@ -1716,6 +1716,10 @@
     "Hocus Pocus": {
       "webpagedata": "魔术咒语",
       "timestamp": 1793741088917
+    },
+    "FC Pro Open Global Qualifier": {
+      "webpagedata": "FC Pro Open 全球预选赛",
+      "timestamp": 1793941446973
     }
   },
   "EVO": {
@@ -1837,6 +1841,11 @@
       "webpagedata": "https://mp.weixin.qq.com/s/AcEggx3pZsaiq4AEzXbwKA",
       "shorten": "23100",
       "timestamp": 1791277390392
+    },
+    "50563325": {
+      "webpagedata": "https://mp.weixin.qq.com/s/XwRfmo_Vw6uHRPari1Vjow",
+      "shorten": "23581",
+      "timestamp": 1793940405381
     },
     "50572286": {
       "webpagedata": "https://mp.weixin.qq.com/s/h_rr0wx2lCW50_FSwJeiww",
