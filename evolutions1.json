@@ -4624,13 +4624,6 @@
     "source": "进化"
   },
   {
-    "name": "Clinical or Technical? [SP+ 28]",
-    "CN": "射术还是技术?",
-    "timestamp": 1792668208163,
-    "source": "高级通行证28级",
-    "futbin_id": "116"
-  },
-  {
     "name": "Dual Identity [SP+ 14]",
     "CN": "双重身份",
     "timestamp": 1792668250681,
@@ -4708,8 +4701,8 @@
   {
     "name": "Ultimate Scream Retro 19 [SP+ 26]",
     "CN": "终极尖叫复古19卡面",
-    "timestamp": 1792668222826,
-    "source": "通行证19级",
+    "timestamp": 1793977360157,
+    "source": "通行证26级",
     "futbin_id": "114"
   },
   {
@@ -4853,5 +4846,17 @@
     "CN": "命运之线",
     "timestamp": 1793911269068,
     "source": "进化"
+  },
+  {
+    "name": "Clinical or Technical?",
+    "CN": "射术还是技术?",
+    "timestamp": 1793978789706,
+    "source": "高级通行证28级"
+  },
+  {
+    "name": "Ultimate Scream Retro 17",
+    "CN": "终极尖叫复古17卡面",
+    "timestamp": 1793977227874,
+    "source": "装饰"
   }
 ]

@@ -1,16 +1,14 @@
 {
-  "version": "27.0.3.4",
+  "version": "27.0.3.5",
   "loader_version": "27.0.4",
   "bundles": [
     {
       "id": "oao-translate",
-      "version": "27.0.3.4",
+      "version": "27.0.3.5",
       "enabled": true,
-      "release_date": "2026-10-18",
+      "release_date": "2026-11-06",
   "update_notes": [
-    "优化插件文件下载机制",
-    "增加OAO-FCUT资料助手推荐",
-    "如遇到插件正常运行但不展示插件，请关闭VPN刷新"
+    "优化进化翻译表现"
   ],
       "codeUrls": [
         "https://gitee.com/rickma11/OAO-evotrans/raw/master/remote-loader/oao-bundle.js",

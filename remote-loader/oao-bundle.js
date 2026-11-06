@@ -640,6 +640,30 @@
     document.head.appendChild(style);
   }
 
+  // futbin 列表页进化卡片：放开右侧 badge 容器的宽度限制（futbin 原生 max-width-50 约 50px，
+  // 中文「通行证N级」+ 图标放不下会竖排折行、挤成圆形）。放开后 badge 横排成 pill（与 fut.gg 一致），
+  // 标题占剩余宽度自动折行。仅作用于列表页卡片 a.evolutions-card-top，详情页 badge 不受影响。
+  function injectFutbinBadgeStyles() {
+    if (!isFutbinPage()) return;
+    const css = `
+    a.evolutions-card-top > div.xs-row.justify-end {
+      max-width: none !important;
+      flex-shrink: 0 !important;
+    }
+    a.evolutions-card-top .evolution-badge {
+      white-space: nowrap !important;
+      max-width: none !important;
+    }
+    a.evolutions-card-top > div.xs-row.align-center:first-child {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+    }
+  `;
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
   // 页面检测函数
   function isUtWebPage() {
     return location.href.includes('ultimate-team/web-app');
@@ -1020,6 +1044,7 @@
 
   // 注入样式后立即初始化侧边栏
   injectSidebarStyles();
+  injectFutbinBadgeStyles();
   initSidebarEarly();
 
 
@@ -3719,6 +3744,46 @@ function showMessage(message, type = 'info') {
     return String(key == null ? '' : key).replace(/\s*\[[^\]]+\]$/, '').trim();
   }
 
+  // 页面后缀 → 来源自动生成（仅 SP+ / SP / Store 三类，其余返回空，不自动生成来源）
+  // SP+ = 高级通行证N级，SP = 普通通行证N级，Store = 商城包
+  // 用法：新录入条目只需写裸基础名 + CN，程序从页面 [xxx] 后缀自动判断来源，无需手填 source
+  function deriveSourceFromSuffix(suffix) {
+    const s = String(suffix == null ? '' : suffix).trim();
+    const m = s.match(/^\[\s*SP(\+?)\s*(\d+)\s*\]$/i);
+    if (m) {
+      return (m[1] ? '高级通行证' : '普通通行证') + m[2] + '级';
+    }
+    if (/^\[\s*Store\s*\]$/i.test(s)) {
+      return '商城包';
+    }
+    return '';
+  }
+
+  // 来源前缀渲染：有值时输出 【来源】；但若该来源文字已出现在展示文本中（如旧 Store 条目把【商城包】写进 CN），则不重复输出，避免双【商城包】
+  function buildEvoSourcePrefix(source, displayText) {
+    if (!source) return '';
+    if (displayText && String(displayText).indexOf(source) !== -1) return '';
+    return '【' + source + '】';
+  }
+
+  // futbin 通行证等级 badge（"Season N Level: M"）→ 统一翻成「通行证M级」（用户决定不区分高级/普通）
+
+  // 显示时剥离"受支持的后缀"（仅 SP+/SP/Store 三类）。这些后缀的来源已由【来源】前缀承载，不应再出现在显示里。
+  // 非受支持后缀（如 [FC 26 Obj]）保持原样（按"其他的不用处理"）。
+  function evoDisplaySuffix(suffix) {
+    const s = String(suffix == null ? '' : suffix);
+    return deriveSourceFromSuffix(s.trim()) ? '' : s;
+  }
+
+  // 英文原名显示时剥掉结尾的 [xxx] 后缀（键盘后缀剥离只用于显示，不用于字典键匹配）。
+  // 不依赖 suffix 变量，任何渲染块都可安全调用。
+  function evoDisplayKey(key) {
+    const k = String(key == null ? '' : key);
+    const m = k.match(/\s*\[[^\]]+\]$/);
+    if (!m || !deriveSourceFromSuffix(m[0])) return k;
+    return k.slice(0, -m[0].length).trim();
+  }
+
   // 从 fut.gg 进化卡片元素稳健提取 futgg_id
   // 快路径：元素自身或祖先就是卡片 <a href="/evolutions/数字-...">；
   // 兜底：向上遍历祖先容器，在每一层内查找同卡 <a>（覆盖 a 是兄弟节点 / 嵌套层级变动导致 closest('a') 取空的情况）。
@@ -3811,19 +3876,19 @@ function showMessage(message, type = 'info') {
     return dictValue || fallbackKey;
   }
 
-  function getSourceValue(dictValue) {
+  function getSourceValue(dictValue, suffix) {
+    let raw = '';
     if (Array.isArray(dictValue)) {
       if (dictValue.length === 0) return '';
       const firstItem = dictValue[0];
       if (firstItem && typeof firstItem === 'object') {
-        return firstItem.source || '';
+        raw = firstItem.source || '';
       }
-      return '';
+    } else if (dictValue && typeof dictValue === 'object') {
+      raw = dictValue.source || '';
     }
-    if (dictValue && typeof dictValue === 'object') {
-      return dictValue.source || '';
-    }
-    return '';
+    // 字典无 source 时，从页面 [SP+ N]/[SP N]/[Store] 后缀自动生成来源；旧条目有 source 则优先（零变化）
+    return raw || deriveSourceFromSuffix(suffix);
   }
 
   function checkIfNeedsReprocess(text, format) {
@@ -6402,26 +6467,38 @@ function showMessage(message, type = 'info') {
         if (element.childNodes.length === 1 && element.firstChild.nodeType === Node.TEXT_NODE) {
           const text = element.textContent.trim();
           const textUpper = text.toUpperCase();
-          if (dictionary[text] || dictionary[textUpper]) {
-            const key = dictionary[text] ? text : textUpper;
+          // 剥除末尾 [xxx] 后缀（如 [SP+ 28]），支持只录入裸基础名的新条目；后缀在渲染时按需拼回
+          const evoSuffixMatch = text.match(/\s*\[[^\]]+\]$/);
+          const evoSuffix = evoSuffixMatch ? evoSuffixMatch[0] : '';
+          const baseText = evoSuffix ? text.slice(0, -evoSuffix.length).trim() : text;
+          const baseUpper = baseText.toUpperCase();
+          // 优先按裸基础名匹配（新条目），再回退到全文本精确匹配（旧全名条目）
+          if (dictionary[baseText] || dictionary[baseUpper] || dictionary[text] || dictionary[textUpper]) {
+            const key = dictionary[baseText] ? baseText : (dictionary[baseUpper] ? baseUpper : (dictionary[text] ? text : textUpper));
             const dictValue = dictionary[key];
             // 处理数组格式和对象格式的字典值
             const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
             const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-            const source = getSourceValue(selectedEntry);
-            // 根据进化格式设置决定显示方式
+            const source = getSourceValue(selectedEntry, evoSuffix);
+            // 仅对支持的 SP+/SP/Store 后缀从显示中剥离（来源信息改由【来源】前缀承载；其余后缀按"其他的不用处理"保留）
+            const handledSuf = (evoSuffix && deriveSourceFromSuffix(evoSuffix)) ? evoSuffix : '';
+            const stripHandledSuf = (s) => (handledSuf && String(s).toUpperCase().endsWith(handledSuf.toUpperCase())) ? String(s).slice(0, String(s).length - handledSuf.length).trim() : s;
+            const displayKey = stripHandledSuf(key);
+            const displayText = stripHandledSuf(text);
+            const displayName = translation || displayKey;
+            // 根据进化格式设置决定显示方式（后缀不再拼回显示）
             switch (evolutionFormat) {
               case 0: // 中文（英文）
-                element.textContent = `${translation || key} (${key})`;
+                element.textContent = `${displayName} (${displayKey})`;
                 break;
               case 1: // 来源中文
-                element.textContent = `${source ? '【' + source + '】' : ''}${translation || key}`;
+                element.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName}`;
                 break;
               case 2: // 英文
-                element.textContent = key;
+                element.textContent = displayText;
                 break;
               case 3: // 【来源】中文（英文）
-                element.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})`;
+                element.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName} (${displayKey})`;
                 break;
             }
             // 标记为已翻译
@@ -6538,20 +6615,20 @@ function showMessage(message, type = 'info') {
                     const dictValue = options.evolutionDictionary[key];
                     const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                     const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                    const source = getSourceValue(selectedEntry);
+                    const source = getSourceValue(selectedEntry, suffix);
                     // 按照进化格式显示
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        h2.textContent = `${translation || key} (${key})${suffix}`;
+                        h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1: // 来源中文
-                        h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                        h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 2: // 英文 - 保持原始英文，不翻译
-                        h2.textContent = key + suffix;
+                        h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                         break;
                       case 3: // 【来源】中文（英文）
-                        h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                        h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     translated = true;
@@ -6565,20 +6642,20 @@ function showMessage(message, type = 'info') {
                       const key = dict[baseText] ? baseText : baseTextUpper;
                       const dictValue = dict[key];
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                      const source = getSourceValue(dictValue);
+                      const source = getSourceValue(dictValue, suffix);
                       // 按照进化格式显示
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          h2.textContent = `${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1: // 来源中文
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2: // 英文 - 保持原始英文，不翻译
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3: // 【来源】中文（英文）
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -6591,16 +6668,16 @@ function showMessage(message, type = 'info') {
                         // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功 | 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                         switch (evolutionFormat) {
                           case 0: // 中文（英文）
-                            h2.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1: // 来源中文
-                            h2.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                            h2.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2: // 英文
-                            h2.textContent = reverseResult.key + suffix;
+                            h2.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -6651,16 +6728,16 @@ function showMessage(message, type = 'info') {
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
                   switch (evolutionFormat) {
                     case 0: // 中文（英文）
-                      h2.textContent = `${translation || found.key} (${found.key})${suffix}`;
+                      h2.textContent = `${translation || found.key} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                       break;
                     case 1: // 来源中文
-                      h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key}${suffix}`;
+                      h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)}${evoDisplaySuffix(suffix)}`;
                       break;
                     case 2: // 英文
-                      h2.textContent = found.key + suffix;
+                      h2.textContent = evoDisplayKey(found.key) + evoDisplaySuffix(suffix);
                       break;
                     case 3: // 【来源】中文（英文）
-                      h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key} (${found.key})${suffix}`;
+                      h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                       break;
                   }
                   translated = true;
@@ -6695,19 +6772,19 @@ function showMessage(message, type = 'info') {
                         const firstItem = dictValue[0];
                         if (firstItem && typeof firstItem === 'object') {
                           const translation = getTranslationValue(firstItem, options.useShortenTerms, key);
-                          const source = firstItem.source || '';
+                          const source = getSourceValue(firstItem, suffix);
                           switch (evolutionFormat) {
                             case 0:
-                              h2.textContent = `${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                             case 1:
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                               break;
                             case 2:
-                              h2.textContent = key + suffix;
+                              h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                               break;
                             case 3: // 【来源】中文（英文）
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                           }
                           translated = true;
@@ -6715,19 +6792,19 @@ function showMessage(message, type = 'info') {
                       } else {
                         // console.log(`[OAO][同名ID追踪][FUTGG] 名称匹配-使用通用条目(进化字典) | 页面ID:${futggId} | 英文名称:${key} | 通用条目:`, matchedItem);
                         const translation = getTranslationValue(matchedItem, options.useShortenTerms, key);
-                        const source = matchedItem.source || '';
+                        const source = getSourceValue(matchedItem, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -6738,19 +6815,19 @@ function showMessage(message, type = 'info') {
                       } else {
                         // console.log(`[OAO][同名ID追踪][FUTGG] 名称匹配-使用通用条目(进化字典) | 页面ID:${futggId} | 英文名称:${key} | 通用条目:`, dictValue);
                         const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                        const source = dictValue.source || '';
+                        const source = getSourceValue(dictValue, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -6760,16 +6837,16 @@ function showMessage(message, type = 'info') {
                       // 简单字符串值（无 ID），可以直接使用
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue}${suffix}`;
+                          h2.textContent = `${dictValue}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3: // 【来源】中文（英文）
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -6781,54 +6858,54 @@ function showMessage(message, type = 'info') {
                       const firstItem = dictValue[0];
                       if (firstItem && typeof firstItem === 'object') {
                         const translation = getTranslationValue(firstItem, options.useShortenTerms, key);
-                        const source = firstItem.source || '';
+                        const source = getSourceValue(firstItem, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                       } else {
-                        h2.textContent = key + suffix;
+                        h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                       }
                     } else if (typeof dictValue === 'object') {
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                      const source = dictValue.source || '';
+                      const source = getSourceValue(dictValue, suffix);
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3: // 【来源】中文（英文）
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                     } else {
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue}${suffix}`;
+                          h2.textContent = `${dictValue}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
-                        case 3: // 【来源】中文（英文）
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                        case 3: // 【来源】中文（英文）—— dictValue 为纯字符串，无来源信息
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                     }
@@ -6848,16 +6925,16 @@ function showMessage(message, type = 'info') {
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          h2.textContent = `${translation || found.key} (${found.key})${suffix}`;
+                          h2.textContent = `${translation || found.key} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1: // 来源中文
-                          h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2: // 英文
-                          h2.textContent = found.key + suffix;
+                          h2.textContent = evoDisplayKey(found.key) + evoDisplaySuffix(suffix);
                           break;
                         case 3: // 【来源】中文（英文）
-                          h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key} (${found.key})${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -6879,73 +6956,73 @@ function showMessage(message, type = 'info') {
                           const matchedItem = dictValue.find(item => typeof item === 'object' && !item.futgg_id);
                           if (!matchedItem) continue;
                           const translation = getTranslationValue(matchedItem, options.useShortenTerms, key);
-                          const source = matchedItem.source;
+                          const source = getSourceValue(matchedItem, suffix);
                           switch (evolutionFormat) {
                             case 0:
-                              h2.textContent = `${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                             case 1:
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                               break;
                             case 2:
-                              h2.textContent = key + suffix;
+                              h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                               break;
                             case 3: // 【来源】中文（英文）
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                           }
                           translated = true;
                         } else if (typeof dictValue === 'object') {
                           if (dictValue.futgg_id) continue;
                           const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                          const source = dictValue.source;
+                          const source = getSourceValue(dictValue, suffix);
                           switch (evolutionFormat) {
                             case 0:
-                              h2.textContent = `${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                             case 1:
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                               break;
                             case 2:
-                              h2.textContent = key + suffix;
+                              h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                               break;
                             case 3: // 【来源】中文（英文）
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                           }
                           translated = true;
                         } else {
                           switch (evolutionFormat) {
                             case 0:
-                              h2.textContent = `${dictValue} (${key})${suffix}`;
+                              h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                             case 1:
-                              h2.textContent = `${dictValue}${suffix}`;
+                              h2.textContent = `${dictValue}${evoDisplaySuffix(suffix)}`;
                               break;
                             case 2:
-                              h2.textContent = key + suffix;
+                              h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                               break;
                             case 3: // 【来源】中文（英文）
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                           }
                           translated = true;
                         }
                       } else {
                         const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                        const source = getSourceValue(dictValue);
+                        const source = getSourceValue(dictValue, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -6959,16 +7036,16 @@ function showMessage(message, type = 'info') {
                         // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功 | 页面ID:${futggId} | 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                         switch (evolutionFormat) {
                           case 0: // 中文（英文）
-                            h2.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1: // 来源中文
-                            h2.textContent = `${reverseResult.translation}${suffix}`;
+                            h2.textContent = `${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2: // 英文
-                            h2.textContent = reverseResult.key + suffix;
+                            h2.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            h2.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -6995,7 +7072,7 @@ function showMessage(message, type = 'info') {
       // 该格式为：<h1 class="text-3xl font-bold">Low Driven Shot+ [SP 25] - EA SPORTS FC 26</h1>
       // 需要翻译进化名称部分，保留 " - EA SPORTS FC 26" 后缀不变
       if (isFutggEvolutionsPage) {
-        const detailH1s = root.querySelectorAll('h1.text-3xl.font-bold');
+        const detailH1s = root.querySelectorAll('h1.font-bold') // fut.gg 改版后详情页 h1 类为 text-2xl ... md:text-3xl，旧选择器匹配不到;
         detailH1s.forEach(h1 => {
           if (h1.dataset.oaoFutggEvoProcessed) return;
 
@@ -7035,19 +7112,23 @@ function showMessage(message, type = 'info') {
           const suffixTrimmed = suffix.trim();
 
           function buildDisplayText(engKey, chnText, srcText, fmt) {
+            // 受支持的 SP+/SP/Store 后缀：来源已由【】前缀承载，显示里彻底隐藏；其余后缀保持原有行为
             const keyHasSuffix = suffixTrimmed && engKey.toUpperCase().endsWith(suffixTrimmed.toUpperCase());
-            const extraSuffix = keyHasSuffix ? '' : suffix;
+            const extraSuffix = (deriveSourceFromSuffix(suffixTrimmed) || keyHasSuffix) ? '' : suffix;
+            const displayKey = evoDisplayKey(engKey);
+            const tail = extraSuffix + fcSuffix;
+            const prefix = buildEvoSourcePrefix(srcText, chnText || displayKey);
             switch (fmt) {
               case 0:
-                return `${chnText || engKey} (${engKey})${extraSuffix}${fcSuffix}`;
+                return `${chnText || displayKey} (${displayKey})${tail}`;
               case 1:
-                return `${srcText ? '【' + srcText + '】' : ''}${chnText || engKey}${extraSuffix}${fcSuffix}`;
+                return `${prefix}${chnText || displayKey}${tail}`;
               case 2:
-                return engKey + extraSuffix + fcSuffix;
+                return displayKey + tail;
               case 3:
-                return `${srcText ? '【' + srcText + '】' : ''}${chnText || engKey} (${engKey})${extraSuffix}${fcSuffix}`;
+                return `${prefix}${chnText || displayKey} (${displayKey})${tail}`;
               default:
-                return engKey + extraSuffix + fcSuffix;
+                return displayKey + tail;
             }
           }
 
@@ -7057,7 +7138,7 @@ function showMessage(message, type = 'info') {
             if (found) {
               const dictValue = found.entry;
               const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
-              const source = getSourceValue(dictValue);
+              const source = getSourceValue(dictValue, suffix);
               h1.textContent = buildDisplayText(found.key, translation, source, evolutionFormat);
               translated = true;
             }
@@ -7071,7 +7152,7 @@ function showMessage(message, type = 'info') {
               const dictValue = options.evolutionDictionary[key];
               const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
               const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-              const source = getSourceValue(selectedEntry);
+              const source = getSourceValue(selectedEntry, suffix);
               h1.textContent = buildDisplayText(key, translation, source, evolutionFormat);
               translated = true;
             }
@@ -7206,16 +7287,16 @@ function showMessage(message, type = 'info') {
                   // 按照进化格式显示
                   switch (evolutionFormat) {
                   case 0: // 中文（英文）
-                    textSpan.textContent = `${translation || key} (${key})${suffix}`;
+                    textSpan.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                     break;
                   case 1: // 来源中文
-                    textSpan.textContent = `${getSourceValue(selectedEntry) ? '【' + getSourceValue(selectedEntry) + '】' : ''}${translation || key}${suffix}`;
+                    textSpan.textContent = `${buildEvoSourcePrefix(getSourceValue(selectedEntry, suffix), translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                     break;
                   case 2: // 英文 - 保持原始英文，不翻译
-                    textSpan.textContent = key + suffix;
+                    textSpan.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                     break;
                   case 3: // 【来源】中文（英文）
-                    textSpan.textContent = `${getSourceValue(selectedEntry) ? '【' + getSourceValue(selectedEntry) + '】' : ''}${translation || key} (${key})${suffix}`;
+                    textSpan.textContent = `${buildEvoSourcePrefix(getSourceValue(selectedEntry, suffix), translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                     break;
                   }
                   translated = true;
@@ -7234,21 +7315,21 @@ function showMessage(message, type = 'info') {
                     // 则只输出纯中文，不应用进化格式（不加英文括号）
                     const isFromEvolutionDict = options.evolutionDictionary && dict === options.evolutionDictionary;
                     if (!isFromEvolutionDict) {
-                      textSpan.textContent = (translation || key) + suffix;
+                      textSpan.textContent = (translation || key) + evoDisplaySuffix(suffix);
                     } else {
                       // 进化字典才应用进化格式显示
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          textSpan.textContent = `${translation || key} (${key})${suffix}`;
+                          textSpan.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1: // 来源中文
-                          textSpan.textContent = `${getSourceValue(dictValue) ? '【' + getSourceValue(dictValue) + '】' : ''}${translation || key}${suffix}`;
+                          textSpan.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2: // 英文 - 保持原始英文，不翻译
-                          textSpan.textContent = key + suffix;
+                          textSpan.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3: // 【来源】中文（英文）
-                          textSpan.textContent = `${getSourceValue(dictValue) ? '【' + getSourceValue(dictValue) + '】' : ''}${translation || key} (${key})${suffix}`;
+                          textSpan.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                     }
@@ -7262,20 +7343,20 @@ function showMessage(message, type = 'info') {
                       const isRevFromEvolutionDict = options.evolutionDictionary && dict === options.evolutionDictionary;
                       // 非进化字典的反向查找命中，同样只显示纯中文
                       if (!isRevFromEvolutionDict) {
-                        textSpan.textContent = reverseResult.translation + suffix;
+                        textSpan.textContent = evoDisplayKey(reverseResult.translation) + evoDisplaySuffix(suffix);
                       } else {
                         switch (evolutionFormat) {
                           case 0: // 中文（英文）
-                            textSpan.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            textSpan.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1: // 来源中文
-                            textSpan.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                            textSpan.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2: // 英文
-                            textSpan.textContent = reverseResult.key + suffix;
+                            textSpan.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                             break;
                           case 3: // 【来源】中文（英文）
-                            textSpan.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            textSpan.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                       }
@@ -7320,20 +7401,20 @@ function showMessage(message, type = 'info') {
                   const dictValue = options.evolutionDictionary[key];
                   const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                   const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                  const source = getSourceValue(selectedEntry);
+                  const source = getSourceValue(selectedEntry, suffix);
                   // 按照进化格式显示
                   switch (evolutionFormat) {
                     case 0: // 中文（英文）
-                      textDiv.textContent = `${translation || key} (${key})${suffix}`;
+                      textDiv.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                     case 1: // 来源中文
-                      textDiv.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                      textDiv.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                       break;
                     case 2: // 英文 - 保持原始英文，不翻译
-                      textDiv.textContent = key + suffix;
+                      textDiv.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                       break;
                     case 3: // 【来源】中文（英文）
-                      textDiv.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                      textDiv.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                   }
                   translated = true;
@@ -7348,20 +7429,20 @@ function showMessage(message, type = 'info') {
                     const dictValue = dict[key];
                     const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                     const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                    const source = getSourceValue(selectedEntry);
+                    const source = getSourceValue(selectedEntry, suffix);
                     // 按照进化格式显示
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        textDiv.textContent = `${translation || key} (${key})${suffix}`;
+                        textDiv.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1: // 来源中文
-                        textDiv.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                        textDiv.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 2: // 英文 - 保持原始英文，不翻译
-                        textDiv.textContent = key + suffix;
+                        textDiv.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                         break;
                       case 3: // 【来源】中文（英文）
-                        textDiv.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                        textDiv.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     translated = true;
@@ -7374,16 +7455,16 @@ function showMessage(message, type = 'info') {
                       // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功 | 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                       switch (evolutionFormat) {
                         case 0:
-                          textDiv.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                          textDiv.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          textDiv.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                          textDiv.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          textDiv.textContent = reverseResult.key + suffix;
+                          textDiv.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                           break;
                         case 3:
-                          textDiv.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                          textDiv.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -7437,28 +7518,39 @@ function showMessage(message, type = 'info') {
               let text = textNode.textContent.trim();
               if (text) {
                 const textUpper = text.toUpperCase();
+                // 剥除末尾 [xxx] 后缀（如 [SP+ 28]），支持只录入裸基础名的新条目；后缀在渲染时按需拼回
+                const evoSuffixMatch = text.match(/\s*\[[^\]]+\]$/);
+                const evoSuffix = evoSuffixMatch ? evoSuffixMatch[0] : '';
+                const evoBaseText = evoSuffix ? text.slice(0, -evoSuffix.length).trim() : text;
+                const evoBaseUpper = evoBaseText.toUpperCase();
                 let translated = false;
                 // 首先在进化字典中查找
                 if (options.evolutionDictionary) {
-                  if (options.evolutionDictionary[text] || options.evolutionDictionary[textUpper]) {
-                    const key = options.evolutionDictionary[text] ? text : textUpper;
+                  if (options.evolutionDictionary[evoBaseText] || options.evolutionDictionary[evoBaseUpper] || options.evolutionDictionary[text] || options.evolutionDictionary[textUpper]) {
+                    const key = options.evolutionDictionary[evoBaseText] ? evoBaseText : (options.evolutionDictionary[evoBaseUpper] ? evoBaseUpper : (options.evolutionDictionary[text] ? text : textUpper));
                     const dictValue = options.evolutionDictionary[key];
                     const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                     const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                    const source = getSourceValue(selectedEntry);
-                    // 按照进化格式显示
+                    const source = getSourceValue(selectedEntry, evoSuffix);
+                    // 仅对支持的 SP+/SP/Store 后缀从显示中剥离（来源信息改由【来源】前缀承载；其余后缀按"其他的不用处理"保留）
+                    const handledSuf = (evoSuffix && deriveSourceFromSuffix(evoSuffix)) ? evoSuffix : '';
+                    const stripHandledSuf = (s) => (handledSuf && String(s).toUpperCase().endsWith(handledSuf.toUpperCase())) ? String(s).slice(0, String(s).length - handledSuf.length).trim() : s;
+                    const displayKey = stripHandledSuf(key);
+                    const displayText = stripHandledSuf(text);
+                    const displayName = translation || displayKey;
+                    // 按照进化格式显示（后缀不再拼回显示）
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        textNode.textContent = `${translation || key} (${key})`;
+                        textNode.textContent = `${displayName} (${displayKey})`;
                         break;
                       case 1: // 来源中文
-                        textNode.textContent = `${source ? '【' + source + '】' : ''}${translation || key}`;
+                        textNode.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName}`;
                         break;
                       case 2: // 英文 - 保持原始英文，不翻译
-                        textNode.textContent = key;
+                        textNode.textContent = displayText;
                         break;
                       case 3: // 【来源】中文（英文）
-                        textNode.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})`;
+                        textNode.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName} (${displayKey})`;
                         break;
                     }
                     translated = true;
@@ -7467,26 +7559,32 @@ function showMessage(message, type = 'info') {
                 // 如果进化字典中没找到，在所有字典中查找
                 if (!translated) {
                   for (const dict of allDictionaries) {
-                    // 正向查找：text 作为 key
-                    if (dict[text] || dict[textUpper]) {
-                      const key = dict[text] ? text : textUpper;
+                    // 正向查找：优先裸基础名（新条目），回退全文本（旧全名条目）
+                    if (dict[evoBaseText] || dict[evoBaseUpper] || dict[text] || dict[textUpper]) {
+                      const key = dict[evoBaseText] ? evoBaseText : (dict[evoBaseUpper] ? evoBaseUpper : (dict[text] ? text : textUpper));
                       const dictValue = dict[key];
                       const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                       const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                      const source = getSourceValue(selectedEntry);
-                      // 按照进化格式显示
+                      const source = getSourceValue(selectedEntry, evoSuffix);
+                      // 仅对支持的 SP+/SP/Store 后缀从显示中剥离（来源信息改由【来源】前缀承载；其余后缀按"其他的不用处理"保留）
+                      const handledSuf = (evoSuffix && deriveSourceFromSuffix(evoSuffix)) ? evoSuffix : '';
+                      const stripHandledSuf = (s) => (handledSuf && String(s).toUpperCase().endsWith(handledSuf.toUpperCase())) ? String(s).slice(0, String(s).length - handledSuf.length).trim() : s;
+                      const displayKey = stripHandledSuf(key);
+                      const displayText = stripHandledSuf(text);
+                      const displayName = translation || displayKey;
+                      // 按照进化格式显示（后缀不再拼回显示）
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          textNode.textContent = `${translation || key} (${key})`;
+                          textNode.textContent = `${displayName} (${displayKey})`;
                           break;
                         case 1: // 来源中文
-                          textNode.textContent = `${source ? '【' + source + '】' : ''}${translation || key}`;
+                          textNode.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName}`;
                           break;
                         case 2: // 英文 - 保持原始英文，不翻译
-                          textNode.textContent = key;
+                          textNode.textContent = displayText;
                           break;
                         case 3: // 【来源】中文（英文）
-                          textNode.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})`;
+                          textNode.textContent = `${buildEvoSourcePrefix(source, displayName)}${displayName} (${displayKey})`;
                           break;
                       }
                       translated = true;
@@ -7559,20 +7657,20 @@ function showMessage(message, type = 'info') {
                   const dictValue = dict[key];
                   const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                   const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                  const source = getSourceValue(selectedEntry);
+                  const source = getSourceValue(selectedEntry, suffix);
                   // 按照进化格式显示
                   switch (evolutionFormat) {
                     case 0: // 中文（英文）
-                      p.textContent = `${translation || key} (${key})${suffix}`;
+                      p.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                     case 1: // 来源中文
-                      p.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                      p.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                       break;
                     case 2: // 英文 - 保持原始英文，不翻译
-                      p.textContent = key + suffix;
+                      p.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                       break;
                     case 3: // 【来源】中文（英文）
-                      p.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                      p.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                   }
                   translated = true;
@@ -7585,16 +7683,16 @@ function showMessage(message, type = 'info') {
                     // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功 | 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                     switch (evolutionFormat) {
                       case 0:
-                        p.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        p.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1:
-                        p.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                        p.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 2:
-                        p.textContent = reverseResult.key + suffix;
+                        p.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                         break;
                       case 3:
-                        p.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        p.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     translated = true;
@@ -7655,20 +7753,20 @@ function showMessage(message, type = 'info') {
                   const key = dict[baseText] ? baseText : baseTextUpper;
                   const dictValue = dict[key];
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                  const source = getSourceValue(dictValue);
+                  const source = getSourceValue(dictValue, suffix);
                   // 按照进化格式显示
                   switch (evolutionFormat) {
                     case 0: // 中文（英文）
-                      span.textContent = `${translation || key} (${key})${suffix}`;
+                      span.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                     case 1: // 来源中文
-                      span.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                      span.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                       break;
                     case 2: // 英文 - 保持原始英文，不翻译
-                      span.textContent = key + suffix;
+                      span.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                       break;
                     case 3: // 【来源】中文（英文）
-                      span.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                      span.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                       break;
                   }
                   translated = true;
@@ -7681,16 +7779,16 @@ function showMessage(message, type = 'info') {
                     // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功 | 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                     switch (evolutionFormat) {
                       case 0:
-                        span.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        span.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1:
-                        span.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                        span.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 2:
-                        span.textContent = reverseResult.key + suffix;
+                        span.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                         break;
                       case 3:
-                        span.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        span.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     translated = true;
@@ -7785,13 +7883,13 @@ function showMessage(message, type = 'info') {
                     // console.log(`[OAO][同名ID追踪][FUTGG] 反向查找匹配成功（已翻译中文恢复）| 页面文本:${baseText} | 英文key:${reverseResult.key}`);
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        textElement.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        textElement.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1: // 来源中文
-                        textElement.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${suffix}`;
+                        textElement.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 3: // 【来源】中文（英文）
-                        textElement.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                        textElement.textContent = `${reverseResult.source ? '【' + reverseResult.source + '】' : ''}${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     textElement.dataset.oaoEvoNameTranslated = 'true';
@@ -7821,13 +7919,13 @@ function showMessage(message, type = 'info') {
                     const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        textElement.textContent = `${translation || key} (${key})${suffix}`;
+                        textElement.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1: // 来源中文
-                        textElement.textContent = `${getSourceValue(selectedEntry) ? '【' + getSourceValue(selectedEntry) + '】' : ''}${translation || key}${suffix}`;
+                        textElement.textContent = `${buildEvoSourcePrefix(getSourceValue(selectedEntry, suffix), translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 3: // 【来源】中文（英文）
-                        textElement.textContent = `${getSourceValue(selectedEntry) ? '【' + getSourceValue(selectedEntry) + '】' : ''}${translation || key} (${key})${suffix}`;
+                        textElement.textContent = `${buildEvoSourcePrefix(getSourceValue(selectedEntry, suffix), translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                     }
                     translated = true;
@@ -7842,16 +7940,16 @@ function showMessage(message, type = 'info') {
                       const dictValue = dict[key];
                       const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                       const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                      const source = getSourceValue(selectedEntry);
+                      const source = getSourceValue(selectedEntry, suffix);
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          textElement.textContent = `${translation || key} (${key})${suffix}`;
+                          textElement.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1: // 来源中文
-                          textElement.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                          textElement.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 3: // 【来源】中文（英文）
-                          textElement.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                          textElement.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -7899,16 +7997,16 @@ function showMessage(message, type = 'info') {
                     const dictValue = dict[key];
                     const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
                     const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-                    const source = getSourceValue(selectedEntry);
+                    const source = getSourceValue(selectedEntry, suffix);
                     switch (evolutionFormat) {
                       case 0: // 中文（英文）
-                        truncateSpan.textContent = `${translation || key} (${key})${suffix}`;
+                        truncateSpan.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                         break;
                       case 1: // 来源中文
-                        truncateSpan.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                        truncateSpan.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                         break;
                       case 2: // 英文
-                        truncateSpan.textContent = key + suffix;
+                        truncateSpan.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                         break;
                     }
                     translated = true;
@@ -7977,7 +8075,7 @@ function showMessage(message, type = 'info') {
               const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
               // 有中文翻译则显示「中文（英文）」，否则保持英文
               if (translation && translation !== key) {
-                finalText = `${translation} (${key})${suffix}`;
+                finalText = `${translation} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
               }
             }
           }
@@ -8025,16 +8123,16 @@ function showMessage(message, type = 'info') {
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
                   switch (evolutionFormat) {
                     case 0:
-                      h2.textContent = `${translation || found.key} (${found.key})${suffix}`;
+                      h2.textContent = `${translation || found.key} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                       break;
                     case 1:
-                      h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key}${suffix}`;
+                      h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)}${evoDisplaySuffix(suffix)}`;
                       break;
                     case 2:
-                      h2.textContent = found.key + suffix;
+                      h2.textContent = evoDisplayKey(found.key) + evoDisplaySuffix(suffix);
                       break;
                     case 3:
-                      h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key} (${found.key})${suffix}`;
+                      h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                       break;
                   }
                   translated = true;
@@ -8054,38 +8152,38 @@ function showMessage(message, type = 'info') {
                         const firstItem = dictValue[0];
                         if (firstItem && typeof firstItem === 'object') {
                           const translation = getTranslationValue(firstItem, options.useShortenTerms, key);
-                          const source = firstItem.source || '';
+                          const source = getSourceValue(firstItem, suffix);
                           switch (evolutionFormat) {
                             case 0:
-                              h2.textContent = `${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                             case 1:
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                               break;
                             case 2:
-                              h2.textContent = key + suffix;
+                              h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                               break;
                             case 3:
-                              h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                              h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                               break;
                           }
                           translated = true;
                         }
                       } else {
                         const translation = getTranslationValue(matchedItem, options.useShortenTerms, key);
-                        const source = matchedItem.source || '';
+                        const source = getSourceValue(matchedItem, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -8093,19 +8191,19 @@ function showMessage(message, type = 'info') {
                     } else if (typeof dictValue === 'object') {
                       if (!dictValue.futgg_id) {
                         const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                        const source = dictValue.source || '';
+                        const source = getSourceValue(dictValue, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -8113,16 +8211,16 @@ function showMessage(message, type = 'info') {
                     } else {
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue}${suffix}`;
+                          h2.textContent = `${dictValue}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -8132,54 +8230,54 @@ function showMessage(message, type = 'info') {
                       const firstItem = dictValue[0];
                       if (firstItem && typeof firstItem === 'object') {
                         const translation = getTranslationValue(firstItem, options.useShortenTerms, key);
-                        const source = firstItem.source || '';
+                        const source = getSourceValue(firstItem, suffix);
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = key + suffix;
+                            h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                             break;
                           case 3:
-                            h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                            h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                       } else {
-                        h2.textContent = key + suffix;
+                        h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                       }
                     } else if (typeof dictValue === 'object') {
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                      const source = dictValue.source || '';
+                      const source = getSourceValue(dictValue, suffix);
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3:
-                          h2.textContent = `${source ? '【' + source + '】' : ''}${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                     } else {
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue}${suffix}`;
+                          h2.textContent = `${dictValue}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                         case 3:
-                          h2.textContent = `${dictValue} (${key})${suffix}`;
+                          h2.textContent = `${dictValue} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                     }
@@ -8197,16 +8295,16 @@ function showMessage(message, type = 'info') {
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${translation || found.key} (${found.key})${suffix}`;
+                          h2.textContent = `${translation || found.key} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = found.key + suffix;
+                          h2.textContent = evoDisplayKey(found.key) + evoDisplaySuffix(suffix);
                           break;
                         case 3:
-                          h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || found.key} (${found.key})${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || found.key)} (${evoDisplayKey(found.key)})${evoDisplaySuffix(suffix)}`;
                           break;
                       }
                       translated = true;
@@ -8223,13 +8321,13 @@ function showMessage(message, type = 'info') {
                       const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
                       switch (evolutionFormat) {
                         case 0:
-                          h2.textContent = `${translation || key} (${key})${suffix}`;
+                          h2.textContent = `${translation || key} (${evoDisplayKey(key)})${evoDisplaySuffix(suffix)}`;
                           break;
                         case 1:
-                          h2.textContent = `${dictValue.source ? '【' + dictValue.source + '】' : ''}${translation || key}${suffix}`;
+                          h2.textContent = `${buildEvoSourcePrefix(getSourceValue(dictValue, suffix), translation || key)}${evoDisplaySuffix(suffix)}`;
                           break;
                         case 2:
-                          h2.textContent = key + suffix;
+                          h2.textContent = evoDisplayKey(key) + evoDisplaySuffix(suffix);
                           break;
                       }
                       translated = true;
@@ -8240,16 +8338,16 @@ function showMessage(message, type = 'info') {
                       if (reverseResult) {
                         switch (evolutionFormat) {
                           case 0:
-                            h2.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                           case 1:
-                            h2.textContent = `${reverseResult.translation}${suffix}`;
+                            h2.textContent = `${reverseResult.translation}${evoDisplaySuffix(suffix)}`;
                             break;
                           case 2:
-                            h2.textContent = reverseResult.key + suffix;
+                            h2.textContent = evoDisplayKey(reverseResult.key) + evoDisplaySuffix(suffix);
                             break;
                           case 3:
-                            h2.textContent = `${reverseResult.translation} (${reverseResult.key})${suffix}`;
+                            h2.textContent = `${reverseResult.translation} (${evoDisplayKey(reverseResult.key)})${evoDisplaySuffix(suffix)}`;
                             break;
                         }
                         translated = true;
@@ -8321,13 +8419,13 @@ function showMessage(message, type = 'info') {
             const base = translation || title;
             switch (evolutionFormat) {
               case 0:
-                return showOriginal ? `${base} (${title})${suffix}` : `${base}${suffix}`;
+                return showOriginal ? `${base} (${evoDisplayKey(title)})${evoDisplaySuffix(suffix)}` : `${base}${evoDisplaySuffix(suffix)}`;
               case 1:
-                return `${showSource ? '【' + source + '】' : ''}${base}${suffix}`;
+                return `${showSource ? buildEvoSourcePrefix(source, base) : ''}${base}${evoDisplaySuffix(suffix)}`;
               case 3:
-                return `${showSource ? '【' + source + '】' : ''}${base}${showOriginal ? ' (' + title + ')' : ''}${suffix}`;
+                return `${showSource ? buildEvoSourcePrefix(source, base) : ''}${base}${showOriginal ? ' (' + title + ')' : ''}${evoDisplaySuffix(suffix)}`;
               default:
-                return showOriginal ? `${base} (${title})${suffix}` : `${base}${suffix}`;
+                return showOriginal ? `${base} (${evoDisplayKey(title)})${evoDisplaySuffix(suffix)}` : `${base}${evoDisplaySuffix(suffix)}`;
             }
           }
           function applyCompactRowStyle(el, compactRow) {
@@ -8346,7 +8444,7 @@ function showMessage(message, type = 'info') {
             if (found) {
               const dictValue = found.entry;
               const translation = getTranslationValue(dictValue, options.useShortenTerms, found.key);
-              const source = getSourceValue(dictValue);
+              const source = getSourceValue(dictValue, suffix);
               titleEl.textContent = formatEvoTitle(found.key, translation, source, suffix, compactRow);
               applyCompactRowStyle(titleEl, compactRow);
               translated = true;
@@ -8361,7 +8459,7 @@ function showMessage(message, type = 'info') {
               const dictValue = options.evolutionDictionary[key];
               const selectedEntry = selectEvolutionEntryByPriority(dictValue, 'futgg_id');
               const translation = getTranslationValue(selectedEntry, options.useShortenTerms, key);
-              const source = getSourceValue(selectedEntry);
+              const source = getSourceValue(selectedEntry, suffix);
               titleEl.textContent = formatEvoTitle(key, translation, source, suffix, compactRow);
               applyCompactRowStyle(titleEl, compactRow);
               translated = true;
@@ -8677,12 +8775,12 @@ function showMessage(message, type = 'info') {
               const baseTextUpper = baseText.toUpperCase();
               // 首先在进化字典中查找
               if (options.evolutionDictionary) {
-                const evoKey = findEvolutionKey(options.evolutionDictionary, baseText, suffix);
+                const evoKey = findEvolutionKey(options.evolutionDictionary, baseText, suffixMatch[0]);
                 if (evoKey) {
                   const key = evoKey;
                   const dictValue = options.evolutionDictionary[key];
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                  const finalTranslation = translation + suffixMatch[0];
+                  const finalTranslation = translation + evoDisplaySuffix(suffixMatch[0]);
                   
                   for (let j = 0; j < element.childNodes.length; j++) {
                     const child = element.childNodes[j];
@@ -8703,7 +8801,7 @@ function showMessage(message, type = 'info') {
                   const key = dict[baseText] ? baseText : baseTextUpper;
                   const dictValue = dict[key];
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                  const finalTranslation = translation + suffixMatch[0];
+                  const finalTranslation = translation + evoDisplaySuffix(suffixMatch[0]);
                   
                   for (let j = 0; j < element.childNodes.length; j++) {
                     const child = element.childNodes[j];
@@ -8771,10 +8869,13 @@ function showMessage(message, type = 'info') {
                     child.textContent = `${translation} (${normalizedDirectText})`;
                     break;
                   case 1: // 来源中文
-                    child.textContent = `${source ? '【' + source + '】' : ''}${translation || key}`;
+                    child.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key}`;
                     break;
                   case 2: // 英文
                     child.textContent = normalizedDirectText;
+                    break;
+                  case 3: // 【来源】中文（英文）
+                    child.textContent = `${buildEvoSourcePrefix(source, translation || key)}${translation || key} (${evoDisplayKey(key)})`;
                     break;
                 }
                 } else {
@@ -8796,12 +8897,12 @@ function showMessage(message, type = 'info') {
               const baseTextUpper = baseText.toUpperCase();
               // 首先在进化字典中查找
               if (options.evolutionDictionary && !isInDropdown) {
-                const evoKey = findEvolutionKey(options.evolutionDictionary, baseText, suffix);
+                const evoKey = findEvolutionKey(options.evolutionDictionary, baseText, suffixMatch[0]);
                 if (evoKey) {
                   const key = evoKey;
                   const dictValue = options.evolutionDictionary[key];
                   const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                  const source = getSourceValue(dictValue);
+                  const source = getSourceValue(dictValue, suffixMatch[0]);
                   
                   // 只替换直接文本节点，保留子元素
                   for (let j = 0; j < element.childNodes.length; j++) {
@@ -8810,13 +8911,16 @@ function showMessage(message, type = 'info') {
                       // 根据进化格式设置决定显示方式
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          child.textContent = `${translation || baseText} (${baseText})${suffixMatch[0]}`;
+                          child.textContent = `${translation || baseText} (${evoDisplayKey(baseText)})${evoDisplaySuffix(suffixMatch[0])}`;
                           break;
                         case 1: // 来源中文
-                          child.textContent = `${source ? '【' + source + '】' : ''}${translation}${suffixMatch[0]}`;
+                          child.textContent = `${buildEvoSourcePrefix(source, translation)}${translation}${evoDisplaySuffix(suffixMatch[0])}`;
                           break;
                         case 2: // 英文
                           child.textContent = normalizedDirectText;
+                          break;
+                        case 3: // 【来源】中文（英文）
+                          child.textContent = `${buildEvoSourcePrefix(source, translation)}${translation} (${evoDisplayKey(key)})${evoDisplaySuffix(suffixMatch[0])}`;
                           break;
                       }
                     }
@@ -8831,7 +8935,7 @@ function showMessage(message, type = 'info') {
                 const key = dict[baseText] ? baseText : baseTextUpper;
                 const dictValue = dict[key];
                 const translation = getTranslationValue(dictValue, options.useShortenTerms, key);
-                const source = getSourceValue(dictValue);
+                const source = getSourceValue(dictValue, suffixMatch[0]);
                 
                 // 只替换直接文本节点，保留子元素
                 for (let j = 0; j < element.childNodes.length; j++) {
@@ -8843,18 +8947,21 @@ function showMessage(message, type = 'info') {
                       // 根据进化格式设置决定显示方式
                       switch (evolutionFormat) {
                         case 0: // 中文（英文）
-                          child.textContent = `${translation || baseText} (${baseText})${suffixMatch[0]}`;
+                          child.textContent = `${translation || baseText} (${evoDisplayKey(baseText)})${evoDisplaySuffix(suffixMatch[0])}`;
                           break;
                         case 1: // 来源中文
-                          child.textContent = `${source ? '【' + source + '】' : ''}${translation || baseText}${suffixMatch[0]}`;
+                          child.textContent = `${buildEvoSourcePrefix(source, translation || baseText)}${translation || baseText}${evoDisplaySuffix(suffixMatch[0])}`;
                           break;
                         case 2: // 英文
                           child.textContent = normalizedDirectText;
                           break;
+                        case 3: // 【来源】中文（英文）
+                          child.textContent = `${buildEvoSourcePrefix(source, translation || baseText)}${translation || baseText} (${evoDisplayKey(key)})${evoDisplaySuffix(suffixMatch[0])}`;
+                          break;
                       }
                     } else {
                       // 其他字典的翻译直接显示中文
-                      child.textContent = (translation || normalizedDirectText) + suffixMatch[0];
+                      child.textContent = (translation || normalizedDirectText) + evoDisplaySuffix(suffixMatch[0]);
                     }
                   }
                 }
@@ -9103,7 +9210,8 @@ function showMessage(message, type = 'info') {
       if (isFutbinEvolutionsPage || isFutbinPlayerEvolutionPage || isFutbinEvolutionDetailPage) {
         const evoBadges = root.querySelectorAll('.evolution-badge');
         evoBadges.forEach(badge => {
-          if (badge.dataset.oaoTranslated === 'true') return;
+          // 注意：不因已标记而跳过。React 重渲染会重建 badge 内容（img + 英文文本回滚）但保留 dataset 标记，
+          // 导致"已标记但仍是英文"的漏翻。重翻是幂等的（中文文本不会命中英文键），代价可忽略。
           badge.childNodes.forEach(child => {
             if (child.nodeType !== Node.TEXT_NODE) return;
             const text = child.textContent.trim();
@@ -9139,6 +9247,23 @@ function showMessage(message, type = 'info') {
               };
               if (badgeTranslations[text]) {
                 child.textContent = badgeTranslations[text];
+                translated = true;
+              }
+            }
+            // 第三阶段：通行证等级标签（futbin "Season N Level: M" ↔ fut.gg [SP+/SP M]）
+            // 用户决定：futbin 侧不区分高级/普通，统一翻成「通行证N级」
+            if (!translated) {
+              const lvlMatch = text.match(/^Season\s+\d+\s+Level:\s*(\d+)\s*$/i);
+              if (lvlMatch) {
+                child.textContent = '通行证' + lvlMatch[1] + '级';
+                translated = true;
+              }
+            }
+            // 第四阶段：周赛代币（"125 Champs Tokens" → "125 周赛代币"）
+            if (!translated) {
+              const tokensMatch = text.match(/^(\d+)\s+Champs\s+Tokens\s*$/i);
+              if (tokensMatch) {
+                child.textContent = tokensMatch[1] + ' 周赛代币';
                 translated = true;
               }
             }
@@ -11043,7 +11168,7 @@ function showMessage(message, type = 'info') {
       }
       
       // 只有在进化相关页面上运行 evolutionsTranslator，英文状态时不运行
-      if (isEvolutionsPage && evolutionFormat !== 2) {
+      if (isEvolutionsPage && evolutionFormat !== 2 && !window.location.hostname.includes('fut.gg')) { // fut.gg 有专用 futggTranslator，旧进化翻译器在此运行会用旧模板抢先渲染并标记，导致来源丢失/括号带后缀
         evolutionsTranslator.translate(root, dictionaries.evolutions, {
           useShortenTerms: USE_SHORTEN_TERMS,
           showOriginalWithBrackets: SHOW_ORIGINAL_WITH_BRACKETS,
@@ -11190,7 +11315,17 @@ function showMessage(message, type = 'info') {
     const debouncedTranslate = debounce((mutations) => {
       // 检查是否正在翻译，避免无限循环
       if (document && document.dataset && document.dataset.oaoTranslating) {
-        // log('debug', '正在翻译中，跳过 MutationObserver 触发');
+        // 正在翻译：不丢弃这次变更。此前直接 return 会吞掉页签切换等场景的 DOM 变更，
+        // 翻译结束后 Observer 不会再触发 → 新内容永远不翻（需反复切换页签才碰运气命中）。
+        // 改为等翻译结束后补跑一次。
+        const retryTranslate = (left) => {
+          if (document.dataset && document.dataset.oaoTranslating && left > 0) {
+            setTimeout(() => retryTranslate(left - 1), 400);
+            return;
+          }
+          translateRoot(document);
+        };
+        setTimeout(() => retryTranslate(5), 400);
         return;
       }
       
