@@ -4858,5 +4858,19 @@
     "CN": "终极尖叫复古17卡面",
     "timestamp": 1793977227874,
     "source": "装饰"
+  },
+  {
+    "name": "Matchday Marksman",
+    "CN": "比赛日射手",
+    "timestamp": 1794004097277,
+    "source": "进化"
+  },
+  {
+    "name": "Intercept",
+    "CN": "拦截",
+    "timestamp": 1794006254443,
+    "source": "终极试炼3任务",
+    "futbin_id": "142",
+    "futgg_id": "2651"
   }
 ]

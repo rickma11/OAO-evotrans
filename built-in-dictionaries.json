@@ -582,6 +582,26 @@
     "Showdown Upgrade": {
       "webpagedata": "大对决升级",
       "timestamp": 1793772031756
+    },
+    "UEFA Champions League RTTK": {
+      "webpagedata": "欧冠RTTK",
+      "timestamp": 1794005588907
+    },
+    "UEFA Women's Champions League RTTK": {
+      "webpagedata": "女足欧冠RTTK",
+      "timestamp": 1794005607362
+    },
+    "UEFA Europa League RTTK": {
+      "webpagedata": "欧联RTTK",
+      "timestamp": 1794005633254
+    },
+    "UEFA Conference League RTTK": {
+      "webpagedata": "欧协联RTTK",
+      "timestamp": 1794005485227
+    },
+    "RTTK": {
+      "webpagedata": "淘汰赛之路",
+      "timestamp": 1794006916237
     }
   },
   "sixStat": {
