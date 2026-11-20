@@ -4974,5 +4974,35 @@
     "CN": "顶级前锋",
     "timestamp": 1795115597818,
     "source": "进化"
+  },
+  {
+    "name": "Circuit Breaker",
+    "CN": "断路器",
+    "timestamp": 1795209232126,
+    "source": "进化"
+  },
+  {
+    "name": "Zero to Sixty",
+    "CN": "零到六十",
+    "timestamp": 1795209336979,
+    "source": "进化"
+  },
+  {
+    "name": "Full Overload",
+    "CN": "全面超载",
+    "timestamp": 1795209410358,
+    "source": "进化"
+  },
+  {
+    "name": "High Voltage",
+    "CN": "高电压",
+    "timestamp": 1795209756371,
+    "source": "进化"
+  },
+  {
+    "name": "Static Charge",
+    "CN": "静电充能",
+    "timestamp": 1795209775444,
+    "source": "进化"
   }
 ]
