@@ -4994,15 +4994,51 @@
     "source": "进化"
   },
   {
+    "name": "Thunderstruck Regular Badge",
+    "CN": "雷霆出击普通徽章",
+    "timestamp": 1795212652167,
+    "source": "装饰"
+  },
+  {
+    "name": "Thunderstruck Premium Badge",
+    "CN": "雷霆出击高级徽章",
+    "timestamp": 1795212666978,
+    "source": "装饰"
+  },
+  {
+    "name": "Pink Lightning",
+    "CN": "粉色闪电",
+    "timestamp": 1795212680539,
+    "source": "装饰"
+  },
+  {
+    "name": "Yellow Lightning",
+    "CN": "黄色闪电",
+    "timestamp": 1795212698202,
+    "source": "装饰"
+  },
+  {
     "name": "High Voltage",
     "CN": "高电压",
-    "timestamp": 1795209756371,
+    "timestamp": 1795213132829,
     "source": "进化"
   },
   {
     "name": "Static Charge",
     "CN": "静电充能",
-    "timestamp": 1795209775444,
+    "timestamp": 1795213153307,
     "source": "进化"
+  },
+  {
+    "name": "Pocket Watcher",
+    "CN": "空当观察者",
+    "timestamp": 1795213202621,
+    "source": "300雷霆代币"
+  },
+  {
+    "name": "Cutting Edge",
+    "CN": "致命锋芒",
+    "timestamp": 1795213509815,
+    "source": "600雷霆代币"
   }
 ]
