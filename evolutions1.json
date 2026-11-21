@@ -4983,9 +4983,9 @@
   },
   {
     "name": "Zero to Sixty",
-    "CN": "零到六十",
-    "timestamp": 1795209336979,
-    "source": "进化"
+    "CN": "零百加速",
+    "timestamp": 1795243064431,
+    "source": "雷霆出击每日参赛完美主义者任务"
   },
   {
     "name": "Full Overload",
@@ -5040,5 +5040,17 @@
     "CN": "致命锋芒",
     "timestamp": 1795213509815,
     "source": "600雷霆代币"
+  },
+  {
+    "name": "Field General",
+    "CN": "场上指挥官",
+    "timestamp": 1795242925366,
+    "source": "追风者任务"
+  },
+  {
+    "name": "Slick Operator",
+    "CN": "灵巧操盘手",
+    "timestamp": 1795242969051,
+    "source": "追风者任务"
   }
 ]
