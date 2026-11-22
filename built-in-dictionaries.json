@@ -2910,6 +2910,14 @@
     "Chemistry Styles": {
       "webpagedata": "化学风格",
       "timestamp": 1791556019656
+    },
+    "Pick level": {
+      "webpagedata": "选择进化阶段",
+      "timestamp": 1795329041296
+    },
+    "Exclude Evo": {
+      "webpagedata": "排除进化",
+      "timestamp": 1795329077354
     }
   },
   "futbin": {
