@@ -5088,5 +5088,35 @@
     "CN": "静电狂涌",
     "timestamp": 1795728107038,
     "source": "进化"
+  },
+  {
+    "name": "Struck by Lightning",
+    "CN": "雷霆一击",
+    "timestamp": 1795814045174,
+    "source": "训练营"
+  },
+  {
+    "name": "Galvanic Wing",
+    "CN": "电光之翼",
+    "timestamp": 1795814802650,
+    "source": "付费进化"
+  },
+  {
+    "name": "Final Bolt",
+    "CN": "最终雷击",
+    "timestamp": 1795814759161,
+    "source": "进化"
+  },
+  {
+    "name": "Rolling Thunder",
+    "CN": "滚雷",
+    "timestamp": 1795814787774,
+    "source": "进化"
+  },
+  {
+    "name": "Initial Spark",
+    "CN": "初始星火",
+    "timestamp": 1795814843332,
+    "source": "进化"
   }
 ]
